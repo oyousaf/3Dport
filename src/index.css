@@ -35,7 +35,7 @@ body {
   }
 
   .nav-sidebar {
-    @apply absolute left-0 right-0 bg-[#b2beb5] backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
+    @apply absolute left-0 right-0 bg-[#B2BEB5] backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
   }
 
   .text-gray_gradient {
@@ -44,7 +44,7 @@ body {
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-[#B2BEB5] transition-all active:scale-95 text-[#556962] mx-auto;
   }
 
   .btn-ping {
