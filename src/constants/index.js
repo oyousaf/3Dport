@@ -286,6 +286,70 @@ export const myProjects = [
       },
     ],
   },
+  {
+    title: "Reddit Client",
+    desc: "A Reddit app developed using React, Redux and Tailwind.",
+    subdesc:
+      "A dynamic Reddit application developed using React and Redux, designed to provide a seamless browsing experience for users. The app allows users to explore posts, display available media, and provides direct links to the original content, enhancing the user’s journey through the platform. Leveraging Tailwind CSS, it features a responsive and visually appealing interface, ensuring optimal usability on both desktop and mobile devices.",
+    href: "https://red-client.netlify.app/",
+    texture: "/textures/project/project7.mp4",
+    logo: "/assets/project-logo7.svg",
+    logoStyle: {
+      backgroundColor: "#FF8b60",
+      border: "0.2px solid #FF8b60",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
+    },
+    spotlight: "/assets/spotlight1.png",
+    tags: [
+      {
+        id: 1,
+        name: "React",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 2,
+        name: "Redux",
+        path: "/assets/redux.svg",
+      },
+      {
+        id: 1,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.png",
+      },
+    ],
+  },
+  {
+    title: "Notflix",
+    desc: "A Netflix clone created using React 18, Tailwind and Firebase.",
+    subdesc:
+      "A simple Netflix clone developed using React 18, Tailwind CSS, and Firebase. This application replicates the streaming experience, allowing users to browse a vast library of movies and TV shows. With a sleek, modern interface designed with Tailwind, users can enjoy seamless navigation and visually appealing layouts. Firebase powers the backend, providing secure authentication and real-time data management, ensuring a smooth and responsive user experience across devices.",
+    href: "https://react-notflix.web.app/",
+    texture: "/textures/project/project8.mp4",
+    logo: "/assets/project-logo8.png",
+    logoStyle: {
+      backgroundColor: "#FFF",
+      border: "0.2px solid #FFF",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
+    },
+    spotlight: "/assets/spotlight2.png",
+    tags: [
+      {
+        id: 1,
+        name: "Firebase",
+        path: "/assets/firebase.svg",
+      },
+      {
+        id: 2,
+        name: "React",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 2,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.png",
+      },
+    ],
+  },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
