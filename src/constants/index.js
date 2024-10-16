@@ -59,9 +59,9 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "Movi3",
-    desc: "Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.",
+    desc: "A movie PWA developed using Next.js, Tailwind and OMDb API.",
     subdesc:
-      "Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.",
+      "A simple movie search application that harnesses the capabilities of Next.js and the OMDb API. This project served as my inaugural venture into the PWA ecosystem, providing me with a comprehensive understanding of its integral components and the nuances of developing progressive web applications.",
     href: "https://movi3.vercel.app",
     texture: "/textures/project/project1.mp4",
     logo: "/assets/project-logo1.png",
@@ -79,8 +79,8 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "Next",
+        path: "/assets/next.svg",
       },
       {
         id: 3,
@@ -89,23 +89,25 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Tailwindcsss",
+        path: "/assets/tailwindcss.png",
       },
     ],
   },
   {
-    title: "LiveDoc - Real-Time Google Docs Clone",
-    desc: "LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.",
+    title: "Pollards",
+    desc: "An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.",
     subdesc:
-      "With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.",
-    href: "https://www.youtube.com/watch?v=y5vE8y_f_OM",
+      "With a focus on efficiency, Pollards integrates complex forms and SMS notifications, by using Next.js, Appwrite and Twillio to enhance operational workflows.",
+    href: "https://pollards.info",
     texture: "/textures/project/project2.mp4",
     logo: "/assets/project-logo2.png",
     logoStyle: {
-      backgroundColor: "#13202F",
-      border: "0.2px solid #17293E",
-      boxShadow: "0px 0px 60px 0px #2F6DB54D",
+      backgroundColor: "#9f34b5",
+      background:
+        "linear-gradient(0deg, #9f34b550, #9f34b550), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
+      border: "0.2px solid rgba(159, 52, 181, 1)",
+      boxShadow: "0px 0px 60px 0px rgba(35, 131, 96, 0.3)",
     },
     spotlight: "/assets/spotlight2.png",
     tags: [
@@ -116,131 +118,171 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "Nextjs",
+        path: "/assets/next.svg",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Twilio",
+        path: "/assets/twilio.svg",
+      },
+      {
+        id: 5,
+        name: "TypeScript",
+        path: "/assets/typescript.png",
       },
     ],
   },
   {
-    title: "Pollards - Appointment Management System",
-    desc: "An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.",
+    title: "Sticky Notes",
+    desc: "A simple sticky notes app develeped using React, Vite and Appwrite.",
     subdesc:
-      "With a focus on efficiency, Pollards integrates complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.",
-    href: "https://www.youtube.com/watch?v=lEflo_sc82g",
+      "A comprehensive, production-ready notes application that combines a robust set of features with an intuitive user interface, making it both functional and enjoyable to use. Users can easily create and delete notes, with the ability to assign a specified colour to each note for quick visual identification. The app ensures a smooth and responsive experience, allowing users to manage their notes effortlessly, whether on desktop or mobile. With a focus on usability, it integrates modern design principles to create a delightful experience for all users.",
+    href: "https://not3s.vercel.app/",
     texture: "/textures/project/project3.mp4",
-    logo: "/assets/project-logo3.png",
+    logo: "/assets/project-logo3.svg",
     logoStyle: {
-      backgroundColor: "#60f5a1",
-      background:
-        "linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
-      border: "0.2px solid rgba(208, 213, 221, 1)",
-      boxShadow: "0px 0px 60px 0px rgba(35, 131, 96, 0.3)",
+      backgroundColor: "#0E1F38",
+      border: "0.2px solid #0E2D58",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     spotlight: "/assets/spotlight3.png",
     tags: [
       {
         id: 1,
+        name: "Appwrite",
+        path: "/assets/appwrite.png",
+      },
+      {
+        id: 2,
         name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 3,
+        name: "Vite",
+        path: "/assets/vite.svg",
+      },
+    ],
+  },
+  {
+    title: "Legxcy",
+    desc: "A comprehensive full-stack eCommerce application that offers a seamless shopping experience.",
+    subdesc:
+      "Developed using the MERN stack, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
+    href: "https://legxcy.onrender.com",
+    texture: "/textures/project/project4.mp4",
+    logo: "/assets/project-logo4.png",
+    logoStyle: {
+      backgroundColor: "#1C1A43",
+      border: "0.2px solid #252262",
+      boxShadow: "0px 0px 60px 0px #635BFF4D",
+    },
+    spotlight: "/assets/spotlight4.png",
+    tags: [
+      {
+        id: 1,
+        name: "Cloudinary",
+        path: "/assets/cloudinary.svg",
+      },
+      {
+        id: 2,
+        name: "Mongo",
+        path: "/assets/mongo.svg",
+      },
+      {
+        id: 3,
+        name: "Express",
+        path: "/assets/express.svg",
+      },
+      {
+        id: 4,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 4,
+        name: "Node",
+        path: "/assets/node.svg",
+      },
+      {
+        id: 5,
+        name: "Stripe",
+        path: "/assets/stripe.svg",
+      },
+      {
+        id: 6,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.png",
+      },
+      {
+        id: 7,
+        name: "Vite",
+        path: "/assets/vite.svg",
+      },
+    ],
+  },
+  {
+    title: "Unlock Your Potential",
+    desc: "A simple SPA developed using React, Vite and Tailwind.",
+    subdesc:
+      "This website leverages the power of React for dynamic user interactions, Vite for fast development and build processes, and Tailwind CSS for a sleek, responsive design.",
+    href: "https://uyp.life/",
+    texture: "/textures/project/project5.mp4",
+    logo: "/assets/project-logo5.png",
+    logoStyle: {
+      backgroundColor: "#ED872D",
+      border: "0.2px solid #ED872D",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
+    },
+    spotlight: "/assets/spotlight5.png",
+    tags: [
+      {
+        id: 1,
+        name: "React",
         path: "/assets/react.svg",
       },
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Vite",
+        path: "/assets/vite.svg",
       },
     ],
   },
   {
-    title: "Horizon - Online Banking Platform",
-    desc: "Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.",
+    title: "Weather",
+    desc: "A user-friendly weather app developed using Vue.js.",
     subdesc:
-      "Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.",
-    href: "https://www.youtube.com/watch?v=PuOVqP_cjkE",
-    texture: "/textures/project/project4.mp4",
-    logo: "/assets/project-logo4.png",
+      "Designed with mobile-friendliness in mind, this app allows users to easily search for and view weather conditions in their desired locations. Enhanced with Tailwind CSS, it features a responsive layout that ensures an engaging and visually appealing experience across all devices.",
+    href: "https://kufi.uk/",
+    texture: "/textures/project/project6.mp4",
+    logo: "/assets/project-logo6.svg",
     logoStyle: {
-      backgroundColor: "#0E1F38",
-      border: "0.2px solid #0E2D58",
+      backgroundColor: "#FFF",
+      border: "0.2px solid #FFF",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     spotlight: "/assets/spotlight4.png",
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "Tailwind",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
-    ],
-  },
-  {
-    title: "Imaginify - AI Photo Manipulation App",
-    desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
-    subdesc:
-      "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
-    href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
-    texture: "/textures/project/project5.mp4",
-    logo: "/assets/project-logo5.png",
-    logoStyle: {
-      backgroundColor: "#1C1A43",
-      border: "0.2px solid #252262",
-      boxShadow: "0px 0px 60px 0px #635BFF4D",
-    },
-    spotlight: "/assets/spotlight5.png",
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Vue",
+        path: "/assets/vue.svg",
       },
     ],
   },
