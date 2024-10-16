@@ -29,9 +29,12 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I’m Omar</p>
               <p className="grid-subtext">
-                With 5 years of experience, I have honed my skills in mostly
-                frontend but also some backend dev, as of late, creating dynamic
-                and responsive websites.
+                With five years of experience, I have primarily honed my skills
+                in frontend development, while recently expanding into
+                full-stack development to better understand how the backend
+                integrates with the frontend. My focus is on crafting dynamic,
+                fully responsive websites that deliver seamless user
+                experiences.
               </p>
             </div>
           </div>
@@ -48,8 +51,9 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                I specialise in a variety of languages, frameworks, and tools
-                that allow me to build robust and scalable applications
+                I specialise in a diverse range of languages, frameworks, and
+                tools, enabling me to develop robust, scalable applications with
+                efficiency and precision.
               </p>
             </div>
           </div>
@@ -69,9 +73,9 @@ const About = () => {
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                 labelsData={[
                   {
-                    lat: 40,
-                    lng: -100,
-                    text: "Wakefield, UK",
+                    lat: 53.68,
+                    lng: -1.5,
+                    text: "I'm here!",
                     color: "white",
                     size: 15,
                   },
@@ -83,8 +87,8 @@ const About = () => {
                 Flexible with time zones and open to relocation in the future
               </p>
               <p className="grid-subtext">
-                Based in Wakefield, UK, and available for remote opportunities
-                globally.
+                Currently based in Wakefield - UK, and available for remote
+                opportunities globally.
               </p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
@@ -102,9 +106,10 @@ const About = () => {
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
-                I love solving problems and building things through code.
-                Programming isn&apos;t just my profession—it&apos;s my passion.
-                I enjoy exploring new technologies, and enhancing my skills.
+                I am passionate about problem-solving and creating solutions
+                through code. Programming goes beyond a profession for me—it's a
+                true calling. I take pleasure in continually exploring emerging
+                technologies and honing my expertise.
               </p>
             </div>
           </div>
