@@ -90,7 +90,7 @@ const About = () => {
                 Currently based in Wakefield - UK, and available for remote
                 opportunities globally.
               </p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              <Button name="Get in Touch" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
         </div>
