@@ -66,9 +66,9 @@ export const myProjects = [
     texture: "/textures/project/project1.mp4",
     logo: "/assets/project-logo1.png",
     logoStyle: {
-      backgroundColor: "#2A1816",
-      border: "0.2px solid #36201D",
-      boxShadow: "0px 0px 60px 0px #AA3C304D",
+      backgroundColor: "#FFDEAA",
+      border: "0.2px solid #FFDEAA",
+      boxShadow: "0px 0px 60px 0px #FFDEAA4D",
     },
     spotlight: "/assets/spotlight1.png",
     tags: [
@@ -105,11 +105,11 @@ export const myProjects = [
     logoStyle: {
       backgroundColor: "#9f34b5",
       background:
-        "linear-gradient(0deg, #9f34b550, #9f34b550), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
-      border: "0.2px solid rgba(159, 52, 181, 1)",
-      boxShadow: "0px 0px 60px 0px rgba(35, 131, 96, 0.3)",
+        "linear-gradient(0deg, #9f34b5, #9f34b5), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
+      border: "0.2px solid #9f34b5",
+      boxShadow: "0px 0px 60px 0px #9f34b5",
     },
-    spotlight: "/assets/spotlight2.png",
+    spotlight: "/assets/spotlight5.png",
     tags: [
       {
         id: 1,
@@ -142,13 +142,13 @@ export const myProjects = [
     title: "Sticky Notes",
     desc: "A simple sticky notes app develeped using React, Vite and Appwrite.",
     subdesc:
-      "A comprehensive, production-ready notes application that combines a robust set of features with an intuitive user interface, making it both functional and enjoyable to use. Users can easily create and delete notes, with the ability to assign a specified colour to each note for quick visual identification. The app ensures a smooth and responsive experience, allowing users to manage their notes effortlessly, whether on desktop or mobile. With a focus on usability, it integrates modern design principles to create a delightful experience for all users.",
+      "A comprehensive, production-ready notes application that combines a robust set of features with an intuitive user interface, making it both functional and enjoyable to use. Users can easily create and delete notes, with the ability to assign a specified colour to each note for quick visual identification.",
     href: "https://not3s.vercel.app/",
     texture: "/textures/project/project3.mp4",
     logo: "/assets/project-logo3.svg",
     logoStyle: {
-      backgroundColor: "#0E1F38",
-      border: "0.2px solid #0E2D58",
+      backgroundColor: "#000",
+      border: "0.2px solid #000",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     spotlight: "/assets/spotlight3.png",
@@ -179,9 +179,9 @@ export const myProjects = [
     texture: "/textures/project/project4.mp4",
     logo: "/assets/project-logo4.png",
     logoStyle: {
-      backgroundColor: "#1C1A43",
-      border: "0.2px solid #252262",
-      boxShadow: "0px 0px 60px 0px #635BFF4D",
+      backgroundColor: "#003632",
+      border: "0.2px solid #003632",
+      boxShadow: "0px 0px 60px 0px #0036324D",
     },
     spotlight: "/assets/spotlight4.png",
     tags: [
@@ -240,7 +240,7 @@ export const myProjects = [
       border: "0.2px solid #ED872D",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
-    spotlight: "/assets/spotlight5.png",
+    spotlight: "/assets/spotlight1.png",
     tags: [
       {
         id: 1,
@@ -295,8 +295,8 @@ export const myProjects = [
     texture: "/textures/project/project7.mp4",
     logo: "/assets/project-logo7.svg",
     logoStyle: {
-      backgroundColor: "#FF8b60",
-      border: "0.2px solid #FF8b60",
+      backgroundColor: "#FF4300",
+      border: "0.2px solid #FF4300",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     spotlight: "/assets/spotlight1.png",
