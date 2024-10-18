@@ -20,7 +20,7 @@ const Clients = () => {
                   />
                   <div className="flex flex-col">
                     <p className="font-semibold text-white-800">{item.name}</p>
-                    <p className="text-white-500 md:text-base text-sm font-light">
+                    <p className="text-gray-200 md:text-base text-sm font-light">
                       {item.position}
                     </p>
                   </div>

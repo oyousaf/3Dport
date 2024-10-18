@@ -92,7 +92,7 @@ body {
   }
 
   .client-review {
-    @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300 bg-opacity-50;
+    @apply rounded-lg md:p-10 p-5 col-span-1 bg-teal-950 bg-opacity-50;
   }
 
   .client-content {
@@ -105,15 +105,15 @@ body {
   }
 
   .work-canvas {
-    @apply col-span-1 rounded-lg bg-teal-900 border border-teal-950;
+    @apply col-span-1 rounded-lg bg-teal-950 border border-teal-950;
   }
 
   .work-content {
-    @apply col-span-2 rounded-lg bg-teal-900 border border-teal-950;
+    @apply col-span-2 rounded-lg bg-teal-950 border border-teal-950;
   }
 
   .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
+    @apply grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-teal-900 rounded-lg sm:px-5 px-2.5;
   }
 
   .work-content_logo {
@@ -121,7 +121,7 @@ body {
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-teal-950 group-hover:bg-black-500 group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full bg-teal-950 group-hover:bg-gray-300 group-last:hidden;
   }
 
   /* contact section */
