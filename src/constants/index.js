@@ -394,7 +394,7 @@ export const workExperiences = [
     pos: "SPA Ninja",
     duration: "2022 - Present",
     title:
-      "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
+      "I've always had a passion for coding and knew I wanted to be a developer—whether frontend, backend, or even mobile. After working on passion projects, I'm now diving back into development through Codecademy's Full Stack Engineer course, expanding my skills in what I love.",
     icon: "/assets/codecademy.svg",
     animation: "salute",
   },
