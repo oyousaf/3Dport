@@ -29,7 +29,7 @@ const Navbar = () => {
             href="/"
             className="text-[#556962] font-bold text-xl hover:text-white transition-colors"
           >
-            Omar
+            Omar ♔
           </a>
 
           <button

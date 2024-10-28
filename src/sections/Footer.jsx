@@ -28,7 +28,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <p className="text-gray-200">© {new Date().getFullYear()} Omar Yousaf</p>
+      <p className="text-gray-200">© {new Date().getFullYear()} Omar ♔</p>
     </footer>
   );
 };
