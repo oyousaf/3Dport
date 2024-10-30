@@ -58,6 +58,43 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Ace Motor Sales",
+    desc: "A car website built with Next.js, styled with Tailwind CSS, and featuring dynamic Instagram integration through LightWidget.",
+    subdesc:
+      "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
+    href: "https://ams-woad.vercel.app",
+    texture: "/textures/project/project9.mp4",
+    logo: "/assets/project-logo9.png",
+    logoStyle: {
+      backgroundColor: "#B5485D",
+      border: "0.2px solid #B5485D",
+      boxShadow: "0px 0px 60px 0px #B5485D4D",
+    },
+    spotlight: "/assets/spotlight4.png",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 2,
+        name: "Next",
+        path: "/assets/next.svg",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: "/assets/typescript.png",
+      },
+      {
+        id: 4,
+        name: "Tailwindcsss",
+        path: "/assets/tailwindcss.png",
+      },
+    ],
+  },
+  {
     title: "Movi3",
     desc: "A movie PWA developed using Next.js, Tailwind and OMDb API.",
     subdesc:
