@@ -15,6 +15,10 @@ const About = () => {
     }, 2000);
   };
 
+  const handleEmailClick = () => {
+    window.location.href = "mailto:o_yousaf@live.co.uk";
+  };
+
   return (
     <section className="c-space my-20" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
@@ -90,7 +94,12 @@ const About = () => {
                 Currently based in Wakefield - UK, and available for remote
                 opportunities globally.
               </p>
-              <Button name="Get in Touch" isBeam containerClass="w-full mt-10" />
+              <Button
+                name="Get in Touch"
+                isBeam
+                containerClass="w-full mt-10"
+                onClick={handleEmailClick}
+              />
             </div>
           </div>
         </div>
