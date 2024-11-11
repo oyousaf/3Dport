@@ -24,14 +24,22 @@ export const navLinks = [
 export const clientReviews = [
   {
     id: 1,
+    name: "Fez Khan",
+    position: "Owner of AMS",
+    img: "assets/project-logo9.png",
+    review:
+      "Outstanding service from start to finish! Very professional and informative through every step of the way, providing knowledgeable input into creating the best marketing website for my business. Highly recommend to anyone looking to have a stress-free experience in creating their website. Very pleased with my website. Many thanks!",
+  },
+  {
+    id: 2,
     name: "Hamza Ahmed",
     position: "CEO of Unlock Your Potential",
-    img: "assets/review1.webp",
+    img: "assets/project-logo5.png",
     review:
       "Working with Omar was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
   },
   {
-    id: 2,
+    id: 3,
     name: "Mark Rogers",
     position: "Founder of Legxcy",
     img: "assets/review2.png",
@@ -39,20 +47,12 @@ export const clientReviews = [
       "Omar’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.",
   },
   {
-    id: 3,
+    id: 4,
     name: "John Dohsas",
     position: "Project Manager at Pollards",
     img: "assets/review3.png",
     review:
       "I can’t say enough good things about Omar. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-  },
-  {
-    id: 4,
-    name: "Ether Smith",
-    position: "CEO of Notflix",
-    img: "assets/review4.png",
-    review:
-      "Omar was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.",
   },
 ];
 
