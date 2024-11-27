@@ -280,22 +280,22 @@ export const myProjects = [
         path: "/assets/react.svg",
       },
       {
-        id: 4,
+        id: 5,
         name: "Node",
         path: "/assets/node.svg",
       },
       {
-        id: 5,
+        id: 6,
         name: "Stripe",
         path: "/assets/stripe.svg",
       },
       {
-        id: 6,
+        id: 7,
         name: "TailwindCSS",
         path: "/assets/tailwindcss.png",
       },
       {
-        id: 7,
+        id: 8,
         name: "Vite",
         path: "/assets/vite.svg",
       },
@@ -386,7 +386,7 @@ export const myProjects = [
         path: "/assets/redux.svg",
       },
       {
-        id: 1,
+        id: 3,
         name: "TailwindCSS",
         path: "/assets/tailwindcss.png",
       },
