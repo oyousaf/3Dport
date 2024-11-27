@@ -418,7 +418,7 @@ export const myProjects = [
         path: "/assets/react.svg",
       },
       {
-        id: 2,
+        id: 3,
         name: "TailwindCSS",
         path: "/assets/tailwindcss.png",
       },
