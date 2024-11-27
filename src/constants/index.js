@@ -58,8 +58,45 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Drainage Hero",
+    desc: "Professional drainage company",
+    subdesc:
+      "A website developed for a local business specialising in drainage solution, including repair, installation, and clearance.",
+    href: "https://drainagehero.uk",
+    texture: "/textures/project/project10.mp4",
+    logo: "/assets/project-logo10.png",
+    logoStyle: {
+      backgroundColor: "#A38F79",
+      border: "0.2px solid #A38F79",
+      boxShadow: "0px 0px 60px 0px #A38F794D",
+    },
+    spotlight: "/assets/spotlight1.png",
+    tags: [
+      {
+        id: 1,
+        name: "Framer Motion",
+        path: "/assets/framer.svg",
+      },
+      {
+        id: 2,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 3,
+        name: "Next",
+        path: "/assets/next.svg",
+      },
+      {
+        id: 4,
+        name: "Tailwindcsss",
+        path: "/assets/tailwindcss.png",
+      },
+    ],
+  },
+  {
     title: "Ace Motor Sales",
-    desc: "A car website built with Next.js, styled with Tailwind CSS, and featuring dynamic Instagram integration through LightWidget.",
+    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations, Tailwind CSS styling, and a custom component.",
     subdesc:
       "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
     href: "https://acemotorsales.uk",
@@ -74,16 +111,21 @@ export const myProjects = [
     tags: [
       {
         id: 1,
+        name: "Framer Motion",
+        path: "/assets/framer.svg",
+      },
+      {
+        id: 2,
         name: "React.js",
         path: "/assets/react.svg",
       },
       {
-        id: 2,
+        id: 3,
         name: "Next",
         path: "/assets/next.svg",
       },
       {
-        id: 3,
+        id: 4,
         name: "Tailwindcsss",
         path: "/assets/tailwindcss.png",
       },
