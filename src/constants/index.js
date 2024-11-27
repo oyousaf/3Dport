@@ -59,9 +59,9 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "Drainage Hero",
-    desc: "Professional drainage company",
+    desc: "A professional drainage company website developed using Framer Motion, Next.js and Tailwind",
     subdesc:
-      "A website developed for a local business specialising in drainage solution, including repair, installation, and clearance.",
+      "Another simple SPA created for a local business specialising in comprehensive drainage solutions, including repairs, installations, and clearance.",
     href: "https://drainagehero.uk",
     texture: "/textures/project/project10.mp4",
     logo: "/assets/project-logo10.png",
@@ -89,14 +89,14 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "Tailwindcsss",
+        name: "Tailwindcss",
         path: "/assets/tailwindcss.png",
       },
     ],
   },
   {
     title: "Ace Motor Sales",
-    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations, Tailwind CSS styling, and a custom component.",
+    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations, Tailwind CSS styling, and consisting of a custom component to display current available cars.",
     subdesc:
       "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
     href: "https://acemotorsales.uk",
@@ -126,7 +126,7 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "Tailwindcsss",
+        name: "Tailwindcss",
         path: "/assets/tailwindcss.png",
       },
     ],
@@ -163,7 +163,7 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "Tailwindcsss",
+        name: "Tailwindcss",
         path: "/assets/tailwindcss.png",
       },
     ],
