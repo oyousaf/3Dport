@@ -59,7 +59,7 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "Drainage Hero",
-    desc: "A professional drainage company website developed using Framer Motion, Next.js and Tailwind",
+    desc: "A professional drainage company website developed using Framer Motion, Next.js and Tailwind.",
     subdesc:
       "Another simple SPA created for a local business specialising in comprehensive drainage solutions, including repairs, installations, and clearance.",
     href: "https://drainagehero.uk",
