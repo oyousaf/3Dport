@@ -96,7 +96,7 @@ export const myProjects = [
   },
   {
     title: "Ace Motor Sales",
-    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations, Tailwind CSS styling, and consisting of a custom component to display current available cars.",
+    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations and Tailwind CSS styling.",
     subdesc:
       "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
     href: "https://acemotorsales.uk",
