@@ -187,26 +187,31 @@ export const myProjects = [
     tags: [
       {
         id: 1,
+        name: "Appwrite",
+        path: "/assets/appwrite.png",
+      },
+      {
+        id: 2,
         name: "React.js",
         path: "/assets/react.svg",
       },
       {
-        id: 2,
+        id: 3,
         name: "Nextjs",
         path: "/assets/next.svg",
       },
       {
-        id: 3,
+        id: 4,
         name: "TailwindCSS",
         path: "/assets/tailwindcss.png",
       },
       {
-        id: 4,
+        id: 5,
         name: "Twilio",
         path: "/assets/twilio.svg",
       },
       {
-        id: 5,
+        id: 6,
         name: "TypeScript",
         path: "/assets/typescript.png",
       },

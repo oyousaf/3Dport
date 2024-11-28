@@ -40,7 +40,7 @@ const Navbar = () => {
             <img
               src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
               alt="toggle"
-              className="w-6 h-6"
+              className="w-10 h-10"
             />
           </button>
           <nav className="sm:flex hidden">
