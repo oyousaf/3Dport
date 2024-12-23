@@ -58,6 +58,43 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Phipps Opticians",
+    desc: "A modern and responsive website built using Next.js 15, Framer Motion, and Tailwind CSS",
+    subdesc:
+      "A simple SPA created for a local business specialising in eye care solutions, visual examinations, and high-quality prescription glasses and contact lenses.",
+    href: "https://phippsopticians.uk",
+    texture: "/textures/project/project11.mp4",
+    logo: "/assets/project-logo11.png",
+    logoStyle: {
+      backgroundColor: "#f5f5dc",
+      border: "0.2px solid #f5f5dc",
+      boxShadow: "0px 0px 60px 0px #f5f5dc4D",
+    },
+    spotlight: "/assets/spotlight1.png",
+    tags: [
+      {
+        id: 1,
+        name: "Framer Motion",
+        path: "/assets/framer.svg",
+      },
+      {
+        id: 2,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 3,
+        name: "Next",
+        path: "/assets/next.svg",
+      },
+      {
+        id: 4,
+        name: "Tailwindcss",
+        path: "/assets/tailwindcss.png",
+      },
+    ],
+  },
+  {
     title: "Drainage Hero",
     desc: "A professional drainage company website developed using Framer Motion, Next.js and Tailwind.",
     subdesc:
