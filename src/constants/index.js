@@ -148,21 +148,26 @@ export const myProjects = [
     tags: [
       {
         id: 1,
+        name: "Appwrite",
+        path: "/assets/appwrite.png",
+      },
+      {
+        id: 2,
         name: "Framer Motion",
         path: "/assets/framer.svg",
       },
       {
-        id: 2,
+        id: 3,
         name: "React.js",
         path: "/assets/react.svg",
       },
       {
-        id: 3,
+        id: 4,
         name: "Next",
         path: "/assets/next.svg",
       },
       {
-        id: 4,
+        id: 5,
         name: "Tailwindcss",
         path: "/assets/tailwindcss.png",
       },
