@@ -211,55 +211,6 @@ export const myProjects = [
     ],
   },
   {
-    title: "Pollards",
-    desc: "An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.",
-    subdesc:
-      "With a focus on efficiency, Pollards integrates complex forms and SMS notifications, by using Next.js, Appwrite and Twillio to enhance operational workflows.",
-    href: "https://pollards.info",
-    texture: "/textures/project/project2.mp4",
-    logo: "/assets/project-logo2.png",
-    logoStyle: {
-      backgroundColor: "#9f34b5",
-      background:
-        "linear-gradient(0deg, #9f34b5, #9f34b5), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
-      border: "0.2px solid #9f34b5",
-      boxShadow: "0px 0px 60px 0px #9f34b5",
-    },
-    spotlight: "/assets/spotlight5.png",
-    tags: [
-      {
-        id: 1,
-        name: "Appwrite",
-        path: "/assets/appwrite.png",
-      },
-      {
-        id: 2,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 3,
-        name: "Nextjs",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
-      {
-        id: 5,
-        name: "Twilio",
-        path: "/assets/twilio.svg",
-      },
-      {
-        id: 6,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-    ],
-  },
-  {
     title: "Sticky Notes",
     desc: "A simple sticky notes app develeped using React, Vite and Appwrite.",
     subdesc:
