@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import GlobeWrapper from "../components/Globe";
 import Button from "../components/Button.jsx";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+import { OrbitControls } from "@react-three/drei";
 
 const About = () => {
   const sectionRef = useRevealOnScroll();
@@ -71,6 +72,7 @@ const About = () => {
                     },
                   ]}
                 />
+                <OrbitControls enableZoom={true} />
               </Canvas>
             </div>
             <div>
