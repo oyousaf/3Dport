@@ -16,7 +16,7 @@ const WorkExperience = () => {
 
       <div className="grid md:grid-cols-2 gap-10">
         {/* 3D Canvas */}
-        <div className="bg-emeraldDark border border-gray200/10 rounded-xl shadow-inner h-96">
+        <div className="bg-emerald-900 border border-gray200/10 rounded-xl shadow-inner h-96">
           <Canvas>
             <ambientLight intensity={7} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -42,7 +42,7 @@ const WorkExperience = () => {
               }
               onMouseLeave={() => setAnimationName("idle")}
               onClick={() => setAnimationName(item.animation.toLowerCase())}
-              className="bg-emeraldDark/70 border border-gray200/10 rounded-xl p-5 transition hover:shadow-lg group cursor-pointer"
+              className="bg-emerald-900 border border-gray200/10 rounded-xl p-5 transition hover:shadow-lg group cursor-pointer"
             >
               <div className="flex items-center gap-4 mb-3">
                 <img

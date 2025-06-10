@@ -2,25 +2,21 @@ import { Html, useProgress } from "@react-three/drei";
 
 const CanvasLoader = () => {
   const { progress } = useProgress();
+
   return (
     <Html
       as="div"
       center
       style={{
         display: "flex",
-        justifyContent: "center",
         flexDirection: "column",
+        alignItems: "center",
+        gap: "1rem",
       }}
     >
-      <span className="canvas-loader" />
-      <p
-        style={{
-          fontSize: 14,
-          color: "#F1F1F1",
-          fontWeight: 800,
-          marginTop: 40,
-        }}
-      >
+      <div className="w-6 h-6 rounded-full bg-mint animate-pulse" />
+
+      <p className="text-sm font-semibold text-gray200">
         {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}
       </p>
     </Html>
