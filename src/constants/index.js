@@ -72,7 +72,7 @@ export const myProjects = [
     desc: "A modern and responsive website built using Next.js 15, Framer Motion, and Tailwind CSS",
     subdesc:
       "A simple SPA created for a local business specialising in eye care solutions, visual examinations, and high-quality prescription glasses and contact lenses.",
-    href: "https://phippsopticians.uk",
+    href: "https://phipps.vercel.app",
     texture: "/textures/project/project11.mp4",
     logo: "/assets/project-logo11.png",
     logoStyle: {
