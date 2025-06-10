@@ -1,35 +1,37 @@
-import { useLayoutEffect, useRef } from "react";
+// hooks/useRevealChildrenOnScroll.js
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const useRevealChildrenOnScroll = (childSelector = "> *", options = {}) => {
-  const containerRef = useRef(null);
+export const useRevealChildrenOnScroll = () => {
+  const ref = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const children = ref.current.children;
+    if (!children || children.length === 0) return;
+
+    gsap.set(children, { opacity: 0, y: 40 });
+
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        containerRef.current.querySelectorAll(childSelector),
-        { autoAlpha: 0, y: 30 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-            ...options,
-          },
-        }
-      );
-    }, containerRef);
+      gsap.to(children, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 80%",
+        },
+      });
+    }, ref);
 
     return () => ctx.revert();
-  }, [childSelector, options]);
+  }, []);
 
-  return containerRef;
+  return ref;
 };

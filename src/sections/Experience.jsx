@@ -5,13 +5,15 @@ import Developer from "../components/Developer.jsx";
 import CanvasLoader from "../components/Loading.jsx";
 import { workExperiences } from "../constants/index.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+import { useRevealChildrenOnScroll } from "../hooks/useRevealChildrenOnScroll";
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState("idle");
   const sectionRef = useRevealOnScroll();
+  const timelineRef = useRevealChildrenOnScroll();
 
   return (
-    <section id="work" className="c-space my-24" ref={sectionRef}>
+    <section id="work" ref={sectionRef} className="c-space my-24">
       <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
         Experience
       </h2>
@@ -35,7 +37,7 @@ const WorkExperience = () => {
         </div>
 
         {/* Experience Timeline */}
-        <div className="space-y-6">
+        <div ref={timelineRef} className="space-y-6">
           {workExperiences.map((item, index) => (
             <div
               key={index}
