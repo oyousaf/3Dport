@@ -1,5 +1,5 @@
 import { Leva } from "leva";
-import { Suspense } from "react";
+import { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -19,7 +19,10 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
-  const sizes = calculateSizes(isSmall, isMobile, isTablet);
+  const sizes = useMemo(
+    () => calculateSizes(isSmall, isMobile, isTablet),
+    [isSmall, isMobile, isTablet]
+  );
 
   return (
     <section
@@ -39,26 +42,26 @@ const Hero = () => {
                 scale={sizes.deskScale}
               />
             </HeroCamera>
-            <group>
-              <Target position={sizes.targetPosition} />
-              <ReactLogo position={sizes.reactLogoPosition} />
-              <Rings position={sizes.ringPosition} />
-              <Cube position={sizes.cubePosition} />
-            </group>
+            <Target position={sizes.targetPosition} />
+            <ReactLogo position={sizes.reactLogoPosition} />
+            <Rings position={sizes.ringPosition} />
+            <Cube position={sizes.cubePosition} />
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
       </div>
 
-      {/* Hero Text */}
-      <div className="relative z-10 px-6 mt-32 sm:mt-40 text-center space-y-4">
-        <h1 className="text-3xl sm:text-5xl font-bold font-generalsans text-white">
-          Hi, I am Omar <span className="waving-hand">👋</span>
-        </h1>
-        <p className="text-lg sm:text-xl font-light text-mint">
-          Building maintainable, responsive and scalable apps
-        </p>
+      {/* Hero Text with backdrop */}
+      <div className="relative z-10 px-6 mt-32 sm:mt-40 text-center">
+        <div className="inline-block bg-emeraldDark/60 backdrop-blur-md px-6 py-4 rounded-xl shadow-lg">
+          <h1 className="text-4xl sm:text-6xl font-bold font-generalsans text-white drop-shadow-lg">
+            Hi, I am Omar <span className="waving-hand">👋</span>
+          </h1>
+          <p className="text-lg sm:text-xl font-light text-mint mt-2">
+            Building maintainable, responsive and scalable apps
+          </p>
+        </div>
       </div>
 
       {/* CTA Button */}
