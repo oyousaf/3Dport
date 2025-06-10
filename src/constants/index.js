@@ -109,7 +109,7 @@ export const myProjects = [
     desc: "A professional drainage company website developed using Framer Motion, Next.js and Tailwind.",
     subdesc:
       "Another simple SPA created for a local business specialising in comprehensive drainage solutions, including repairs, installations, and clearance.",
-    href: "https://drainagehero.uk",
+    href: "https://dh-tau-silk.vercel.app/",
     texture: "/textures/project/project10.mp4",
     logo: "/assets/project-logo10.png",
     logoStyle: {
@@ -257,7 +257,7 @@ export const myProjects = [
     desc: "A comprehensive full-stack eCommerce application that offers a seamless shopping experience.",
     subdesc:
       "Developed using the MERN stack, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
-    href: "https://legxcy.onrender.com",
+    href: "https://legxcy.uk",
     texture: "/textures/project/project4.mp4",
     logo: "/assets/project-logo4.png",
     logoStyle: {
