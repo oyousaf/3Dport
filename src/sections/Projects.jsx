@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Suspense, useState } from "react";
+import { useRef, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 
@@ -12,63 +12,72 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const textRef = useRef([]);
 
   const handleNavigation = (direction) => {
-    setSelectedProjectIndex((prevIndex) => {
-      if (direction === "previous") {
-        return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
-      } else {
-        return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
-      }
-    });
+    setSelectedProjectIndex((prevIndex) =>
+      direction === "previous"
+        ? (prevIndex - 1 + projectCount) % projectCount
+        : (prevIndex + 1) % projectCount
+    );
   };
 
   useGSAP(() => {
-    gsap.fromTo(
-      `.animatedText`,
-      { opacity: 0 },
-      { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" }
-    );
+    if (textRef.current) {
+      gsap.fromTo(
+        textRef.current,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power2.out",
+        }
+      );
+    }
   }, [selectedProjectIndex]);
 
   const currentProject = myProjects[selectedProjectIndex];
 
   return (
-    <section className="c-space my-20" id="projects">
-      <p className="head-text">My Projects</p>
+    <section id="projects" className="c-space my-24">
+      <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
+        My Projects
+      </h2>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
+      <div className="grid lg:grid-cols-2 gap-10">
+        {/* Info Panel */}
+        <div className="flex flex-col gap-6 bg-emeraldDark/60 p-6 sm:p-10 rounded-xl shadow-md backdrop-blur-md border border-gray200/10 relative z-10">
+          <div className="relative h-56 w-full rounded-xl overflow-hidden shadow">
             <img
               src={currentProject.spotlight}
-              alt="spotlight"
-              className="w-full h-96 object-cover rounded-xl"
+              alt="project banner"
+              className="w-full h-full object-cover"
             />
+            <div
+              className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded shadow"
+              style={currentProject.logoStyle}
+            >
+              <img src={currentProject.logo} alt="logo" className="w-8 h-8" />
+            </div>
           </div>
 
-          <div
-            className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
-            style={currentProject.logoStyle}
-          >
-            <img
-              className="w-10 h-10 shadow-sm"
-              src={currentProject.logo}
-              alt="logo"
-            />
-          </div>
-
-          <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">
+          <div className="space-y-4 text-gray200">
+            <h3
+              className="text-2xl font-semibold text-white"
+              ref={(el) => (textRef.current[0] = el)}
+            >
               {currentProject.title}
+            </h3>
+            <p ref={(el) => (textRef.current[1] = el)}>{currentProject.desc}</p>
+            <p ref={(el) => (textRef.current[2] = el)}>
+              {currentProject.subdesc}
             </p>
-
-            <p className="animatedText">{currentProject.desc}</p>
-            <p className="animatedText">{currentProject.subdesc}</p>
           </div>
 
-          <div className="flex items-center justify-between flex-wrap gap-5">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex gap-3">
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className="tech-logo">
                   <img src={tag.path} alt={tag.name} />
@@ -77,38 +86,34 @@ const Projects = () => {
             </div>
 
             <a
-              className="flex items-center gap-2 cursor-pointer text-white-600"
               href={currentProject.href}
               target="_blank"
               rel="noreferrer"
+              className="text-mint hover:text-white transition-colors text-sm flex items-center gap-2"
             >
-              <p>Live Site</p>
+              <span className="underline">Live Site</span>
               <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
             </a>
           </div>
 
-          <div className="flex justify-between items-center mt-7">
+          <div className="flex justify-between mt-6">
             <button
               className="arrow-btn"
               onClick={() => handleNavigation("previous")}
             >
-              <img src="/assets/left-arrow.png" alt="left arrow" />
+              <img src="/assets/left-arrow.png" alt="prev" />
             </button>
-
             <button
               className="arrow-btn"
               onClick={() => handleNavigation("next")}
             >
-              <img
-                src="/assets/right-arrow.png"
-                alt="right arrow"
-                className="w-4 h-4"
-              />
+              <img src="/assets/right-arrow.png" alt="next" />
             </button>
           </div>
         </div>
 
-        <div className="border border-teal-950 bg-teal-950 rounded-lg h-96 md:h-full">
+        {/* 3D Preview Panel */}
+        <div className="border border-gray200/10 rounded-lg bg-emeraldDark h-96 md:h-full overflow-hidden shadow-md">
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />

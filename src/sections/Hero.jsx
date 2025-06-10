@@ -22,50 +22,54 @@ const Hero = () => {
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
-    <section className="min-h-screen w-full flex flex-col relative" id="home">
-      <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
+    <section
+      id="home"
+      className="relative w-full min-h-screen flex flex-col justify-center items-center bg-emeraldDark text-gray200 overflow-hidden"
+    >
+      {/* Canvas 3D BG */}
+      <div className="absolute inset-0 z-0">
+        <Leva hidden />
+        <Canvas className="w-full h-full">
+          <Suspense fallback={<CanvasLoader />}>
+            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+            <HeroCamera isMobile={isMobile}>
+              <HackerRoom
+                position={sizes.deskPosition}
+                rotation={[0, -Math.PI, 0]}
+                scale={sizes.deskScale}
+              />
+            </HeroCamera>
+            <group>
+              <Target position={sizes.targetPosition} />
+              <ReactLogo position={sizes.reactLogoPosition} />
+              <Rings position={sizes.ringPosition} />
+              <Cube position={sizes.cubePosition} />
+            </group>
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+          </Suspense>
+        </Canvas>
+      </div>
+
+      {/* Hero Text */}
+      <div className="relative z-10 px-6 mt-32 sm:mt-40 text-center space-y-4">
+        <h1 className="text-3xl sm:text-5xl font-bold font-generalsans text-white">
           Hi, I am Omar <span className="waving-hand">👋</span>
-        </p>
-        <p className="hero_tag text-gray_gradient">
+        </h1>
+        <p className="text-lg sm:text-xl font-light text-mint">
           Building maintainable, responsive and scalable apps
         </p>
+      </div>
 
-        <div className="w-full h-full absolute inset-0">
-          <Leva hidden />
-          <Canvas className="w-full h-full">
-            <Suspense fallback={<CanvasLoader />}>
-              <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-              <HeroCamera isMobile={isMobile}>
-                <HackerRoom
-                  position={sizes.deskPosition}
-                  rotation={[0, -Math.PI, 0]}
-                  scale={sizes.deskScale}
-                />
-              </HeroCamera>
-
-              <group>
-                <Target position={sizes.targetPosition} />
-                <ReactLogo position={sizes.reactLogoPosition} />
-                <Rings position={sizes.ringPosition} />
-                <Cube position={sizes.cubePosition} />
-              </group>
-
-              <ambientLight intensity={1} />
-              <directionalLight position={[10, 10, 10]} intensity={0.5} />
-            </Suspense>
-          </Canvas>
-        </div>
-
-        <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-          <a href="#about" className="w-fit">
-            <Button
-              name="Let's innovate together"
-              isBeam
-              containerClass="sm:w-fit w-full sm:min-w-96"
-            />
-          </a>
-        </div>
+      {/* CTA Button */}
+      <div className="relative z-10 mt-10">
+        <a href="#about">
+          <Button
+            name="Let's innovate together"
+            isBeam
+            containerClass="mx-auto sm:min-w-80 w-full"
+          />
+        </a>
       </div>
     </section>
   );
