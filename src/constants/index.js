@@ -256,7 +256,7 @@ export const myProjects = [
     title: "Legxcy",
     desc: "A comprehensive full-stack eCommerce application that offers a seamless shopping experience.",
     subdesc:
-      "Developed using the MERN stack, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
+      "Developed using the Supabase, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
     href: "https://legxcy.uk",
     texture: "/textures/project/project4.mp4",
     logo: "/assets/project-logo4.png",
