@@ -6,24 +6,23 @@ const Footer = () => {
   };
 
   return (
-    <footer className="c-space pt-7 pb-3 border-t border-teal-900 flex items-center justify-between gap-5">
-      <div className="flex justify-center flex-grow space-x-4">
+    <footer className="c-space pt-10 pb-5 border-t border-gray200/10 mt-24 text-center">
+      <div className="flex justify-center space-x-6 mb-4">
         <AiFillGithub
-          size={36}
-          className="text-gray-200 hover:text-white transition-colors duration-200 cursor-pointer"
+          size={28}
+          className="text-gray200 hover:text-mint cursor-pointer transition"
           onClick={() => handleIconClick("https://github.com/oyousaf")}
           aria-label="GitHub"
         />
         <AiFillLinkedin
-          size={36}
-          className="text-gray-200 hover:text-white transition-colors duration-200 cursor-pointer"
+          size={28}
+          className="text-gray200 hover:text-mint cursor-pointer transition"
           onClick={() => handleIconClick("https://linkedin.com/in/oyousaf")}
           aria-label="LinkedIn"
         />
       </div>
-
-      <p className="text-gray-200 text-center">
-        © {new Date().getFullYear()} Omar ♔
+      <p className="text-sm text-gray200 tracking-wide">
+        © {new Date().getFullYear()} Omar 🍉
       </p>
     </footer>
   );
