@@ -3,8 +3,10 @@ import { useRef, useState } from "react";
 
 import useAlert from "../hooks/useAlert.js";
 import Alert from "../components/Alert.jsx";
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 const Contact = () => {
+  const sectionRef = useRevealOnScroll();
   const formRef = useRef();
 
   const { alert, showAlert, hideAlert } = useAlert();
@@ -65,7 +67,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="c-space my-20" id="contact">
+    <section className="c-space my-20" id="contact" ref={sectionRef}>
       {alert.show && <Alert {...alert} />}
 
       <div className="relative min-h-screen flex items-center justify-center flex-col">

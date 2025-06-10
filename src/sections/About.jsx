@@ -2,8 +2,10 @@ import { useState } from "react";
 import Globe from "react-globe.gl";
 
 import Button from "../components/Button.jsx";
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 const About = () => {
+  const sectionRef = useRevealOnScroll();
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
@@ -16,7 +18,7 @@ const About = () => {
   };
 
   return (
-    <section className="c-space my-20" id="about">
+    <section className="c-space my-20" id="about" ref={sectionRef}>
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">

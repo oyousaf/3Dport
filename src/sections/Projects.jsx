@@ -8,11 +8,14 @@ import { myProjects } from "../constants/index.js";
 import CanvasLoader from "../components/Loading.jsx";
 import DemoComputer from "../components/DemoComputer.jsx";
 
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+
 const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const textRef = useRef([]);
+  const sectionRef = useRevealOnScroll();
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) =>
@@ -41,7 +44,7 @@ const Projects = () => {
   const currentProject = myProjects[selectedProjectIndex];
 
   return (
-    <section id="projects" className="c-space my-24">
+    <section id="projects" className="c-space my-24" ref={sectionRef}>
       <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
         My Projects
       </h2>
