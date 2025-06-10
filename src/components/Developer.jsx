@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useAnimations, useGLTF, useFBX } from "@react-three/drei";
-import { useGraph } from "@react-three/fiber";
+import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { SkeletonUtils } from "three-stdlib";
+import * as THREE from "three";
 
-const animationFiles = {
+const animationPaths = {
   idle: "/models/animations/idle.fbx",
   salute: "/models/animations/salute.fbx",
   clapping: "/models/animations/clapping.fbx",
@@ -11,73 +12,38 @@ const animationFiles = {
 
 const Developer = ({ animationName = "idle", ...props }) => {
   const group = useRef();
-  const { scene } = useGLTF("/models/animations/developer.glb");
+  const { scene: rawScene } = useGLTF("/models/animations/developer.glb");
 
-  const [SkeletonUtils, setSkeletonUtils] = useState(null);
+  const clonedScene = useMemo(() => SkeletonUtils.clone(rawScene), [rawScene]);
+  const { animations: idleAnim } = useFBX(animationPaths.idle);
+  const { animations: saluteAnim } = useFBX(animationPaths.salute);
+  const { animations: clappingAnim } = useFBX(animationPaths.clapping);
+  const { animations: victoryAnim } = useFBX(animationPaths.victory);
 
-  useEffect(() => {
-    import("three/examples/jsm/utils/SkeletonUtils.js").then((mod) =>
-      setSkeletonUtils(mod.SkeletonUtils)
-    );
-  }, []);
-
-  const clone = useMemo(() => {
-    if (!SkeletonUtils) return null;
-    return SkeletonUtils.clone(scene);
-  }, [SkeletonUtils, scene]);
-
-  const { nodes, materials } = useMemo(() => {
-    if (!clone) return { nodes: {}, materials: {} };
-    return useGraph(clone);
-  }, [clone]);
-
-  const idle = useFBX(animationFiles.idle);
-  const salute = useFBX(animationFiles.salute);
-  const clapping = useFBX(animationFiles.clapping);
-  const victory = useFBX(animationFiles.victory);
-
-  const animations = useMemo(() => {
-    if (!idle || !salute || !clapping || !victory) return [];
-    idle.animations[0].name = "idle";
-    salute.animations[0].name = "salute";
-    clapping.animations[0].name = "clapping";
-    victory.animations[0].name = "victory";
-    return [
-      idle.animations[0],
-      salute.animations[0],
-      clapping.animations[0],
-      victory.animations[0],
+  const allAnimations = useMemo(() => {
+    const animations = [
+      { name: "idle", clip: idleAnim[0] },
+      { name: "salute", clip: saluteAnim[0] },
+      { name: "clapping", clip: clappingAnim[0] },
+      { name: "victory", clip: victoryAnim[0] },
     ];
-  }, [idle, salute, clapping, victory]);
+    animations.forEach(({ name, clip }) => {
+      if (clip) clip.name = name;
+    });
+    return animations.map((a) => a.clip).filter(Boolean);
+  }, [idleAnim, saluteAnim, clappingAnim, victoryAnim]);
 
-  const { actions } = useAnimations(animations, group);
+  const { actions } = useAnimations(allAnimations, group);
 
   useEffect(() => {
-    const action = actions?.[animationName];
-    if (action) {
-      action.reset().fadeIn(0.5).play();
-      return () => action.fadeOut(0.5);
-    }
+    if (!actions || !actions[animationName]) return;
+    actions[animationName].reset().fadeIn(0.5).play();
+    return () => actions[animationName]?.fadeOut(0.5);
   }, [animationName, actions]);
-
-  if (!nodes?.Hips) return null;
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <primitive object={nodes.Hips} />
-      {Object.entries(nodes)
-        .filter(([name]) => name !== "Hips")
-        .map(([name, node]) => (
-          <skinnedMesh
-            key={name}
-            name={name}
-            geometry={node.geometry}
-            material={materials[node.material?.name]}
-            skeleton={node.skeleton}
-            morphTargetDictionary={node.morphTargetDictionary}
-            morphTargetInfluences={node.morphTargetInfluences}
-          />
-        ))}
+      <primitive object={clonedScene} />
     </group>
   );
 };
