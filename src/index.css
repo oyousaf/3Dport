@@ -9,8 +9,7 @@
 }
 
 body {
-  background: #556962;
-  font-family: "Nunito", sans-serif;
+  @apply bg-emeraldDark font-generalsans text-gray200;
 }
 
 @layer utilities {
