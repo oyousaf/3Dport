@@ -68,6 +68,105 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Legxcy",
+    desc: "A comprehensive full-stack eCommerce application that offers a seamless shopping experience.",
+    subdesc:
+      "Developed using the Supabase, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
+    href: "https://legxcy.uk",
+    texture: "/textures/project/project4.mp4",
+    logo: "/assets/project-logo4.png",
+    logoStyle: {
+      backgroundColor: "#003632",
+      border: "0.2px solid #003632",
+      boxShadow: "0px 0px 60px 0px #0036324D",
+    },
+    spotlight: "/assets/spotlight4.png",
+    tags: [
+      {
+        id: 1,
+        name: "Supabase",
+        path: "/assets/supabase.svg",
+      },
+      {
+        id: 2,
+        name: "Cloudinary",
+        path: "/assets/cloudinary.svg",
+      },
+      {
+        id: 3,
+        name: "Express",
+        path: "/assets/express.svg",
+      },
+      {
+        id: 4,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 5,
+        name: "Node",
+        path: "/assets/node.svg",
+      },
+      {
+        id: 6,
+        name: "Stripe",
+        path: "/assets/stripe.svg",
+      },
+      {
+        id: 7,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.png",
+      },
+      {
+        id: 8,
+        name: "Vite",
+        path: "/assets/vite.svg",
+      },
+    ],
+  },
+  {
+    title: "Ace Motor Sales",
+    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations and Tailwind CSS styling.",
+    subdesc:
+      "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
+    href: "https://acemotorsales.uk",
+    texture: "/textures/project/project9.mp4",
+    logo: "/assets/project-logo9.png",
+    logoStyle: {
+      backgroundColor: "#B5485D",
+      border: "0.2px solid #B5485D",
+      boxShadow: "0px 0px 60px 0px #B5485D4D",
+    },
+    spotlight: "/assets/spotlight4.png",
+    tags: [
+      {
+        id: 1,
+        name: "Appwrite",
+        path: "/assets/appwrite.png",
+      },
+      {
+        id: 2,
+        name: "Framer Motion",
+        path: "/assets/framer.svg",
+      },
+      {
+        id: 3,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 4,
+        name: "Next",
+        path: "/assets/next.svg",
+      },
+      {
+        id: 5,
+        name: "Tailwindcss",
+        path: "/assets/tailwindcss.png",
+      },
+    ],
+  },
+  {
     title: "Phipps Opticians",
     desc: "A modern and responsive website built using Next.js 15, Framer Motion, and Tailwind CSS",
     subdesc:
@@ -142,48 +241,6 @@ export const myProjects = [
     ],
   },
   {
-    title: "Ace Motor Sales",
-    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations and Tailwind CSS styling.",
-    subdesc:
-      "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
-    href: "https://acemotorsales.uk",
-    texture: "/textures/project/project9.mp4",
-    logo: "/assets/project-logo9.png",
-    logoStyle: {
-      backgroundColor: "#B5485D",
-      border: "0.2px solid #B5485D",
-      boxShadow: "0px 0px 60px 0px #B5485D4D",
-    },
-    spotlight: "/assets/spotlight4.png",
-    tags: [
-      {
-        id: 1,
-        name: "Appwrite",
-        path: "/assets/appwrite.png",
-      },
-      {
-        id: 2,
-        name: "Framer Motion",
-        path: "/assets/framer.svg",
-      },
-      {
-        id: 3,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 4,
-        name: "Next",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 5,
-        name: "Tailwindcss",
-        path: "/assets/tailwindcss.png",
-      },
-    ],
-  },
-  {
     title: "Movi3",
     desc: "A movie PWA developed using Next.js, Tailwind and OMDb API.",
     subdesc:
@@ -247,63 +304,6 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: "Vite",
-        path: "/assets/vite.svg",
-      },
-    ],
-  },
-  {
-    title: "Legxcy",
-    desc: "A comprehensive full-stack eCommerce application that offers a seamless shopping experience.",
-    subdesc:
-      "Developed using the Supabase, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
-    href: "https://legxcy.uk",
-    texture: "/textures/project/project4.mp4",
-    logo: "/assets/project-logo4.png",
-    logoStyle: {
-      backgroundColor: "#003632",
-      border: "0.2px solid #003632",
-      boxShadow: "0px 0px 60px 0px #0036324D",
-    },
-    spotlight: "/assets/spotlight4.png",
-    tags: [
-      {
-        id: 1,
-        name: "Cloudinary",
-        path: "/assets/cloudinary.svg",
-      },
-      {
-        id: 2,
-        name: "Mongo",
-        path: "/assets/mongo.svg",
-      },
-      {
-        id: 3,
-        name: "Express",
-        path: "/assets/express.svg",
-      },
-      {
-        id: 4,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 5,
-        name: "Node",
-        path: "/assets/node.svg",
-      },
-      {
-        id: 6,
-        name: "Stripe",
-        path: "/assets/stripe.svg",
-      },
-      {
-        id: 7,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
-      {
-        id: 8,
         name: "Vite",
         path: "/assets/vite.svg",
       },
