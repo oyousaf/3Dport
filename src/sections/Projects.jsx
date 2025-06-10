@@ -46,20 +46,27 @@ const Projects = () => {
         My Projects
       </h2>
 
-      <div ref={projectCardRef} className="grid lg:grid-cols-2 grid-cols-1 gap-10">
-        <div className="flex flex-col gap-6 bg-emeraldDark/60 p-6 sm:p-10 rounded-xl shadow-md backdrop-blur-md border border-gray200/10">
+      <div
+        ref={projectCardRef}
+        className="grid lg:grid-cols-2 grid-cols-1 gap-10"
+      >
+        {/* Text + Info Panel */}
+        <div className="flex flex-col gap-6 bg-emerald-900 p-6 sm:p-10 rounded-xl shadow-md border border-gray200/20 text-gray200">
           <div className="relative h-56 w-full rounded-xl overflow-hidden shadow">
             <img
               src={currentProject.spotlight}
               alt="project banner"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded shadow" style={currentProject.logoStyle}>
+            <div
+              className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded shadow"
+              style={currentProject.logoStyle}
+            >
               <img src={currentProject.logo} alt="logo" className="w-8 h-8" />
             </div>
           </div>
 
-          <div className="space-y-4 text-gray200">
+          <div className="space-y-4">
             <h3
               className="text-2xl font-semibold text-white"
               ref={(el) => (textRef.current[0] = el)}
@@ -67,7 +74,9 @@ const Projects = () => {
               {currentProject.title}
             </h3>
             <p ref={(el) => (textRef.current[1] = el)}>{currentProject.desc}</p>
-            <p ref={(el) => (textRef.current[2] = el)}>{currentProject.subdesc}</p>
+            <p ref={(el) => (textRef.current[2] = el)}>
+              {currentProject.subdesc}
+            </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -91,16 +100,23 @@ const Projects = () => {
           </div>
 
           <div className="flex justify-between mt-6">
-            <button className="arrow-btn" onClick={() => handleNavigation("previous")}>
+            <button
+              className="arrow-btn"
+              onClick={() => handleNavigation("previous")}
+            >
               <img src="/assets/left-arrow.png" alt="prev" />
             </button>
-            <button className="arrow-btn" onClick={() => handleNavigation("next")}>
+            <button
+              className="arrow-btn"
+              onClick={() => handleNavigation("next")}
+            >
               <img src="/assets/right-arrow.png" alt="next" />
             </button>
           </div>
         </div>
 
-        <div className="border border-gray200/10 rounded-lg bg-emeraldDark h-96 md:h-full overflow-hidden shadow-md">
+        {/* 3D Canvas Panel */}
+        <div className="border border-gray200/20 rounded-lg bg-emerald-900 h-96 md:h-full overflow-hidden shadow-md">
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
