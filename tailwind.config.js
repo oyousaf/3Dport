@@ -14,6 +14,9 @@ export default {
       },
       animation: {
         pulseGlow: "pulseGlow 3s ease-in-out infinite",
+        animation: {
+          "spin-slow": "spin 3s linear infinite",
+        },
       },
       colors: {
         black: {
