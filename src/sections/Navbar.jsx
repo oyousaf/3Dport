@@ -94,7 +94,7 @@ const Navbar = () => {
             <img
               src="/assets/linkedin.svg"
               alt="LinkedIn"
-              className="w-10 h-10"
+              className="w-6 h-6"
             />
           </a>
         </div>
