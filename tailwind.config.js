@@ -11,12 +11,19 @@ export default {
           "0%, 100%": { opacity: "0.6" },
           "50%": { opacity: "1" },
         },
+        spinSlow: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        spinY: {
+          "0%": { transform: "rotateY(0deg)" },
+          "100%": { transform: "rotateY(180deg)" },
+        },
       },
       animation: {
         pulseGlow: "pulseGlow 3s ease-in-out infinite",
-        animation: {
-          "spin-slow": "spin 3s linear infinite",
-        },
+        spinSlow: "spinSlow 3s linear infinite",
+        spinY: "spinY 3s linear infinite",
       },
       colors: {
         black: {
