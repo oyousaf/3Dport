@@ -7,8 +7,7 @@ import { workExperiences } from "../constants/index.js";
 const FallbackLoader = () => (
   <Html center>
     <div className="flex flex-col items-center gap-2">
-      <div className="w-6 h-6 rounded-full bg-mint animate-pulse" />
-      <p className="text-sm font-semibold text-white">Loading 3D...</p>
+      <p className="text-sm font-semibold text-white">Loading...</p>
     </div>
   </Html>
 );

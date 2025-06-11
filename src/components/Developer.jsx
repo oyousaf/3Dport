@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { useAnimations, useGLTF } from "@react-three/drei";
 import { SkeletonUtils } from "three-stdlib";
-import * as THREE from "three";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 const animationPaths = {
   idle: "/models/animations/idle.fbx",
@@ -15,25 +15,42 @@ const Developer = ({ animationName = "idle", ...props }) => {
   const { scene: rawScene } = useGLTF("/models/animations/developer.glb");
 
   const clonedScene = useMemo(() => SkeletonUtils.clone(rawScene), [rawScene]);
-  const { animations: idleAnim } = useFBX(animationPaths.idle);
-  const { animations: saluteAnim } = useFBX(animationPaths.salute);
-  const { animations: clappingAnim } = useFBX(animationPaths.clapping);
-  const { animations: victoryAnim } = useFBX(animationPaths.victory);
 
-  const allAnimations = useMemo(() => {
-    const animations = [
-      { name: "idle", clip: idleAnim[0] },
-      { name: "salute", clip: saluteAnim[0] },
-      { name: "clapping", clip: clappingAnim[0] },
-      { name: "victory", clip: victoryAnim[0] },
-    ];
-    animations.forEach(({ name, clip }) => {
-      if (clip) clip.name = name;
+  const [idleClip, setIdleClip] = useState(null);
+  const [extraClips, setExtraClips] = useState({});
+
+  const allClips = useMemo(() => {
+    const clips = [];
+    if (idleClip) clips.push(idleClip);
+    if (extraClips[animationName]) clips.push(extraClips[animationName]);
+    return clips;
+  }, [idleClip, extraClips, animationName]);
+
+  const { actions } = useAnimations(allClips, group);
+
+  useEffect(() => {
+    const loader = new FBXLoader();
+    loader.load(animationPaths.idle, (anim) => {
+      const clip = anim.animations[0];
+      clip.name = "idle";
+      setIdleClip(clip);
     });
-    return animations.map((a) => a.clip).filter(Boolean);
-  }, [idleAnim, saluteAnim, clappingAnim, victoryAnim]);
+  }, []);
 
-  const { actions } = useAnimations(allAnimations, group);
+  useEffect(() => {
+    if (animationName === "idle" || extraClips[animationName]) return;
+
+    const loader = new FBXLoader();
+    loader.load(animationPaths[animationName], (anim) => {
+      const clip = anim.animations[0];
+      clip.name = animationName;
+
+      setExtraClips((prev) => ({
+        ...prev,
+        [animationName]: clip,
+      }));
+    });
+  }, [animationName, extraClips]);
 
   useEffect(() => {
     if (!actions || !actions[animationName]) return;
@@ -49,4 +66,5 @@ const Developer = ({ animationName = "idle", ...props }) => {
 };
 
 useGLTF.preload("/models/animations/developer.glb");
+
 export default Developer;
