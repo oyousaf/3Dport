@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { navLinks } from "../constants/index";
+import { Github, Linkedin } from "lucide-react";
 
 const NavItems = ({ onClick, isMobile = false }) => {
   const handleScroll = (id) => {
@@ -21,7 +22,7 @@ const NavItems = ({ onClick, isMobile = false }) => {
           <button
             onClick={() => handleScroll(href.substring(1))}
             className={`text-gray200 hover:text-mint text-lg font-medium tracking-wide transition-colors duration-200 ${
-              isMobile ? "text-[2.5rem] uppercase" : ""
+              isMobile ? "text-[2rem] uppercase" : ""
             }`}
           >
             {name}
@@ -81,21 +82,17 @@ const Navbar = () => {
             href="https://github.com/oyousaf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray200 hover:text-mint transition"
+            className="text-gray200 hover:text-mint transition-all duration-300 ease-in-out transform hover:scale-110 hover:opacity-90"
           >
-            <img src="/assets/github.svg" alt="GitHub" className="w-10 h-10" />
+            <Github className="w-10 h-10" />
           </a>
           <a
             href="https://linkedin.com/in/oyousaf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray200 hover:text-mint transition"
+            className="text-gray200 hover:text-mint transition-all duration-300 ease-in-out transform hover:scale-110 hover:opacity-90"
           >
-            <img
-              src="/assets/linkedin.svg"
-              alt="LinkedIn"
-              className="w-10 h-10"
-            />
+            <Linkedin className="w-10 h-10" />
           </a>
         </div>
       </div>
