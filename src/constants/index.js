@@ -125,6 +125,73 @@ export const myProjects = [
     ],
   },
   {
+    title: "Astra AI",
+    desc: "Astra AI is a quirky, AI-powered web app for tracking your job applications and managing your job search efficiently.",
+    subdesc:
+      "Built with a modern stack including React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, and PostgreSQL — deployed seamlessly via Vercel.",
+    href: "https://legxcy.uk",
+    texture: "/textures/project/project12.mp4",
+    logo: "/assets/project-logo12.png",
+    logoStyle: {
+      backgroundColor: "#5b21b6",
+      border: "0.2px solid #5b21b6",
+      boxShadow: "0px 0px 60px 0px #5b21b64D",
+    },
+    spotlight: "/assets/spotlight5.png",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 2,
+        name: "Next",
+        path: "/assets/next.svg",
+      },
+      {
+        id: 3,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.png",
+      },
+      {
+        id: 4,
+        name: "Framer Motion",
+        path: "/assets/framer.svg",
+      },
+      {
+        id: 5,
+        name: "Shadcn",
+        path: "/assets/shadcn.png",
+      },
+      {
+        id: 6,
+        name: "Express",
+        path: "/assets/express.svg",
+      },
+      {
+        id: 7,
+        name: "Node",
+        path: "/assets/node.svg",
+      },
+      {
+        id: 8,
+        name: "Prisma",
+        path: "/assets/prisma.png",
+      },
+      {
+        id: 9,
+        name: "PostgreSQL",
+        path: "/assets/pql.png",
+      },
+      {
+        id: 10,
+        name: "Vercel",
+        path: "/assets/vercel.svg",
+      },
+    ],
+  },
+  {
     title: "Ace Motor Sales",
     desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations and Tailwind CSS styling.",
     subdesc:
