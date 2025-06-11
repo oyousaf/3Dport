@@ -544,9 +544,9 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: "Professional Development",
-    pos: "SPA Ninja",
-    duration: "2022 - Present",
+    name: "Freelance Development",
+    pos: "Web Developer",
+    duration: "2024 - Present",
     title:
       "I've always had a passion for coding and knew I wanted to be a developer—whether frontend, backend, or even mobile. After working on passion projects, I'm now diving back into development through Codecademy's Full Stack Engineer course, expanding my skills in what I love.",
     icon: "/assets/codecademy.svg",
@@ -564,6 +564,16 @@ export const workExperiences = [
   },
   {
     id: 3,
+    name: "Professional Development",
+    pos: "SPA Ninja",
+    duration: "2022 - Present",
+    title:
+      "I've always had a passion for coding and knew I wanted to be a developer—whether frontend, backend, or even mobile. After working on passion projects, I'm now diving back into development through Codecademy's Full Stack Engineer course, expanding my skills in what I love.",
+    icon: "/assets/codecademy.svg",
+    animation: "salute",
+  },
+  {
+    id: 4,
     name: "Utility Warehouse",
     pos: "Technical Support Advisor",
     duration: "2023",
