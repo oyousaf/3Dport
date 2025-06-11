@@ -1,26 +1,10 @@
-import { Html, useProgress } from "@react-three/drei";
-
-const CanvasLoader = () => {
-  const { progress } = useProgress();
-
-  return (
-    <Html
-      as="div"
-      center
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "1rem",
-      }}
-    >
+const CanvasLoader = () => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div className="flex flex-col items-center gap-3">
       <div className="w-6 h-6 rounded-full bg-mint animate-pulse" />
-
-      <p className="text-sm font-semibold text-gray200">
-        {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}
-      </p>
-    </Html>
-  );
-};
+      <p className="text-sm font-semibold text-gray200">Loading 3D...</p>
+    </div>
+  </div>
+);
 
 export default CanvasLoader;

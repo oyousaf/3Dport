@@ -1,9 +1,17 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Html } from "@react-three/drei";
 import Developer from "../components/Developer.jsx";
-import CanvasLoader from "../components/Loading.jsx";
 import { workExperiences } from "../constants/index.js";
+
+const FallbackLoader = () => (
+  <Html center>
+    <div className="flex flex-col items-center gap-2">
+      <div className="w-6 h-6 rounded-full bg-mint animate-pulse" />
+      <p className="text-sm font-semibold text-white">Loading 3D...</p>
+    </div>
+  </Html>
+);
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState("idle");
@@ -22,7 +30,8 @@ const WorkExperience = () => {
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <directionalLight position={[10, 10, 10]} intensity={1} />
             <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
-            <Suspense fallback={<CanvasLoader />}>
+
+            <Suspense fallback={<FallbackLoader />}>
               <Developer
                 position-y={-3}
                 scale={3}
