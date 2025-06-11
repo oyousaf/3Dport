@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navLinks } from "../constants/index";
 
-const NavItems = ({ onClick }) => {
+const NavItems = ({ onClick, isMobile = false }) => {
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -11,12 +11,18 @@ const NavItems = ({ onClick }) => {
   };
 
   return (
-    <ul className="flex flex-col sm:flex-row gap-6 items-center sm:gap-8">
+    <ul
+      className={`flex ${
+        isMobile ? "flex-col gap-6" : "flex-row gap-8"
+      } items-center`}
+    >
       {navLinks.map(({ id, name, href }) => (
         <li key={id}>
           <button
             onClick={() => handleScroll(href.substring(1))}
-            className="text-gray200 hover:text-mint font-medium tracking-wide transition-colors duration-200"
+            className={`text-gray200 hover:text-mint text-lg font-medium tracking-wide transition-colors duration-200 ${
+              isMobile ? "text-[2.5rem] uppercase" : ""
+            }`}
           >
             {name}
           </button>
@@ -29,6 +35,10 @@ const NavItems = ({ onClick }) => {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen((prev) => !prev);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-emeraldDark/80 border-b border-gray200/10">
@@ -48,26 +58,46 @@ const Navbar = () => {
         {/* Mobile Hamburger */}
         <button
           onClick={toggleMenu}
-          className="sm:hidden focus:outline-none"
+          className="sm:hidden focus:outline-none z-50"
           aria-label="Toggle menu"
         >
           <img
             src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
             alt="toggle"
-            className="w-7 h-7"
+            className="w-10 h-10"
           />
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Fullscreen Menu */}
       <div
-        className={`sm:hidden overflow-hidden transition-[min-h-screen] duration-500 ease-in-out ${
-          isOpen ? "max-h-screen" : "max-h-0"
-        }`}
+        className={`sm:hidden fixed top-0 left-0 w-full h-screen z-40 transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        } bg-emeraldDark/95 backdrop-blur-md flex flex-col items-center justify-center space-y-10`}
       >
-        <nav className="px-6 pb-4 pt-2 bg-emeraldDark/95 border-t border-gray200/10">
-          <NavItems onClick={() => setIsOpen(false)} />
-        </nav>
+        <NavItems onClick={() => setIsOpen(false)} isMobile />
+        <div className="absolute bottom-8 w-full flex justify-center gap-6">
+          <a
+            href="https://github.com/oyousaf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray200 hover:text-mint transition"
+          >
+            <img src="/assets/github.svg" alt="GitHub" className="w-10 h-10" />
+          </a>
+          <a
+            href="https://linkedin.com/in/oyousaf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray200 hover:text-mint transition"
+          >
+            <img
+              src="/assets/linkedin.svg"
+              alt="LinkedIn"
+              className="w-10 h-10"
+            />
+          </a>
+        </div>
       </div>
     </header>
   );
