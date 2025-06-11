@@ -134,8 +134,8 @@ export const myProjects = [
     desc: "Astra AI is a quirky, AI-powered web app for tracking your job applications and managing your job search efficiently.",
     subdesc:
       "Built with a modern stack including React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, and PostgreSQL — deployed seamlessly via Vercel.",
-    href: "https://legxcy.uk",
-    texture: "/textures/project/project12.mp4",
+    href: "https://astra-ai-six.vercel.app/",
+    texture: "/textures/project/project12.mkv",
     logo: "/assets/project-logo12.png",
     logoStyle: {
       backgroundColor: "#5b21b6",
