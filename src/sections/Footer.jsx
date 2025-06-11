@@ -27,7 +27,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <p className="text-sm text-gray200 tracking-wide">
-        © {new Date().getFullYear()} Omar 🍉 — All rights reserved.
+        © {new Date().getFullYear()} Omar 🍉
       </p>
     </footer>
   );
