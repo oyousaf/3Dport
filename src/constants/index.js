@@ -122,7 +122,7 @@ export const myProjects = [
         name: "Vite",
         path: "/assets/vite.svg",
       },
-            {
+      {
         id: 9,
         name: "Vercel",
         path: "/assets/vercel.svg",
@@ -544,12 +544,12 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: "Freelance Development",
+    name: "Legxcy Solutions",
     pos: "Web Developer",
     duration: "2024 - Present",
     title:
-      "I've always had a passion for coding and knew I wanted to be a developer—whether frontend, backend, or even mobile. After working on passion projects, I'm now diving back into development through Codecademy's Full Stack Engineer course, expanding my skills in what I love.",
-    icon: "/assets/codecademy.svg",
+      "I'm currently working as a freelance developer, specialising in modern frontend development with tools like React, Next.js, Tailwind CSS, and Framer Motion to craft responsive, scalable, and visually engaging SPAs. Lately, I've been expanding into full-stack development, integrating powerful backends using PostgreSQL, Supabase, Appwrite, Prisma, Express, and Node.js — all deployed seamlessly with Vercel. This evolution allows me to build complete, performant apps with a consistent developer experience end-to-end.",
+    icon: "/assets/legxcysol.webp",
     animation: "salute",
   },
   {
