@@ -1,6 +1,5 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-
 import useAlert from "../hooks/useAlert.js";
 import Alert from "../components/Alert.jsx";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
@@ -8,8 +7,8 @@ import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 const Contact = () => {
   const sectionRef = useRevealOnScroll();
   const formRef = useRef();
-
   const { alert, showAlert, hideAlert } = useAlert();
+
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -42,7 +41,6 @@ const Contact = () => {
             text: "Thank you for your message 😃",
             type: "success",
           });
-
           setTimeout(() => {
             hideAlert(false);
             setForm({ name: "", email: "", message: "" });
@@ -61,21 +59,25 @@ const Contact = () => {
   };
 
   return (
-    <section className="c-space my-20" id="contact" ref={sectionRef}>
+    <section id="contact" ref={sectionRef} className="c-space py-24">
       {alert.show && <Alert {...alert} />}
 
-      <div className="min-h-screen flex items-center justify-center flex-col">
-        <div className="contact-container w-full max-w-2xl bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-gray200/10 shadow-xl">
+      <div className="flex items-center justify-center min-h-[80vh]">
+        <div className="w-full max-w-xl bg-black/40 backdrop-blur-lg border border-gray200/10 p-10 rounded-2xl shadow-xl text-center">
           <h3 className="text-3xl sm:text-4xl font-bold text-mint mb-3">
             Let's converse
           </h3>
-          <p className="text-gray200 text-base leading-relaxed mb-8">
-            Whether you’re building a website or starting a unique project, I’m
-            here to help.
+          <p className="text-gray200 text-base leading-relaxed mb-10">
+            Whether you're building a new site or just want to say hello — feel
+            free to reach out.
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-            <label className="block space-y-2">
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="space-y-6 text-left"
+          >
+            <label className="block space-y-1">
               <span className="text-white font-medium">Full Name</span>
               <input
                 type="text"
@@ -89,7 +91,7 @@ const Contact = () => {
               />
             </label>
 
-            <label className="block space-y-2">
+            <label className="block space-y-1">
               <span className="text-white font-medium">Email Address</span>
               <input
                 type="email"
@@ -103,7 +105,7 @@ const Contact = () => {
               />
             </label>
 
-            <label className="block space-y-2">
+            <label className="block space-y-1">
               <span className="text-white font-medium">Your Message</span>
               <textarea
                 name="message"
@@ -120,7 +122,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={loading}
-              className="flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-lg hover:brightness-110 transition-all disabled:opacity-60"
+              className="w-full flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-lg hover:brightness-110 transition-all disabled:opacity-60"
             >
               {loading ? "Sending..." : "Send Message"}
               <img
