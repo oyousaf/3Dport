@@ -28,7 +28,7 @@ export const useRevealOnScroll = (options = {}) => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [options]);
+  }, []);
 
   return sectionRef;
 };

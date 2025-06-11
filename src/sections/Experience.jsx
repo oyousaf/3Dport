@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Html } from "@react-three/drei";
 import Developer from "../components/Developer.jsx";
 import { workExperiences } from "../constants/index.js";
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 const FallbackLoader = () => (
   <Html center>
@@ -14,9 +15,10 @@ const FallbackLoader = () => (
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState("idle");
+  const sectionRef = useRevealOnScroll();
 
   return (
-    <section id="work" className="c-space my-24">
+    <section id="work" className="c-space my-24" ref={sectionRef}>
       <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
         Experience
       </h2>

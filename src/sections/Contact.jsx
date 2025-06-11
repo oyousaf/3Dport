@@ -11,7 +11,6 @@ const Contact = () => {
 
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
-
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = ({ target: { name, value } }) => {
@@ -46,17 +45,12 @@ const Contact = () => {
 
           setTimeout(() => {
             hideAlert(false);
-            setForm({
-              name: "",
-              email: "",
-              message: "",
-            });
-          }, [3000]);
+            setForm({ name: "", email: "", message: "" });
+          }, 3000);
         },
         (error) => {
           setLoading(false);
           console.error(error);
-
           showAlert({
             show: true,
             text: "Oops, something went wrong 😢. Please try again.",
@@ -70,71 +64,69 @@ const Contact = () => {
     <section className="c-space my-20" id="contact" ref={sectionRef}>
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img
-          src="/assets/terminal.png"
-          alt="terminal-bg"
-          className="absolute inset-0 min-h-screen"
-        />
-
-        <div className="contact-container">
-          <h3 className="head-text">Let's converse</h3>
-          <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing
-            platform, or bring a unique project to life, I’m here to help.
+      <div className="min-h-screen flex items-center justify-center flex-col">
+        <div className="contact-container w-full max-w-2xl bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-gray200/10 shadow-xl">
+          <h3 className="text-3xl sm:text-4xl font-bold text-mint mb-3">
+            Let's converse
+          </h3>
+          <p className="text-gray200 text-base leading-relaxed mb-8">
+            Whether you’re building a website or starting a unique project, I’m
+            here to help.
           </p>
 
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="mt-12 flex flex-col space-y-7"
-          >
-            <label className="space-y-3">
-              <span className="field-label">Full Name</span>
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <label className="block space-y-2">
+              <span className="text-white font-medium">Full Name</span>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
+                autoComplete="name"
                 required
-                className="field-input"
+                className="w-full p-3 rounded-lg bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint transition"
                 placeholder="ex., John Doe"
               />
             </label>
 
-            <label className="space-y-3">
-              <span className="field-label">Email address</span>
+            <label className="block space-y-2">
+              <span className="text-white font-medium">Email Address</span>
               <input
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
+                autoComplete="email"
                 required
-                className="field-input"
+                className="w-full p-3 rounded-lg bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint transition"
                 placeholder="ex., johndoe@gmail.com"
               />
             </label>
 
-            <label className="space-y-3">
-              <span className="field-label">Your message</span>
+            <label className="block space-y-2">
+              <span className="text-white font-medium">Your Message</span>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                required
                 rows={5}
-                className="field-input"
+                autoComplete="off"
+                required
+                className="w-full p-3 rounded-lg bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint transition resize-none"
                 placeholder="Share your thoughts or inquiries..."
               />
             </label>
 
-            <button className="field-btn" type="submit" disabled={loading}>
+            <button
+              type="submit"
+              disabled={loading}
+              className="flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-lg hover:brightness-110 transition-all disabled:opacity-60"
+            >
               {loading ? "Sending..." : "Send Message"}
-
               <img
                 src="/assets/arrow-up.png"
                 alt="arrow-up"
-                className="field-btn_arrow"
+                className="w-4 h-4 mt-0.5"
               />
             </button>
           </form>
