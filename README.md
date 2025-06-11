@@ -1,4 +1,4 @@
-# 🍉 Omar – 3D Portfolio
+# 3D Portfolio
 
 A bold, immersive portfolio built with React, Three.js, and Vite, showcasing dynamic 3D models, animated transitions, and a clean developer aesthetic. Built to highlight projects, skills, and style in one interactive experience.
 
