@@ -22,7 +22,7 @@ const NavItems = ({ onClick, isMobile = false }) => {
           <button
             onClick={() => handleScroll(href.substring(1))}
             className={`text-gray200 hover:text-mint text-lg font-medium tracking-wide transition-colors duration-200 ${
-              isMobile ? "text-[35px] uppercase" : ""
+              isMobile ? "text-[34px] uppercase" : ""
             }`}
           >
             {name}
