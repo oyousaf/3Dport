@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { navLinks } from "../constants/index";
-import { Github, Linkedin } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const NavItems = ({ onClick, isMobile = false }) => {
   const handleScroll = (id) => {
@@ -22,7 +22,7 @@ const NavItems = ({ onClick, isMobile = false }) => {
           <button
             onClick={() => handleScroll(href.substring(1))}
             className={`text-gray200 hover:text-mint text-lg font-medium tracking-wide transition-colors duration-200 ${
-              isMobile ? "text-[2rem] uppercase" : ""
+              isMobile ? "text-[30px] uppercase" : ""
             }`}
           >
             {name}
@@ -84,7 +84,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="text-gray200 hover:text-mint transition-all duration-300 ease-in-out transform hover:scale-110 hover:opacity-90"
           >
-            <Github className="w-10 h-10" />
+            <FaGithub className="w-10 h-10" />
           </a>
           <a
             href="https://linkedin.com/in/oyousaf"
@@ -92,7 +92,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="text-gray200 hover:text-mint transition-all duration-300 ease-in-out transform hover:scale-110 hover:opacity-90"
           >
-            <Linkedin className="w-10 h-10" />
+            <FaLinkedin className="w-10 h-10" />
           </a>
         </div>
       </div>
