@@ -6,6 +6,15 @@ export default {
       fontFamily: {
         generalsans: ["Nunito", "sans-serif"],
       },
+      keyframes: {
+        pulseGlow: {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
+      },
+      animation: {
+        pulseGlow: "pulseGlow 3s ease-in-out infinite",
+      },
       colors: {
         black: {
           DEFAULT: "#000",

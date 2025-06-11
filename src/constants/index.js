@@ -122,6 +122,11 @@ export const myProjects = [
         name: "Vite",
         path: "/assets/vite.svg",
       },
+            {
+        id: 9,
+        name: "Vercel",
+        path: "/assets/vercel.svg",
+      },
     ],
   },
   {

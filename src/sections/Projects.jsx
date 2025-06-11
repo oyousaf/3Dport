@@ -53,10 +53,13 @@ const Projects = () => {
         {/* Text + Info Panel */}
         <div className="flex flex-col gap-6 bg-emerald-900 p-6 sm:p-10 rounded-xl shadow-md border border-gray200/20 text-gray200">
           <div className="relative h-56 w-full rounded-xl overflow-hidden shadow">
-            <img
-              src={currentProject.spotlight}
-              alt="project banner"
-              className="w-full h-full object-cover"
+            <div
+              className="w-full h-full"
+              style={{
+                background: `radial-gradient(circle at 30% 30%, ${currentProject.logoStyle.backgroundColor}88 0%, transparent 70%)`,
+                border: currentProject.logoStyle.border,
+                boxShadow: currentProject.logoStyle.boxShadow,
+              }}
             />
             <div
               className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded shadow"
