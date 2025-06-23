@@ -67,20 +67,65 @@ export const clientReviews = [
 ];
 
 export const myProjects = [
+   {
+    title: "Hxmza",
+    desc: "A stylish, responsive car rental platform.",
+    subdesc:
+      "Built with: Next.js 15 Tailwind CSS, Framer Motion, Car Specs API and Unsplash",
+    href: "https://hxmza.uk",
+    texture: "/textures/project/project13.mkv",
+    logo: "/assets/project-logo13.png",
+    logoStyle: {
+      backgroundColor: "#D1CBC1",
+      border: "0.2px solid #D1CBC1",
+      boxShadow: "0px 0px 60px 0px #D1CBC14D",
+    },
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 2,
+        name: "Next",
+        path: "/assets/next.svg",
+      },
+      {
+        id: 3,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.png",
+      },
+      {
+        id: 4,
+        name: "Framer Motion",
+        path: "/assets/framer.svg",
+      },
+      {
+        id: 5,
+        name: "RapidAPI",
+        path: "/assets/rapidapi.png",
+      },
+      {
+        id: 6,
+        name: "Unsplash",
+        path: "/assets/unsplash.png",
+      },
+    ],
+  },
   {
     title: "Legxcy",
     desc: "A comprehensive full-stack eCommerce application that offers a seamless shopping experience.",
     subdesc:
       "Developed using the Supabase, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
     href: "https://legxcy.uk",
-    texture: "/textures/project/project4.mp4",
+    texture: "/textures/project/project4.mkv",
     logo: "/assets/project-logo4.png",
     logoStyle: {
       backgroundColor: "#003632",
       border: "0.2px solid #003632",
       boxShadow: "0px 0px 60px 0px #0036324D",
     },
-    spotlight: "/assets/spotlight4.png",
     tags: [
       {
         id: 1,
@@ -142,7 +187,6 @@ export const myProjects = [
       border: "0.2px solid #5b21b6",
       boxShadow: "0px 0px 60px 0px #5b21b64D",
     },
-    spotlight: "/assets/spotlight5.png",
     tags: [
       {
         id: 1,
@@ -202,14 +246,13 @@ export const myProjects = [
     subdesc:
       "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
     href: "https://acemotorsales.uk",
-    texture: "/textures/project/project9.mp4",
+    texture: "/textures/project/project9.mkv",
     logo: "/assets/project-logo9.png",
     logoStyle: {
       backgroundColor: "#B5485D",
       border: "0.2px solid #B5485D",
       boxShadow: "0px 0px 60px 0px #B5485D4D",
     },
-    spotlight: "/assets/spotlight4.png",
     tags: [
       {
         id: 1,
@@ -251,7 +294,6 @@ export const myProjects = [
       border: "0.2px solid #f5f5dc",
       boxShadow: "0px 0px 60px 0px #f5f5dc4D",
     },
-    spotlight: "/assets/spotlight1.png",
     tags: [
       {
         id: 1,
@@ -288,7 +330,6 @@ export const myProjects = [
       border: "0.2px solid #A38F79",
       boxShadow: "0px 0px 60px 0px #A38F794D",
     },
-    spotlight: "/assets/spotlight1.png",
     tags: [
       {
         id: 1,
@@ -325,7 +366,6 @@ export const myProjects = [
       border: "0.2px solid #FFDEAA",
       boxShadow: "0px 0px 60px 0px #FFDEAA4D",
     },
-    spotlight: "/assets/spotlight1.png",
     tags: [
       {
         id: 1,
@@ -362,7 +402,6 @@ export const myProjects = [
       border: "0.2px solid #000",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
-    spotlight: "/assets/spotlight3.png",
     tags: [
       {
         id: 1,
@@ -394,7 +433,6 @@ export const myProjects = [
       border: "0.2px solid #ED872D",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
-    spotlight: "/assets/spotlight1.png",
     tags: [
       {
         id: 1,
@@ -426,7 +464,6 @@ export const myProjects = [
       border: "0.2px solid #FFF",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
-    spotlight: "/assets/spotlight4.png",
     tags: [
       {
         id: 1,
@@ -453,7 +490,6 @@ export const myProjects = [
       border: "0.2px solid #FF4300",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
-    spotlight: "/assets/spotlight1.png",
     tags: [
       {
         id: 1,
@@ -485,7 +521,6 @@ export const myProjects = [
       border: "0.2px solid #FFF",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
-    spotlight: "/assets/spotlight2.png",
     tags: [
       {
         id: 1,
