@@ -67,7 +67,7 @@ export const clientReviews = [
 ];
 
 export const myProjects = [
-   {
+  {
     title: "Hxmza",
     desc: "A stylish, responsive car rental platform.",
     subdesc:
@@ -235,6 +235,11 @@ export const myProjects = [
       },
       {
         id: 10,
+        name: "Supabase",
+        path: "/assets/supabase.svg",
+      },
+      {
+        id: 11,
         name: "Vercel",
         path: "/assets/vercel.svg",
       },
