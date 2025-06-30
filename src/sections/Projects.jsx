@@ -1,6 +1,11 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Suspense, useState, useRef } from "react";
+import {
+  Suspense,
+  useState,
+  useRef,
+  useEffect,
+} from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 
@@ -11,8 +16,19 @@ import { useRevealChildrenOnScroll } from "../hooks/useRevealChildrenOnScroll";
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const projectCardRef = useRevealChildrenOnScroll();
   const textRef = useRef([]);
+
+  // Check screen size once on mount
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) =>
@@ -65,7 +81,11 @@ const Projects = () => {
               className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded shadow"
               style={currentProject.logoStyle}
             >
-              <img src={currentProject.logo} alt="logo" className="w-8 h-8" />
+              <img
+                src={currentProject.logo}
+                alt="logo"
+                className="w-8 h-8 object-contain"
+              />
             </div>
           </div>
 
@@ -83,10 +103,14 @@ const Projects = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap max-w-full">
               {currentProject.tags.map((tag, index) => (
-                <div key={index} className="tech-logo">
-                  <img src={tag.path} alt={tag.name} />
+                <div key={index} className="tech-logo w-8 h-8">
+                  <img
+                    src={tag.path}
+                    alt={tag.name}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -119,13 +143,16 @@ const Projects = () => {
         </div>
 
         {/* 3D Canvas Panel */}
-        <div className="border border-gray200/20 rounded-lg bg-emerald-900 h-96 md:h-full overflow-hidden shadow-md">
+        <div className="border border-gray200/20 rounded-lg bg-emerald-900 h-[55vh] md:h-full overflow-hidden shadow-md max-w-full">
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                <group
+                  scale={isMobile ? 1.25 : 2}
+                  position={[0, isMobile ? -1.8 : -3, 0]}
+                >
                   <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>
