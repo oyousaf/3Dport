@@ -167,18 +167,13 @@ export const myProjects = [
         name: "Vite",
         path: "/assets/vite.svg",
       },
-      {
-        id: 9,
-        name: "Vercel",
-        path: "/assets/vercel.svg",
-      },
     ],
   },
   {
     title: "Astra AI",
     desc: "Astra AI is a quirky, AI-powered web app for tracking your job applications and managing your job search efficiently.",
     subdesc:
-      "Built with a modern stack including React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, and PostgreSQL — deployed seamlessly via Vercel.",
+      "Built with a modern stack including React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, and PostgreSQL.",
     href: "https://astra-ai-six.vercel.app/",
     texture: "/textures/project/project12.mkv",
     logo: "/assets/project-logo12.png",
@@ -237,11 +232,6 @@ export const myProjects = [
         id: 10,
         name: "Supabase",
         path: "/assets/supabase.svg",
-      },
-      {
-        id: 11,
-        name: "Vercel",
-        path: "/assets/vercel.svg",
       },
     ],
   },
@@ -505,37 +495,6 @@ export const myProjects = [
         id: 2,
         name: "Redux",
         path: "/assets/redux.svg",
-      },
-      {
-        id: 3,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
-    ],
-  },
-  {
-    title: "Notflix",
-    desc: "A Netflix clone created using React 18, Tailwind and Firebase.",
-    subdesc:
-      "A simple Netflix clone developed using React 18, Tailwind CSS, and Firebase. This application replicates the streaming experience, allowing users to browse a vast library of movies and TV shows. With a sleek, modern interface designed with Tailwind, users can enjoy seamless navigation and visually appealing layouts. Firebase powers the backend, providing secure authentication and real-time data management, ensuring a smooth and responsive user experience across devices.",
-    href: "https://react-notflix.web.app/",
-    texture: "/textures/project/project8.mp4",
-    logo: "/assets/project-logo8.png",
-    logoStyle: {
-      backgroundColor: "#FFF",
-      border: "0.2px solid #FFF",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-    },
-    tags: [
-      {
-        id: 1,
-        name: "Firebase",
-        path: "/assets/firebase.svg",
-      },
-      {
-        id: 2,
-        name: "React",
-        path: "/assets/react.svg",
       },
       {
         id: 3,
