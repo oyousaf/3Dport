@@ -28,8 +28,8 @@ const Footer = () => {
       {/* Copyright */}
       <p className="text-sm text-gray200 tracking-wide">
         © {new Date().getFullYear()} Built with{" "}
-        <span className="inline-block animate-spinY origin-center">💚</span>{" "}
-        by Omar 🍉
+        <span className="inline-block animate-spin origin-center">💚</span> by
+        Omar 🍉
       </p>
     </footer>
   );

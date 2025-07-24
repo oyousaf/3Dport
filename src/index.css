@@ -237,3 +237,18 @@ img {
     rgba(255, 255, 255, 0.025) 100%
   );
 }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@layer utilities {
+  .animate-spin {
+    animation: spin 4s linear infinite;
+  }
+}
