@@ -69,9 +69,9 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "Hxmza",
-    desc: "A stylish, responsive car rental platform.",
+    desc: "A stylish and responsive platform for renting cars with a modern UI.",
     subdesc:
-      "Built with: Next.js 15 Tailwind CSS, Framer Motion, Car Specs API and Unsplash",
+      "Built with Next.js 15, Tailwind CSS, Framer Motion, Car Specs API, and Unsplash.",
     href: "https://hxmza.uk",
     texture: "/textures/project/project13.mkv",
     logo: "/assets/project-logo13.png",
@@ -81,43 +81,19 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #D1CBC14D",
     },
     tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "Next",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 3,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.svg",
-      },
-      {
-        id: 5,
-        name: "RapidAPI",
-        path: "/assets/rapidapi.png",
-      },
-      {
-        id: 6,
-        name: "Unsplash",
-        path: "/assets/unsplash.png",
-      },
+      { id: 1, name: "React.js", path: "/assets/react.svg" },
+      { id: 2, name: "Next", path: "/assets/next.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
+      { id: 4, name: "Framer Motion", path: "/assets/framer.svg" },
+      { id: 5, name: "RapidAPI", path: "/assets/rapidapi.png" },
+      { id: 6, name: "Unsplash", path: "/assets/unsplash.png" },
     ],
   },
   {
     title: "Legxcy",
-    desc: "A comprehensive full-stack eCommerce application that offers a seamless shopping experience.",
+    desc: "A sleek full-stack eCommerce site offering a seamless online shopping experience.",
     subdesc:
-      "Developed using the Supabase, alongside Cloudinary for image management, Stripe for secure payment processing, Tailwind CSS for elegant and responsive design, and Vite for a fast development environment.",
+      "Powered by Supabase, Express, Cloudinary, Stripe, Tailwind CSS, React, Vite, and Node.js.",
     href: "https://legxcy.uk",
     texture: "/textures/project/project4.mkv",
     logo: "/assets/project-logo4.png",
@@ -127,53 +103,21 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #0036324D",
     },
     tags: [
-      {
-        id: 1,
-        name: "Supabase",
-        path: "/assets/supabase.svg",
-      },
-      {
-        id: 2,
-        name: "Cloudinary",
-        path: "/assets/cloudinary.svg",
-      },
-      {
-        id: 3,
-        name: "Express",
-        path: "/assets/express.svg",
-      },
-      {
-        id: 4,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 5,
-        name: "Node",
-        path: "/assets/node.svg",
-      },
-      {
-        id: 6,
-        name: "Stripe",
-        path: "/assets/stripe.svg",
-      },
-      {
-        id: 7,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
-      {
-        id: 8,
-        name: "Vite",
-        path: "/assets/vite.svg",
-      },
+      { id: 1, name: "Supabase", path: "/assets/supabase.svg" },
+      { id: 2, name: "Cloudinary", path: "/assets/cloudinary.svg" },
+      { id: 3, name: "Express", path: "/assets/express.svg" },
+      { id: 4, name: "React.js", path: "/assets/react.svg" },
+      { id: 5, name: "Node", path: "/assets/node.svg" },
+      { id: 6, name: "Stripe", path: "/assets/stripe.svg" },
+      { id: 7, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
+      { id: 8, name: "Vite", path: "/assets/vite.svg" },
     ],
   },
   {
     title: "Astra AI",
-    desc: "Astra AI is a quirky, AI-powered web app for tracking your job applications and managing your job search efficiently.",
+    desc: "An AI-assisted job tracker built to streamline and manage job applications efficiently.",
     subdesc:
-      "Built with a modern stack including React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, and PostgreSQL.",
+      "Developed using React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, PostgreSQL, and Supabase.",
     href: "https://astra-ai-six.vercel.app/",
     texture: "/textures/project/project12.mkv",
     logo: "/assets/project-logo12.png",
@@ -183,63 +127,23 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #5b21b64D",
     },
     tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "Next",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 3,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.svg",
-      },
-      {
-        id: 5,
-        name: "Shadcn",
-        path: "/assets/shadcn.png",
-      },
-      {
-        id: 6,
-        name: "Express",
-        path: "/assets/express.svg",
-      },
-      {
-        id: 7,
-        name: "Node",
-        path: "/assets/node.svg",
-      },
-      {
-        id: 8,
-        name: "Prisma",
-        path: "/assets/prisma.png",
-      },
-      {
-        id: 9,
-        name: "PostgreSQL",
-        path: "/assets/pql.png",
-      },
-      {
-        id: 10,
-        name: "Supabase",
-        path: "/assets/supabase.svg",
-      },
+      { id: 1, name: "React.js", path: "/assets/react.svg" },
+      { id: 2, name: "Next", path: "/assets/next.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
+      { id: 4, name: "Framer Motion", path: "/assets/framer.svg" },
+      { id: 5, name: "Shadcn", path: "/assets/shadcn.png" },
+      { id: 6, name: "Express", path: "/assets/express.svg" },
+      { id: 7, name: "Node", path: "/assets/node.svg" },
+      { id: 8, name: "Prisma", path: "/assets/prisma.png" },
+      { id: 9, name: "PostgreSQL", path: "/assets/pql.png" },
+      { id: 10, name: "Supabase", path: "/assets/supabase.svg" },
     ],
   },
   {
     title: "Ace Motor Sales",
-    desc: "A dynamic car website built with Next.js, enhanced with Framer Motion animations and Tailwind CSS styling.",
+    desc: "A dynamic website showcasing cars for sale, tailored for a local dealership.",
     subdesc:
-      "A sleek and user-friendly website designed for a local car dealership, showcasing the latest vehicles for sale and featuring authentic customer reviews to build trust and enhance the buying experience.",
+      "Built using Next.js, Framer Motion, Tailwind CSS, React, and Appwrite.",
     href: "https://acemotorsales.uk",
     texture: "/textures/project/project9.mkv",
     logo: "/assets/project-logo9.png",
@@ -249,38 +153,17 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #B5485D4D",
     },
     tags: [
-      {
-        id: 1,
-        name: "Appwrite",
-        path: "/assets/appwrite.png",
-      },
-      {
-        id: 2,
-        name: "Framer Motion",
-        path: "/assets/framer.svg",
-      },
-      {
-        id: 3,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 4,
-        name: "Next",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 5,
-        name: "Tailwindcss",
-        path: "/assets/tailwindcss.png",
-      },
+      { id: 1, name: "Appwrite", path: "/assets/appwrite.png" },
+      { id: 2, name: "Framer Motion", path: "/assets/framer.svg" },
+      { id: 3, name: "React.js", path: "/assets/react.svg" },
+      { id: 4, name: "Next", path: "/assets/next.svg" },
+      { id: 5, name: "Tailwindcss", path: "/assets/tailwindcss.png" },
     ],
   },
   {
     title: "Phipps Opticians",
-    desc: "A modern and responsive website built using Next.js 15, Framer Motion, and Tailwind CSS",
-    subdesc:
-      "A simple SPA created for a local business specialising in eye care solutions, visual examinations, and high-quality prescription glasses and contact lenses.",
+    desc: "A clean and responsive SPA for an optician offering eye care and vision services.",
+    subdesc: "Built with Next.js 15, Framer Motion, React, and Tailwind CSS.",
     href: "https://phipps.vercel.app",
     texture: "/textures/project/project11.mp4",
     logo: "/assets/project-logo11.png",
@@ -290,33 +173,16 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #f5f5dc4D",
     },
     tags: [
-      {
-        id: 1,
-        name: "Framer Motion",
-        path: "/assets/framer.svg",
-      },
-      {
-        id: 2,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 3,
-        name: "Next",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 4,
-        name: "Tailwindcss",
-        path: "/assets/tailwindcss.png",
-      },
+      { id: 1, name: "Framer Motion", path: "/assets/framer.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "Next", path: "/assets/next.svg" },
+      { id: 4, name: "Tailwindcss", path: "/assets/tailwindcss.png" },
     ],
   },
   {
     title: "Drainage Hero",
-    desc: "A professional drainage company website developed using Framer Motion, Next.js and Tailwind.",
-    subdesc:
-      "Another simple SPA created for a local business specialising in comprehensive drainage solutions, including repairs, installations, and clearance.",
+    desc: "A professional drainage services website tailored for a local business.",
+    subdesc: "Developed with Next.js, Framer Motion, React, and Tailwind CSS.",
     href: "https://dh-tau-silk.vercel.app/",
     texture: "/textures/project/project10.mp4",
     logo: "/assets/project-logo10.png",
@@ -326,33 +192,16 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #A38F794D",
     },
     tags: [
-      {
-        id: 1,
-        name: "Framer Motion",
-        path: "/assets/framer.svg",
-      },
-      {
-        id: 2,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 3,
-        name: "Next",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 4,
-        name: "Tailwindcss",
-        path: "/assets/tailwindcss.png",
-      },
+      { id: 1, name: "Framer Motion", path: "/assets/framer.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "Next", path: "/assets/next.svg" },
+      { id: 4, name: "Tailwindcss", path: "/assets/tailwindcss.png" },
     ],
   },
   {
     title: "Movi3",
-    desc: "A movie PWA developed using Next.js, Tailwind and OMDb API.",
-    subdesc:
-      "A simple movie search application that harnesses the capabilities of Next.js and the OMDb API. This project served as my inaugural venture into the PWA ecosystem, providing me with a comprehensive understanding of its integral components and the nuances of developing progressive web applications.",
+    desc: "A PWA that allows users to explore films via the OMDb API.",
+    subdesc: "Built using Next.js, Tailwind CSS, TypeScript, and the OMDb API.",
     href: "https://movi3.vercel.app",
     texture: "/textures/project/project1.mp4",
     logo: "/assets/project-logo1.png",
@@ -362,33 +211,16 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #FFDEAA4D",
     },
     tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "Next",
-        path: "/assets/next.svg",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Tailwindcss",
-        path: "/assets/tailwindcss.png",
-      },
+      { id: 1, name: "React.js", path: "/assets/react.svg" },
+      { id: 2, name: "Next", path: "/assets/next.svg" },
+      { id: 3, name: "TypeScript", path: "/assets/typescript.png" },
+      { id: 4, name: "Tailwindcss", path: "/assets/tailwindcss.png" },
     ],
   },
   {
     title: "Sticky Notes",
-    desc: "A simple sticky notes app develeped using React, Vite and Appwrite.",
-    subdesc:
-      "A comprehensive, production-ready notes application that combines a robust set of features with an intuitive user interface, making it both functional and enjoyable to use. Users can easily create and delete notes, with the ability to assign a specified colour to each note for quick visual identification.",
+    desc: "A user-friendly note-taking app with colour-coded organisation features.",
+    subdesc: "Crafted using React, Vite, and Appwrite.",
     href: "https://not3s.vercel.app/",
     texture: "/textures/project/project3.mp4",
     logo: "/assets/project-logo3.svg",
@@ -398,28 +230,15 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     tags: [
-      {
-        id: 1,
-        name: "Appwrite",
-        path: "/assets/appwrite.png",
-      },
-      {
-        id: 2,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 3,
-        name: "Vite",
-        path: "/assets/vite.svg",
-      },
+      { id: 1, name: "Appwrite", path: "/assets/appwrite.png" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "Vite", path: "/assets/vite.svg" },
     ],
   },
   {
     title: "Unlock Your Potential",
-    desc: "A simple SPA developed using React, Vite and Tailwind.",
-    subdesc:
-      "This website leverages the power of React for dynamic user interactions, Vite for fast development and build processes, and Tailwind CSS for a sleek, responsive design.",
+    desc: "A motivational website promoting personal growth and reflection.",
+    subdesc: "Developed with React, Tailwind CSS, and Vite.",
     href: "https://uyp.life/",
     texture: "/textures/project/project5.mp4",
     logo: "/assets/project-logo5.png",
@@ -429,28 +248,15 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     tags: [
-      {
-        id: 1,
-        name: "React",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "Vite",
-        path: "/assets/vite.svg",
-      },
+      { id: 1, name: "React", path: "/assets/react.svg" },
+      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
+      { id: 3, name: "Vite", path: "/assets/vite.svg" },
     ],
   },
   {
     title: "Weather",
-    desc: "A user-friendly weather app developed using Vue.js.",
-    subdesc:
-      "Designed with mobile-friendliness in mind, this app allows users to easily search for and view weather conditions in their desired locations. Enhanced with Tailwind CSS, it features a responsive layout that ensures an engaging and visually appealing experience across all devices.",
+    desc: "A mobile-first weather app with sleek design and city search features.",
+    subdesc: "Built using Vue.js and Tailwind CSS.",
     href: "https://kufi.uk/",
     texture: "/textures/project/project6.mp4",
     logo: "/assets/project-logo6.svg",
@@ -460,23 +266,14 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     tags: [
-      {
-        id: 1,
-        name: "Tailwind",
-        path: "/assets/tailwindcss.png",
-      },
-      {
-        id: 2,
-        name: "Vue",
-        path: "/assets/vue.svg",
-      },
+      { id: 1, name: "Tailwind", path: "/assets/tailwindcss.png" },
+      { id: 2, name: "Vue", path: "/assets/vue.svg" },
     ],
   },
   {
     title: "Reddit Client",
-    desc: "A Reddit app developed using React, Redux and Tailwind.",
-    subdesc:
-      "A dynamic Reddit application developed using React and Redux, designed to provide a seamless browsing experience for users. The app allows users to explore posts, display available media, and provides direct links to the original content, enhancing the user’s journey through the platform. Leveraging Tailwind CSS, it features a responsive and visually appealing interface, ensuring optimal usability on both desktop and mobile devices.",
+    desc: "A Reddit browsing client with media previews and post navigation.",
+    subdesc: "Developed using React, Redux, and Tailwind CSS.",
     href: "https://red-client.netlify.app/",
     texture: "/textures/project/project7.mp4",
     logo: "/assets/project-logo7.svg",
@@ -486,21 +283,9 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     tags: [
-      {
-        id: 1,
-        name: "React",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "Redux",
-        path: "/assets/redux.svg",
-      },
-      {
-        id: 3,
-        name: "TailwindCSS",
-        path: "/assets/tailwindcss.png",
-      },
+      { id: 1, name: "React", path: "/assets/react.svg" },
+      { id: 2, name: "Redux", path: "/assets/redux.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
     ],
   },
 ];
