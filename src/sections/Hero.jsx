@@ -66,13 +66,16 @@ const Hero = () => {
 
       {/* CTA Button */}
       <div className="relative z-10 mt-10">
-        <a href="#about">
-          <Button
-            name="Let's innovate together"
-            isBeam
-            containerClass="mx-auto sm:min-w-80 w-full"
-          />
-        </a>
+        <button
+          onClick={() => {
+            const section = document.getElementById("about");
+            if (section) section.scrollIntoView({ behavior: "smooth" });
+          }}
+          aria-label="Scroll to About Section"
+          className="w-full sm:min-w-80 mx-auto"
+        >
+          <Button name="Let's innovate together" isBeam />
+        </button>
       </div>
     </section>
   );

@@ -16,7 +16,11 @@ const About = () => {
   };
 
   return (
-    <section className="c-space my-20" id="about" ref={sectionRef}>
+    <section
+      className="c-space my-24 mt-32 scroll-mt-24"
+      id="about"
+      ref={sectionRef}
+    >
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">

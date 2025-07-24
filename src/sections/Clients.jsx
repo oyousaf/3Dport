@@ -5,7 +5,7 @@ const Clients = () => {
   const containerRef = useRevealChildrenOnScroll();
 
   return (
-    <section id="clients" className="c-space my-24">
+    <section id="clients" className="c-space my-24 mt-32 scroll-mt-24">
       <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
         What My Clients Say
       </h2>

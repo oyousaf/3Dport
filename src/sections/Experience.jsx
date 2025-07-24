@@ -18,7 +18,11 @@ const WorkExperience = () => {
   const sectionRef = useRevealOnScroll();
 
   return (
-    <section id="work" className="c-space my-24" ref={sectionRef}>
+    <section
+      id="work"
+      className="c-space my-24 mt-32 scroll-mt-36"
+      ref={sectionRef}
+    >
       <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
         Experience
       </h2>

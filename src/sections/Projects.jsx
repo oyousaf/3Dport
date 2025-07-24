@@ -1,11 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import {
-  Suspense,
-  useState,
-  useRef,
-  useEffect,
-} from "react";
+import { Suspense, useState, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 
@@ -57,7 +52,7 @@ const Projects = () => {
   const currentProject = myProjects[selectedProjectIndex];
 
   return (
-    <section id="projects" className="c-space my-24">
+    <section id="projects" className="c-space my-24 mt-32 scroll-mt-24">
       <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
         My Projects
       </h2>

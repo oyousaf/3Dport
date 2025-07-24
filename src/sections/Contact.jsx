@@ -59,7 +59,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="c-space py-24">
+    <section id="contact" ref={sectionRef} className="c-space my-24 mt-32 scroll-mt-32">
       {alert.show && <Alert {...alert} />}
 
       <div className="flex items-center justify-center min-h-[80vh]">
