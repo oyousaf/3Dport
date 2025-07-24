@@ -29,6 +29,11 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   @apply bg-emeraldDark font-generalsans text-gray200;
 }

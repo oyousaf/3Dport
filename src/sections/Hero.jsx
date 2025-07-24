@@ -27,10 +27,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen flex flex-col justify-center items-center bg-emeraldDark text-gray200 overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col justify-center items-center bg-emeraldDark text-gray200 scroll-mt-20"
     >
-      {/* Canvas 3D BG */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <Leva hidden />
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
@@ -52,8 +51,7 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      {/* Hero Text with backdrop */}
-      <div className="relative z-10 px-6 mt-32 sm:mt-40 text-center">
+      <div className="relative z-10 px-6 pt-40 sm:pt-52 text-center">
         <div className="inline-block bg-emeraldDark/60 backdrop-blur-md px-6 py-4 rounded-xl shadow-lg">
           <h1 className="text-4xl sm:text-6xl font-bold font-generalsans text-white drop-shadow-lg">
             Hi, I am Omar <span className="waving-hand">👋</span>
@@ -64,7 +62,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* CTA Button */}
       <div className="relative z-10 mt-10">
         <button
           onClick={() => {

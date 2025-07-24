@@ -39,11 +39,12 @@ const Navbar = () => {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
+    document.body.style.overflowX = "hidden"; // Always prevent horizontal scroll
   }, [isOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-emeraldDark/80 border-b border-gray200/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center overflow-x-hidden">
         <a
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-mint text-xl sm:text-2xl font-bold tracking-wide cursor-pointer hover:text-white transition"
@@ -51,12 +52,10 @@ const Navbar = () => {
           Omar 🍉
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden sm:block">
           <NavItems />
         </nav>
 
-        {/* Mobile Hamburger */}
         <button
           onClick={toggleMenu}
           className="sm:hidden focus:outline-none z-50"
@@ -64,25 +63,24 @@ const Navbar = () => {
         >
           <img
             src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
-            alt="toggle"
+            alt={isOpen ? "Close menu" : "Open menu"}
             className="w-10 h-10"
           />
         </button>
       </div>
 
-      {/* Mobile Fullscreen Menu */}
       <div
-        className={`sm:hidden fixed top-0 left-0 w-full h-screen z-40 transition-transform duration-300 ease-in-out ${
+        className={`sm:hidden fixed top-0 left-0 w-full h-[100svh] z-40 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-y-0" : "-translate-y-full"
-        } bg-emeraldDark/95 backdrop-blur-md flex flex-col items-center justify-center space-y-10`}
+        } bg-emeraldDark/95 backdrop-blur-md flex flex-col items-center justify-center space-y-10 overflow-hidden touch-action-none`}
       >
         <NavItems onClick={() => setIsOpen(false)} isMobile />
-        <div className="absolute bottom-8 w-full flex justify-center gap-6">
+        <div className="absolute bottom-8 w-full flex justify-center gap-6 overflow-hidden">
           <a
             href="https://github.com/oyousaf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray200 hover:text-mint transition-all duration-300 ease-in-out transform hover:scale-110 hover:opacity-90"
+            className="text-gray200 hover:text-mint transition-transform duration-300 ease-in-out transform hover:scale-105 will-change-transform"
           >
             <FaGithub className="w-10 h-10" />
           </a>
@@ -90,7 +88,7 @@ const Navbar = () => {
             href="https://linkedin.com/in/oyousaf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray200 hover:text-mint transition-all duration-300 ease-in-out transform hover:scale-110 hover:opacity-90"
+            className="text-gray200 hover:text-mint transition-transform duration-300 ease-in-out transform hover:scale-105 will-change-transform"
           >
             <FaLinkedin className="w-10 h-10" />
           </a>
