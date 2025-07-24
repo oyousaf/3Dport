@@ -143,7 +143,7 @@ export const myProjects = [
     title: "Ace Motor Sales",
     desc: "A dynamic website showcasing cars for sale, tailored for a local dealership.",
     subdesc:
-      "Built using Next.js, Framer Motion, Tailwind CSS, React, and Appwrite.",
+      "Engineered through the integration of Next.js, Framer Motion, Tailwind CSS, React, and Appwrite.",
     href: "https://acemotorsales.uk",
     texture: "/textures/project/project9.mkv",
     logo: "/assets/project-logo9.png",
@@ -220,7 +220,7 @@ export const myProjects = [
   {
     title: "Sticky Notes",
     desc: "A user-friendly note-taking app with colour-coded organisation features.",
-    subdesc: "Crafted using React, Vite, and Appwrite.",
+    subdesc: "Implemented with the use of React, Vite, and Appwrite.",
     href: "https://not3s.vercel.app/",
     texture: "/textures/project/project3.mp4",
     logo: "/assets/project-logo3.svg",
