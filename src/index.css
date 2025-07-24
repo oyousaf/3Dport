@@ -23,6 +23,14 @@ body {
   @apply bg-emeraldDark font-generalsans text-gray200;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 /* Custom utility classes */
