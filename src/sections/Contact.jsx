@@ -2,6 +2,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import useAlert from "../hooks/useAlert.js";
 import Alert from "../components/Alert.jsx";
+import Button from "../components/Button.jsx";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 const Contact = () => {
@@ -59,7 +60,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="c-space my-24 mt-32 scroll-mt-32">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="c-space my-24 mt-32 scroll-mt-32"
+    >
       {alert.show && <Alert {...alert} />}
 
       <div className="flex items-center justify-center min-h-[80vh]">
@@ -119,18 +124,22 @@ const Contact = () => {
               />
             </label>
 
-            <button
+            <Button
+              as="button"
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-lg hover:brightness-110 transition-all disabled:opacity-60"
+              ariaLabel="Submit contact form"
+              name={loading ? "Sending..." : "Send Message"}
+              containerClass="w-full flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-lg hover:brightness-110 transition-all disabled:opacity-60"
             >
-              {loading ? "Sending..." : "Send Message"}
-              <img
-                src="/assets/arrow-up.png"
-                alt="arrow-up"
-                className="w-4 h-4 mt-0.5"
-              />
-            </button>
+              {!loading && (
+                <img
+                  src="/assets/arrow-up.png"
+                  alt="arrow-up"
+                  className="w-4 h-4 mt-0.5"
+                />
+              )}
+            </Button>
           </form>
         </div>
       </div>
