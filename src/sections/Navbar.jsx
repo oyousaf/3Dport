@@ -38,13 +38,23 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   useEffect(() => {
+    const preventTouch = (e) => e.preventDefault();
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
+      document.body.addEventListener("touchmove", preventTouch, {
+        passive: false,
+      });
     } else {
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
+      document.body.removeEventListener("touchmove", preventTouch);
     }
+
+    return () => {
+      document.body.removeEventListener("touchmove", preventTouch);
+    };
   }, [isOpen]);
 
   return (
