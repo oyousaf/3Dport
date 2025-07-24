@@ -12,13 +12,6 @@
   padding: 0;
 }
 
-/* Core layout handling */
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
 body {
   @apply bg-emeraldDark font-generalsans text-gray200;
   line-height: 1.5;
