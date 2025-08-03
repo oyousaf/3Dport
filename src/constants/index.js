@@ -239,7 +239,7 @@ export const myProjects = [
     title: "Unlock Your Potential",
     desc: "A motivational website promoting personal growth and reflection.",
     subdesc: "Developed with React, Tailwind CSS, and Vite.",
-    href: "https://uyp.life/",
+    href: "https://uypp.vercel.app",
     texture: "/textures/project/project5.mp4",
     logo: "/assets/project-logo5.png",
     logoStyle: {
