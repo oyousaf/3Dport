@@ -161,25 +161,6 @@ export const myProjects = [
     ],
   },
   {
-    title: "Movi3",
-    desc: "A PWA that allows users to explore films via the OMDb API.",
-    subdesc: "Built using Next.js, Tailwind CSS, TypeScript, and the OMDb API.",
-    href: "https://movi3.vercel.app",
-    texture: "/textures/project/project1.mp4",
-    logo: "/assets/project-logo1.png",
-    logoStyle: {
-      backgroundColor: "#FFDEAA",
-      border: "0.2px solid #FFDEAA",
-      boxShadow: "0px 0px 60px 0px #FFDEAA4D",
-    },
-    tags: [
-      { id: 1, name: "React.js", path: "/assets/react.svg" },
-      { id: 2, name: "Next", path: "/assets/next.svg" },
-      { id: 3, name: "TypeScript", path: "/assets/typescript.png" },
-      { id: 4, name: "Tailwindcss", path: "/assets/tailwindcss.png" },
-    ],
-  },
-  {
     title: "Sticky Notes",
     desc: "A user-friendly note-taking app with colour-coded organisation features.",
     subdesc: "Implemented with the use of React, Vite, and Appwrite.",
