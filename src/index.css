@@ -103,7 +103,7 @@ html {
   }
 
   .tech-logo {
-    @apply backdrop-blur-lg backdrop-filter bg-neutral-100 bg-opacity-10 flex h-10 items-center justify-center p-2 rounded-md w-10 transition-transform duration-200 hover:scale-110 hover:-translate-y-0.5;
+    @apply bg-white/90 flex h-10 items-center justify-center p-2 rounded-md w-10 shadow-sm transition-transform duration-200 hover:scale-110 hover:-translate-y-0.5;
   }
 
   /* Hover-lift used on cards throughout (About grid, Clients, Experience) */
