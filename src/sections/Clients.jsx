@@ -21,10 +21,10 @@ const Clients = () => {
         ref={containerRef}
         className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3"
       >
-        {clientReviews.map((item) => (
+        {clientReviews.map((item, index) => (
           <div
             key={`review-${item.id}`}
-            className="flex flex-col justify-between p-6 rounded-xl bg-emerald-900 border border-gray200/20 shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="card-tilt flex flex-col justify-between p-6 rounded-2xl bg-emerald-900 border border-gray200/20 shadow-md"
           >
             <p className="text-gray200 text-sm leading-relaxed mb-6 italic">
               “{item.review}”
@@ -38,7 +38,9 @@ const Clients = () => {
                   loading="lazy"
                   width="48"
                   height="48"
-                  className="w-12 h-12 rounded-full object-cover"
+                  className={`w-12 h-12 rounded-full object-cover ring-2 ${
+                    ["ring-mint", "ring-coral", "ring-sky"][index % 3]
+                  }`}
                 />
                 <div>
                   <p className="text-white font-semibold leading-tight">

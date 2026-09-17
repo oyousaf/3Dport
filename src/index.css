@@ -25,6 +25,44 @@ body {
   @apply bg-emeraldDark font-generalsans text-gray200;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Subtle film-grain texture for a tactile, less-flat surface. Generated
+   inline via an SVG noise filter so it costs no extra network request. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background-color: theme("colors.mint");
+  color: theme("colors.emeraldDark");
+}
+
+/* Slim, on-brand scrollbar (WebKit/Blink) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: theme("colors.emeraldDark");
+}
+::-webkit-scrollbar-thumb {
+  background-color: theme("colors.emerald.800");
+  border-radius: 999px;
+  border: 2px solid theme("colors.emeraldDark");
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme("colors.mint");
+}
+html {
+  scrollbar-color: theme("colors.emerald.800") theme("colors.emeraldDark");
 }
 
 /* Custom utility classes */
@@ -44,7 +82,7 @@ body {
 
   /* About section */
   .grid-container {
-    @apply w-full h-full bg-emerald-900 border border-gray200/20 rounded-lg sm:p-7 p-4 flex flex-col gap-5 shadow-md backdrop-blur-md;
+    @apply w-full h-full bg-emerald-900 border border-gray200/20 rounded-2xl sm:p-7 p-4 flex flex-col gap-5 shadow-md backdrop-blur-md transition-all duration-300;
   }
 
   .grid-headtext {
@@ -65,7 +103,12 @@ body {
   }
 
   .tech-logo {
-    @apply backdrop-blur-lg backdrop-filter bg-neutral-100 bg-opacity-10 flex h-10 items-center justify-center p-2 rounded-md w-10;
+    @apply backdrop-blur-lg backdrop-filter bg-neutral-100 bg-opacity-10 flex h-10 items-center justify-center p-2 rounded-md w-10 transition-transform duration-200 hover:scale-110 hover:-translate-y-0.5;
+  }
+
+  /* Hover-lift used on cards throughout (About grid, Clients, Experience) */
+  .card-tilt {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20;
   }
 }
 

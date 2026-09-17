@@ -5,6 +5,13 @@ export default {
     extend: {
       fontFamily: {
         generalsans: ["Nunito", "sans-serif"],
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "monospace",
+        ],
       },
       keyframes: {
         pulseGlow: {
@@ -29,6 +36,9 @@ export default {
         emeraldDark: "#014034",
         mint: "#aaf0d1",
         gray200: "#e5e7eb",
+        coral: "#ff9b7a",
+        sky: "#7fd4e8",
+        lime: "#a3e635",
       },
     },
   },

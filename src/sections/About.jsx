@@ -23,13 +23,16 @@ const About = () => {
       aria-labelledby="about-heading"
       ref={sectionRef}
     >
-      <h2 id="about-heading" className="sr-only">
+      <h2
+        id="about-heading"
+        className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12"
+      >
         About Me
       </h2>
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         {/* Intro */}
         <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container">
+          <div className="grid-container card-tilt">
             <img
               src="assets/grid1.webp"
               alt="Omar portrait"
@@ -52,7 +55,7 @@ const About = () => {
 
         {/* Tech Stack */}
         <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container">
+          <div className="grid-container card-tilt">
             <img
               src="assets/grid2.webp"
               alt="Tech stack preview"
@@ -74,7 +77,7 @@ const About = () => {
 
         {/* 3D Globe + Button */}
         <div className="col-span-1 xl:row-span-4">
-          <div className="grid-container">
+          <div className="grid-container card-tilt">
             <div
               className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center"
               aria-hidden="true"
@@ -116,7 +119,7 @@ const About = () => {
 
         {/* Passion */}
         <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container">
+          <div className="grid-container card-tilt">
             <img
               src="assets/grid3.webp"
               alt="Code passion image"
@@ -139,7 +142,7 @@ const About = () => {
 
         {/* Copy to clipboard */}
         <div className="xl:col-span-1 xl:row-span-2">
-          <div className="grid-container">
+          <div className="grid-container card-tilt">
             <img
               src="assets/grid4.webp"
               alt="Contact info background"
@@ -160,7 +163,7 @@ const About = () => {
                   alt=""
                   aria-hidden="true"
                 />
-                <p className="lg:text-2xl md:text-xl font-medium text-white text-center">
+                <p className="lg:text-xl md:text-lg font-mono text-white text-center">
                   o_yousaf@live.co.uk
                 </p>
               </button>

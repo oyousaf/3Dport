@@ -121,7 +121,7 @@ const Contact = () => {
                     value={form[field.name]}
                     onChange={handleChange}
                     required
-                    className="w-full p-3 rounded-lg bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint transition"
+                    className="w-full p-3 rounded-xl bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint focus:border-mint transition-all"
                     placeholder={field.placeholder}
                   />
                 </label>
@@ -137,11 +137,11 @@ const Contact = () => {
                   maxLength={MAX_MESSAGE_LENGTH}
                   required
                   autoComplete="off"
-                  className="w-full p-3 rounded-lg bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint transition resize-none"
+                  className="w-full p-3 rounded-xl bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint focus:border-mint transition-all resize-none"
                   placeholder="Share your thoughts or inquiries..."
                 />
                 <p
-                  className="text-sm text-gray200 text-right"
+                  className="text-xs font-mono text-gray200 text-right"
                   aria-live="polite"
                 >
                   {form.message.length}/{MAX_MESSAGE_LENGTH} characters
@@ -155,7 +155,7 @@ const Contact = () => {
               disabled={loading}
               ariaLabel="Submit contact form"
               name={loading ? "Sending..." : "Send Message"}
-              containerClass="w-full flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-lg hover:brightness-110 transition-all disabled:opacity-60"
+              containerClass="w-full flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-xl hover:brightness-110 transition-all disabled:opacity-60"
             >
               {loading ? (
                 <span

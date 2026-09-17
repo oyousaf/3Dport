@@ -21,11 +21,17 @@ const NavItems = ({ onClick, isMobile = false }) => {
         <li key={id}>
           <button
             onClick={() => handleScroll(href.substring(1))}
-            className={`text-gray200 hover:text-mint text-lg font-medium tracking-wide transition-colors duration-200 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint focus-visible:ring-offset-2 focus-visible:ring-offset-emeraldDark ${
+            className={`group relative text-gray200 hover:text-mint text-lg font-medium tracking-wide transition-colors duration-200 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint focus-visible:ring-offset-2 focus-visible:ring-offset-emeraldDark ${
               isMobile ? "mobile-nav-link" : ""
             }`}
           >
             {name}
+            {!isMobile && (
+              <span
+                className="absolute -bottom-1 left-0 h-0.5 w-0 bg-mint transition-all duration-300 group-hover:w-full group-focus-visible:w-full"
+                aria-hidden="true"
+              />
+            )}
           </button>
         </li>
       ))}

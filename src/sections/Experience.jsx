@@ -34,7 +34,7 @@ const WorkExperience = () => {
       <div className="grid md:grid-cols-2 gap-10">
         {/* 3D Canvas */}
         <div
-          className="bg-emerald-900 border border-gray200/10 rounded-xl shadow-inner h-96"
+          className="bg-emerald-900 border border-gray200/10 rounded-2xl shadow-inner h-96"
           aria-hidden="true"
         >
           <Canvas>
@@ -66,7 +66,7 @@ const WorkExperience = () => {
               onFocus={() => setAnimationName(item.animation.toLowerCase())}
               onBlur={() => setAnimationName("idle")}
               onClick={() => setAnimationName(item.animation.toLowerCase())}
-              className="w-full text-left bg-emerald-900 border border-gray200/10 rounded-xl p-5 transition hover:shadow-lg group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+              className="w-full text-left bg-emerald-900 border border-l-4 border-gray200/10 border-l-mint/30 rounded-2xl p-5 transition-all duration-300 hover:shadow-lg hover:border-l-mint hover:-translate-y-0.5 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
             >
               <div className="flex items-center gap-4 mb-3">
                 <img
@@ -76,12 +76,13 @@ const WorkExperience = () => {
                   loading="lazy"
                   width="40"
                   height="40"
-                  className="w-10 h-10 rounded-md object-contain"
+                  className="w-10 h-10 rounded-md object-contain transition-transform duration-300 group-hover:scale-110"
                 />
                 <div>
                   <p className="text-white font-bold">{item.name}</p>
                   <p className="text-gray200 text-sm">
-                    {item.pos} — <span>{item.duration}</span>
+                    {item.pos} —{" "}
+                    <span className="font-mono text-xs">{item.duration}</span>
                   </p>
                 </div>
               </div>

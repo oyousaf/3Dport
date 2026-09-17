@@ -67,8 +67,8 @@ const Projects = () => {
         className="grid lg:grid-cols-2 grid-cols-1 gap-10"
       >
         {/* Text + Info Panel */}
-        <div className="flex flex-col gap-6 bg-emerald-900 p-6 sm:p-10 rounded-xl shadow-md border border-gray200/20 text-gray200">
-          <div className="relative h-56 w-full rounded-xl overflow-hidden shadow">
+        <div className="flex flex-col gap-6 bg-emerald-900 p-6 sm:p-10 rounded-2xl shadow-md border border-gray200/20 text-gray200">
+          <div className="relative h-56 w-full rounded-2xl overflow-hidden shadow">
             <div
               className="w-full h-full animate-pulseGlow"
               style={{
@@ -78,7 +78,7 @@ const Projects = () => {
               }}
             />
             <div
-              className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded shadow"
+              className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded-lg shadow"
               style={{
                 backgroundColor: accentColor,
                 border: `0.2px solid ${accentColor}`,
@@ -125,14 +125,14 @@ const Projects = () => {
               href={currentProject.href}
               target="_blank"
               rel="noreferrer"
-              className="text-mint hover:text-white transition-colors text-sm flex items-center gap-2"
+              className="text-mint hover:text-coral transition-colors text-sm font-mono flex items-center gap-2 group"
             >
-              <span className="underline">Live Site</span>
+              <span className="underline underline-offset-2">Live Site</span>
               <img
                 src="/assets/arrow-up.png"
                 alt=""
                 aria-hidden="true"
-                className="w-3 h-3"
+                className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
           </div>
@@ -157,7 +157,7 @@ const Projects = () => {
 
         {/* 3D Canvas Panel */}
         <div
-          className="border border-gray200/20 rounded-lg bg-emerald-900 h-[55vh] md:h-full overflow-hidden shadow-md max-w-full"
+          className="border border-gray200/20 rounded-2xl bg-emerald-900 h-[55vh] md:h-full overflow-hidden shadow-md max-w-full"
           aria-hidden="true"
         >
           <Canvas>
