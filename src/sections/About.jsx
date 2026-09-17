@@ -131,8 +131,7 @@ const About = () => {
                 I thrive on solving problems and building meaningful solutions
                 through code. Programming isn&rsquo;t just a profession &mdash;
                 it&rsquo;s a true calling. I continuously explore new
-                technologies and sharpen my
-                skillset.
+                technologies and sharpen my skillset.
               </p>
             </div>
           </div>

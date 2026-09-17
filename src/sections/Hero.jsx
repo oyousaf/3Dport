@@ -21,7 +21,7 @@ const Hero = () => {
 
   const sizes = useMemo(
     () => calculateSizes(isSmall, isMobile, isTablet),
-    [isSmall, isMobile, isTablet]
+    [isSmall, isMobile, isTablet],
   );
 
   return (

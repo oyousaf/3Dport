@@ -50,9 +50,7 @@ const Navbar = () => {
         passive: false,
       });
 
-      const firstFocusable = menuRef.current?.querySelector(
-        "button, a[href]"
-      );
+      const firstFocusable = menuRef.current?.querySelector("button, a[href]");
       firstFocusable?.focus();
     } else {
       document.body.style.overflow = "auto";
