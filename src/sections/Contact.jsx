@@ -35,7 +35,7 @@ const Contact = () => {
             to_email: "o_yousaf@live.co.uk",
             message: form.message,
           },
-          import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+          import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
         )
         .then(
           () => {
@@ -58,10 +58,10 @@ const Contact = () => {
               text: "Oops, something went wrong 😢. Please try again.",
               type: "danger",
             });
-          }
+          },
         );
     },
-    [form, hideAlert, showAlert]
+    [form, hideAlert, showAlert],
   );
 
   const fields = [
@@ -101,8 +101,8 @@ const Contact = () => {
             Let&rsquo;s converse
           </h2>
           <p className="text-gray200 text-base leading-relaxed mb-10">
-            Whether you&rsquo;re building a new site or just want to say hello — feel
-            free to reach out.
+            Whether you&rsquo;re building a new site or just want to say hello —
+            feel free to reach out.
           </p>
 
           <form

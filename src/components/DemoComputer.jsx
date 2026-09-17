@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useGLTF, useAnimations, useTexture } from "@react-three/drei";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -11,12 +11,6 @@ const DemoComputer = (props) => {
   const txt = useTexture(
     props.texture ? props.texture : "/textures/project/project3.webp"
   );
-
-  useEffect(() => {
-    if (txt) {
-      txt.flipY = false;
-    }
-  }, [txt]);
 
   useGSAP(() => {
     gsap.from(group.current.rotation, {

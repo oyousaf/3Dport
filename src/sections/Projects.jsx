@@ -20,7 +20,7 @@ const Projects = () => {
     setSelectedProjectIndex((prevIndex) =>
       direction === "previous"
         ? (prevIndex - 1 + myProjects.length) % myProjects.length
-        : (prevIndex + 1) % myProjects.length
+        : (prevIndex + 1) % myProjects.length,
     );
   };
 
@@ -35,7 +35,7 @@ const Projects = () => {
           duration: 1,
           stagger: 0.15,
           ease: "power2.out",
-        }
+        },
       );
     }
   }, [selectedProjectIndex]);
@@ -133,22 +133,14 @@ const Projects = () => {
               aria-label="Previous project"
               onClick={() => handleNavigation("previous")}
             >
-              <img
-                src="/assets/left-arrow.png"
-                alt=""
-                aria-hidden="true"
-              />
+              <img src="/assets/left-arrow.png" alt="" aria-hidden="true" />
             </button>
             <button
               className="arrow-btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
               aria-label="Next project"
               onClick={() => handleNavigation("next")}
             >
-              <img
-                src="/assets/right-arrow.png"
-                alt=""
-                aria-hidden="true"
-              />
+              <img src="/assets/right-arrow.png" alt="" aria-hidden="true" />
             </button>
           </div>
         </div>
