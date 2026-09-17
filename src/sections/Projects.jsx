@@ -1,8 +1,9 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Suspense, useState, useRef, useEffect } from "react";
+import { Suspense, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
+import { useMediaQuery } from "react-responsive";
 
 import { myProjects } from "../constants/index.js";
 import CanvasLoader from "../components/Loading.jsx";
@@ -11,19 +12,9 @@ import { useRevealChildrenOnScroll } from "../hooks/useRevealChildrenOnScroll";
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const projectCardRef = useRevealChildrenOnScroll();
   const textRef = useRef([]);
-
-  // Check screen size once on mount
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) =>

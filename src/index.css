@@ -1,47 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-  --font-generalsans: "Nunito", sans-serif;
-
-  --color-emeraldDark: #014034;
-  --color-mint: #aaf0d1;
-  --color-gray200: #e5e7eb;
-
-  --animate-pulseGlow: pulseGlow 3s ease-in-out infinite;
-  --animate-pulse: pulse 1.5s ease-in-out infinite;
-  --animate-spin-slow: spin-slow 4s linear infinite;
-
-  @keyframes pulseGlow {
-    0%,
-    100% {
-      opacity: 0.6;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-  }
-
-  @keyframes spin-slow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(-360deg);
-    }
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Base reset */
 * {
@@ -52,6 +11,10 @@
 }
 
 /* Core layout handling */
+html {
+  scrollbar-gutter: stable;
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -102,7 +65,7 @@ body {
   }
 
   .tech-logo {
-    @apply backdrop-blur-lg backdrop-filter bg-neutral-100/10 flex h-10 items-center justify-center p-2 rounded-md w-10;
+    @apply backdrop-blur-lg backdrop-filter bg-neutral-100 bg-opacity-10 flex h-10 items-center justify-center p-2 rounded-md w-10;
   }
 }
 
@@ -142,7 +105,7 @@ body {
   display: inline-block;
 }
 
-@utility arrow-gradient {
+.arrow-gradient {
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.1) 10%,

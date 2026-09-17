@@ -134,7 +134,7 @@ const Navbar = () => {
         aria-modal="true"
         aria-label="Mobile navigation"
         {...(!isOpen ? { inert: "" } : {})}
-        className={`sm:hidden fixed top-0 left-0 w-full h-[100svh] z-40 transition-transform duration-300 ease-in-out ${
+        className={`sm:hidden fixed top-0 left-0 w-full h-svh z-40 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-y-0" : "-translate-y-full"
         } bg-emeraldDark/95 backdrop-blur-md flex flex-col items-center justify-center space-y-10 overflow-hidden touch-action-none`}
       >

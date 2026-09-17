@@ -29,7 +29,7 @@ const Footer = () => {
       <p className="text-sm text-gray200 tracking-wide">
         © {new Date().getFullYear()} Built with{" "}
         <span
-          className="inline-block animate-spin-slow origin-center"
+          className="inline-block animate-spinSlow origin-center"
           aria-hidden="true"
         >
           💚
