@@ -36,7 +36,7 @@ export const clientReviews = [
     id: 1,
     name: "Fez Khan",
     position: "Owner of AMS",
-    img: "assets/project-logo9.png",
+    img: "assets/project-logo9.webp",
     review:
       "Outstanding service from start to finish! Very professional and informative through every step of the way, providing knowledgeable input into creating the best marketing website for my business. Highly recommend to anyone looking to have a stress-free experience in creating their website. Very pleased with my website. Many thanks!",
   },
@@ -44,7 +44,7 @@ export const clientReviews = [
     id: 2,
     name: "Hamza Ahmed",
     position: "CEO of Unlock Your Potential",
-    img: "assets/project-logo5.png",
+    img: "assets/project-logo5.webp",
     review:
       "Working with Omar was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
   },
@@ -52,7 +52,7 @@ export const clientReviews = [
     id: 3,
     name: "Mark Rogers",
     position: "Founder of Legxcy",
-    img: "assets/review2.png",
+    img: "assets/review2.webp",
     review:
       "Omar’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.",
   },
@@ -60,7 +60,7 @@ export const clientReviews = [
     id: 4,
     name: "John Dohsas",
     position: "Project Manager at Pollards",
-    img: "assets/review3.png",
+    img: "assets/review3.webp",
     review:
       "I can’t say enough good things about Omar. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
   },
@@ -73,8 +73,8 @@ export const myProjects = [
     subdesc:
       "Built with Next.js 15, Tailwind CSS, Framer Motion, Car Specs API, and Unsplash.",
     href: "https://hxmza.uk",
-    texture: "/textures/project/project13.mkv",
-    logo: "/assets/project-logo13.png",
+    texture: "/textures/project/project13.webp",
+    logo: "/assets/project-logo13.webp",
     logoStyle: {
       backgroundColor: "#D1CBC1",
       border: "0.2px solid #D1CBC1",
@@ -95,8 +95,8 @@ export const myProjects = [
     subdesc:
       "Powered by Supabase, Express, Cloudinary, Stripe, Tailwind CSS, React, Vite, and Node.js.",
     href: "https://legxcy.uk",
-    texture: "/textures/project/project4.mkv",
-    logo: "/assets/project-logo4.png",
+    texture: "/textures/project/project4.webp",
+    logo: "/assets/project-logo4.webp",
     logoStyle: {
       backgroundColor: "#003632",
       border: "0.2px solid #003632",
@@ -119,7 +119,7 @@ export const myProjects = [
     subdesc:
       "Developed using React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, PostgreSQL, and Supabase.",
     href: "https://astra-ai-six.vercel.app/",
-    texture: "/textures/project/project12.mkv",
+    texture: "/textures/project/project12.webp",
     logo: "/assets/project-logo12.png",
     logoStyle: {
       backgroundColor: "#5b21b6",
@@ -135,7 +135,7 @@ export const myProjects = [
       { id: 6, name: "Express", path: "/assets/express.svg" },
       { id: 7, name: "Node", path: "/assets/node.svg" },
       { id: 8, name: "Prisma", path: "/assets/prisma.png" },
-      { id: 9, name: "PostgreSQL", path: "/assets/pql.png" },
+      { id: 9, name: "PostgreSQL", path: "/assets/pql.webp" },
       { id: 10, name: "Supabase", path: "/assets/supabase.svg" },
     ],
   },
@@ -145,8 +145,8 @@ export const myProjects = [
     subdesc:
       "Engineered through the integration of Next.js, Framer Motion, Tailwind CSS, React, and Appwrite.",
     href: "https://acemotorsales.uk",
-    texture: "/textures/project/project9.mkv",
-    logo: "/assets/project-logo9.png",
+    texture: "/textures/project/project9.webp",
+    logo: "/assets/project-logo9.webp",
     logoStyle: {
       backgroundColor: "#B5485D",
       border: "0.2px solid #B5485D",
@@ -165,7 +165,7 @@ export const myProjects = [
     desc: "A user-friendly note-taking app with colour-coded organisation features.",
     subdesc: "Implemented with the use of React, Vite, and Appwrite.",
     href: "https://not3s.vercel.app/",
-    texture: "/textures/project/project3.mp4",
+    texture: "/textures/project/project3.webp",
     logo: "/assets/project-logo3.svg",
     logoStyle: {
       backgroundColor: "#000",
@@ -183,8 +183,8 @@ export const myProjects = [
     desc: "A motivational website promoting personal growth and reflection.",
     subdesc: "Developed with React, Tailwind CSS, and Vite.",
     href: "https://uypp.vercel.app",
-    texture: "/textures/project/project5.mp4",
-    logo: "/assets/project-logo5.png",
+    texture: "/textures/project/project5.webp",
+    logo: "/assets/project-logo5.webp",
     logoStyle: {
       backgroundColor: "#ED872D",
       border: "0.2px solid #ED872D",
@@ -201,7 +201,7 @@ export const myProjects = [
     desc: "A mobile-first weather app with sleek design and city search features.",
     subdesc: "Built using Vue.js and Tailwind CSS.",
     href: "https://kufi.uk/",
-    texture: "/textures/project/project6.mp4",
+    texture: "/textures/project/project6.webp",
     logo: "/assets/project-logo6.svg",
     logoStyle: {
       backgroundColor: "#FFF",
@@ -218,7 +218,7 @@ export const myProjects = [
     desc: "A Reddit browsing client with media previews and post navigation.",
     subdesc: "Developed using React, Redux, and Tailwind CSS.",
     href: "https://red-client.netlify.app/",
-    texture: "/textures/project/project7.mp4",
+    texture: "/textures/project/project7.webp",
     logo: "/assets/project-logo7.svg",
     logoStyle: {
       backgroundColor: "#FF4300",

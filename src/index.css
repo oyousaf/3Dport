@@ -1,8 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --font-generalsans: "Nunito", sans-serif;
+
+  --color-emeraldDark: #014034;
+  --color-mint: #aaf0d1;
+  --color-gray200: #e5e7eb;
+
+  --animate-pulseGlow: pulseGlow 3s ease-in-out infinite;
+  --animate-pulse: pulse 1.5s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 4s linear infinite;
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+}
 
 /* Base reset */
 * {
@@ -23,22 +62,10 @@ body {
   @apply bg-emeraldDark font-generalsans text-gray200;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  user-select: none;
-}
-
-img {
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-drag: none;
-  -webkit-touch-callout: none;
 }
 
 /* Custom utility classes */
 @layer utilities {
-  .animate-pulse {
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-
   .mobile-nav-link {
     @apply text-[2rem] uppercase;
   }
@@ -47,46 +74,9 @@ img {
     @apply px-5 sm:px-10;
   }
 
-  .head-text {
-    @apply font-semibold sm:text-4xl text-3xl text-gray_gradient;
-  }
-
-  .nav-ul {
-    @apply flex flex-col gap-4 items-center md:gap-6 relative sm:flex-row z-20;
-  }
-
-  .nav-li {
-    @apply font-bold font-generalsans hover:text-white max-sm:hover:bg-mint max-sm:px-5 max-sm:rounded-md max-sm:w-full py-2 text-mint;
-  }
-
-  .nav-li_a {
-    @apply hover:text-white md:text-base text-lg transition-colors;
-  }
-
-  .nav-sidebar {
-    @apply absolute backdrop-blur-sm bg-mint block duration-300 ease-in-out left-0 mx-auto overflow-hidden right-0 sm:hidden transition-all z-20;
-  }
-
-  .text-gray_gradient {
-    @apply bg-clip-text bg-gradient-to-r from-60% from-[#BEC1CF] text-transparent to-100% to-[#D5D8EA] via-60% via-[#D5D8EA];
-  }
-
   /* Button component */
   .btn {
     @apply active:scale-95 bg-mint cursor-pointer flex gap-4 hover:text-white items-center justify-center mx-auto p-3 rounded-md text-mint transition-all;
-  }
-
-  .btn-ping {
-    @apply absolute animate-ping bg-green-400 h-full inline-flex opacity-75 rounded-full w-full;
-  }
-
-  .btn-ping_dot {
-    @apply bg-green-500 h-3 inline-flex relative rounded-full w-3;
-  }
-
-  /* Hero section */
-  .hero_tag {
-    @apply font-black font-generalsans md:text-5xl sm:text-4xl text-3xl text-center xl:text-6xl;
   }
 
   /* About section */
@@ -112,87 +102,11 @@ img {
   }
 
   .tech-logo {
-    @apply backdrop-blur-lg backdrop-filter bg-neutral-100 bg-opacity-10 flex h-10 items-center justify-center p-2 rounded-md w-10;
-  }
-
-  /* Clients section */
-  .client-container {
-    @apply gap-5 grid grid-cols-1 md:grid-cols-2 mt-12;
-  }
-
-  .client-review {
-    @apply bg-opacity-50 bg-emerald-950 col-span-1 md:p-10 p-5 rounded-lg;
-  }
-
-  .client-content {
-    @apply flex flex-col gap-5 items-start justify-between lg:flex-row lg:items-center mt-7;
-  }
-
-  /* Work experience section */
-  .work-container {
-    @apply gap-5 grid grid-cols-1 lg:grid-cols-3 mt-12;
-  }
-
-  .work-canvas {
-    @apply bg-emerald-950 border border-emerald-950 col-span-1 rounded-lg;
-  }
-
-  .work-content {
-    @apply bg-emerald-950 border border-emerald-950 col-span-2 rounded-lg;
-  }
-
-  .work-content_container {
-    @apply cursor-pointer duration-500 ease-in-out gap-5 grid grid-cols-[auto_1fr] hover:bg-emerald-900 items-start px-2.5 rounded-lg sm:px-5 transition-all;
-  }
-
-  .work-content_logo {
-    @apply bg-black-600 h-16 p-2 rounded-3xl w-16;
-  }
-
-  .work-content_bar {
-    @apply bg-emerald-950 flex-1 group-hover:bg-gray-300 group-last:hidden h-full mt-4 w-0.5;
-  }
-
-  /* Contact section */
-  .contact-container {
-    @apply max-w-xl mt-12 px-5 relative sm:px-10 z-10;
-  }
-
-  .field-label {
-    @apply text-gray200 text-lg;
-  }
-
-  .field-input {
-    @apply bg-black-600 focus:outline-none min-h-14 placeholder:text-gray200 px-5 py-2 rounded-lg shadow-2xl shadow-black-200 text-lg text-white w-full;
-  }
-
-  .field-btn {
-    @apply bg-black-500 flex gap-3 items-center justify-center min-h-12 px-5 py-2 rounded-lg shadow-2xl shadow-black-200 text-lg text-white;
-  }
-
-  .field-btn_arrow {
-    @apply brightness-0 h-2.5 invert object-contain w-2.5;
-  }
-
-  /* Footer */
-  .social-icon {
-    @apply bg-black-600 border border-black-200 flex h-12 items-center justify-center rounded-full w-12;
+    @apply backdrop-blur-lg backdrop-filter bg-neutral-100/10 flex h-10 items-center justify-center p-2 rounded-md w-10;
   }
 }
 
 /* Global animations & extras */
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-}
-
 @keyframes wave-animation {
   0% {
     transform: rotate(0deg);
@@ -228,7 +142,7 @@ img {
   display: inline-block;
 }
 
-.arrow-gradient {
+@utility arrow-gradient {
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.1) 10%,
@@ -238,17 +152,13 @@ img {
   );
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-
-@layer utilities {
-  .animate-spin {
-    animation: spin 4s linear infinite;
+/* Respect the user's motion preference: kill smooth-scroll and all
+   decorative/looping animations sitewide. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

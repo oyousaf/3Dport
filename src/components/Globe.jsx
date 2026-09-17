@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import Globe from "three-globe";
 import { useFrame, useThree } from "@react-three/fiber";
-import * as THREE from "three";
 
 const GlobeWrapper = ({ labels = [] }) => {
   const globeRef = useRef();

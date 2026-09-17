@@ -5,6 +5,14 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 5000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ["three", "three-stdlib", "three-globe"],
+          "react-three": ["@react-three/fiber", "@react-three/drei"],
+          gsap: ["gsap", "@gsap/react"],
+        },
+      },
+    },
   },
 });

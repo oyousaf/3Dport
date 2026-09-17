@@ -52,10 +52,20 @@ const Projects = () => {
   const currentProject = myProjects[selectedProjectIndex];
 
   return (
-    <section id="projects" className="c-space my-24 mt-32 scroll-mt-24">
-      <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
+    <section
+      id="projects"
+      className="c-space my-24 mt-32 scroll-mt-24"
+      aria-labelledby="projects-heading"
+    >
+      <h2
+        id="projects-heading"
+        className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12"
+      >
         My Projects
       </h2>
+      <p className="sr-only" role="status" aria-live="polite">
+        Now showing: {currentProject.title}
+      </p>
 
       <div
         ref={projectCardRef}
@@ -78,7 +88,7 @@ const Projects = () => {
             >
               <img
                 src={currentProject.logo}
-                alt="logo"
+                alt={`${currentProject.title} logo`}
                 className="w-8 h-8 object-contain"
               />
             </div>
@@ -117,28 +127,46 @@ const Projects = () => {
               className="text-mint hover:text-white transition-colors text-sm flex items-center gap-2"
             >
               <span className="underline">Live Site</span>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+              <img
+                src="/assets/arrow-up.png"
+                alt=""
+                aria-hidden="true"
+                className="w-3 h-3"
+              />
             </a>
           </div>
 
           <div className="flex justify-between mt-6">
             <button
-              className="arrow-btn"
+              className="arrow-btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+              aria-label="Previous project"
               onClick={() => handleNavigation("previous")}
             >
-              <img src="/assets/left-arrow.png" alt="prev" />
+              <img
+                src="/assets/left-arrow.png"
+                alt=""
+                aria-hidden="true"
+              />
             </button>
             <button
-              className="arrow-btn"
+              className="arrow-btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+              aria-label="Next project"
               onClick={() => handleNavigation("next")}
             >
-              <img src="/assets/right-arrow.png" alt="next" />
+              <img
+                src="/assets/right-arrow.png"
+                alt=""
+                aria-hidden="true"
+              />
             </button>
           </div>
         </div>
 
         {/* 3D Canvas Panel */}
-        <div className="border border-gray200/20 rounded-lg bg-emerald-900 h-[55vh] md:h-full overflow-hidden shadow-md max-w-full">
+        <div
+          className="border border-gray200/20 rounded-lg bg-emerald-900 h-[55vh] md:h-full overflow-hidden shadow-md max-w-full"
+          aria-hidden="true"
+        >
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />

@@ -28,6 +28,7 @@ export const useRevealOnScroll = (options = {}) => {
     }, sectionRef);
 
     return () => ctx.revert();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- options is read once on mount; callers pass a fresh object literal each render, so including it would re-trigger the scroll animation setup every render
   }, []);
 
   return sectionRef;

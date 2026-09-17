@@ -83,6 +83,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
+      aria-labelledby="contact-heading"
       className="c-space my-24 mt-32 scroll-mt-32"
     >
       {alert.show && (
@@ -93,11 +94,14 @@ const Contact = () => {
 
       <div className="flex items-center justify-center min-h-[80vh]">
         <div className="w-full max-w-xl bg-black/40 backdrop-blur-lg border border-gray200/10 p-10 rounded-2xl shadow-xl text-center">
-          <h3 className="text-3xl sm:text-4xl font-bold text-mint mb-3">
-            Let's converse
-          </h3>
+          <h2
+            id="contact-heading"
+            className="text-3xl sm:text-4xl font-bold text-mint mb-3"
+          >
+            Let&rsquo;s converse
+          </h2>
           <p className="text-gray200 text-base leading-relaxed mb-10">
-            Whether you're building a new site or just want to say hello — feel
+            Whether you&rsquo;re building a new site or just want to say hello — feel
             free to reach out.
           </p>
 
@@ -136,8 +140,11 @@ const Contact = () => {
                   className="w-full p-3 rounded-lg bg-black/30 border border-gray200/20 text-white placeholder-gray200 focus:outline-none focus:ring-2 focus:ring-mint transition resize-none"
                   placeholder="Share your thoughts or inquiries..."
                 />
-                <p className="text-sm text-gray200 text-right">
-                  {form.message.length}/{MAX_MESSAGE_LENGTH}
+                <p
+                  className="text-sm text-gray200 text-right"
+                  aria-live="polite"
+                >
+                  {form.message.length}/{MAX_MESSAGE_LENGTH} characters
                 </p>
               </label>
             </fieldset>
@@ -151,11 +158,15 @@ const Contact = () => {
               containerClass="w-full flex items-center justify-center gap-2 bg-mint text-black font-semibold py-3 px-6 rounded-lg hover:brightness-110 transition-all disabled:opacity-60"
             >
               {loading ? (
-                <span className="animate-spin rounded-full border-2 border-white border-t-transparent w-4 h-4" />
+                <span
+                  className="animate-spin rounded-full border-2 border-white border-t-transparent w-4 h-4"
+                  aria-hidden="true"
+                />
               ) : (
                 <img
                   src="/assets/arrow-up.png"
-                  alt="arrow-up"
+                  alt=""
+                  aria-hidden="true"
                   className="w-4 h-4 mt-0.5"
                 />
               )}

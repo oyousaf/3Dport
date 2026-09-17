@@ -5,8 +5,15 @@ const Clients = () => {
   const containerRef = useRevealChildrenOnScroll();
 
   return (
-    <section id="clients" className="c-space my-24 mt-32 scroll-mt-24">
-      <h2 className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12">
+    <section
+      id="clients"
+      className="c-space my-24 mt-32 scroll-mt-24"
+      aria-labelledby="clients-heading"
+    >
+      <h2
+        id="clients-heading"
+        className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12"
+      >
         What My Clients Say
       </h2>
 
@@ -28,6 +35,9 @@ const Clients = () => {
                 <img
                   src={item.img}
                   alt={item.name}
+                  loading="lazy"
+                  width="48"
+                  height="48"
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
@@ -38,12 +48,20 @@ const Clients = () => {
                 </div>
               </div>
 
-              <div className="flex gap-1 items-center pt-1">
+              <div
+                className="flex gap-1 items-center pt-1"
+                role="img"
+                aria-label="5 out of 5 stars"
+              >
                 {[...Array(5)].map((_, idx) => (
                   <img
                     key={idx}
                     src="/assets/star.png"
-                    alt="star"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    width="16"
+                    height="16"
                     className="w-4 h-4"
                   />
                 ))}

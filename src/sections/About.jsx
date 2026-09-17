@@ -20,19 +20,26 @@ const About = () => {
     <section
       className="c-space my-24 mt-32 scroll-mt-24"
       id="about"
+      aria-labelledby="about-heading"
       ref={sectionRef}
     >
+      <h2 id="about-heading" className="sr-only">
+        About Me
+      </h2>
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         {/* Intro */}
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img
-              src="assets/grid1.png"
+              src="assets/grid1.webp"
               alt="Omar portrait"
+              loading="lazy"
+              width="276"
+              height="276"
               className="w-full sm:h-[276px] h-fit object-contain"
             />
             <div>
-              <p className="grid-headtext">Hi, I’m Omar</p>
+              <h3 className="grid-headtext">Hi, I’m Omar</h3>
               <p className="grid-subtext">
                 With five years of experience, I’ve primarily honed my skills in
                 frontend development, while recently expanding into full-stack
@@ -47,12 +54,15 @@ const About = () => {
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img
-              src="assets/grid2.png"
+              src="assets/grid2.webp"
               alt="Tech stack preview"
+              loading="lazy"
+              width="276"
+              height="276"
               className="w-full sm:h-[276px] h-fit object-contain"
             />
             <div>
-              <p className="grid-headtext">Tech Stack</p>
+              <h3 className="grid-headtext">Tech Stack</h3>
               <p className="grid-subtext">
                 I specialise in a range of languages, frameworks, and tools,
                 enabling me to build robust, scalable apps with efficiency and
@@ -65,7 +75,10 @@ const About = () => {
         {/* 3D Globe + Button */}
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+            <div
+              className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center"
+              aria-hidden="true"
+            >
               <Canvas camera={{ position: [0, 0, 400], fov: 35 }}>
                 <ambientLight intensity={1.5} />
                 <directionalLight position={[0, 0, 400]} intensity={1} />
@@ -82,9 +95,9 @@ const About = () => {
               </Canvas>
             </div>
             <div>
-              <p className="grid-headtext">
+              <h3 className="grid-headtext">
                 Flexible with time zones and open to relocation
-              </p>
+              </h3>
               <p className="grid-subtext">
                 Currently based in Wakefield, UK — available for remote work
                 globally.
@@ -105,16 +118,20 @@ const About = () => {
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
             <img
-              src="assets/grid3.png"
+              src="assets/grid3.webp"
               alt="Code passion image"
+              loading="lazy"
+              width="266"
+              height="266"
               className="w-full sm:h-[266px] h-fit object-contain"
             />
             <div>
-              <p className="grid-headtext">My Passion for Coding</p>
+              <h3 className="grid-headtext">My Passion for Coding</h3>
               <p className="grid-subtext">
                 I thrive on solving problems and building meaningful solutions
-                through code. Programming isn’t just a profession — it's a true
-                calling. I continuously explore new technologies and sharpen my
+                through code. Programming isn&rsquo;t just a profession &mdash;
+                it&rsquo;s a true calling. I continuously explore new
+                technologies and sharpen my
                 skillset.
               </p>
             </div>
@@ -125,21 +142,32 @@ const About = () => {
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
             <img
-              src="assets/grid4.png"
+              src="assets/grid4.webp"
               alt="Contact info background"
+              loading="lazy"
+              width="276"
+              height="276"
               className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
             />
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
-              <div className="copy-container" onClick={handleCopy}>
+              <button
+                type="button"
+                className="copy-container w-full rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+                onClick={handleCopy}
+              >
                 <img
                   src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
-                  alt={hasCopied ? "Copied!" : "Copy email"}
+                  alt=""
+                  aria-hidden="true"
                 />
                 <p className="lg:text-2xl md:text-xl font-medium text-white text-center">
                   o_yousaf@live.co.uk
                 </p>
-              </div>
+              </button>
+              <p className="sr-only" role="status" aria-live="polite">
+                {hasCopied ? "Email address copied to clipboard" : ""}
+              </p>
             </div>
           </div>
         </div>
