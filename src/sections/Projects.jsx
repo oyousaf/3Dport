@@ -5,16 +5,22 @@ import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 
-import { myProjects } from "../constants/index.js";
+import { getFaviconUrl, myProjects } from "../constants/index.js";
 import CanvasLoader from "../components/Loading.jsx";
 import DemoComputer from "../components/DemoComputer.jsx";
 import { useRevealChildrenOnScroll } from "../hooks/useRevealChildrenOnScroll";
+import { useDominantColor } from "../hooks/useDominantColor";
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const projectCardRef = useRevealChildrenOnScroll();
   const textRef = useRef([]);
+  const currentProject = myProjects[selectedProjectIndex];
+  // New project added but missing favicon/accent in constants/index.js?
+  // Run `npm run resolve-favicons` and paste its output into that entry.
+  const favicon = currentProject.favicon ?? getFaviconUrl(currentProject.href);
+  const accentColor = useDominantColor(favicon, currentProject.accent);
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) =>
@@ -39,8 +45,6 @@ const Projects = () => {
       );
     }
   }, [selectedProjectIndex]);
-
-  const currentProject = myProjects[selectedProjectIndex];
 
   return (
     <section
@@ -68,20 +72,26 @@ const Projects = () => {
             <div
               className="w-full h-full animate-pulseGlow"
               style={{
-                background: `radial-gradient(circle at 30% 30%, ${currentProject.logoStyle.backgroundColor}88 0%, transparent 70%)`,
-                border: currentProject.logoStyle.border,
-                boxShadow: currentProject.logoStyle.boxShadow,
+                background: `radial-gradient(circle at 30% 30%, ${accentColor}88 0%, transparent 70%)`,
+                border: `0.2px solid ${accentColor}`,
+                boxShadow: `0px 0px 60px 0px ${accentColor}4D`,
               }}
             />
             <div
               className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded shadow"
-              style={currentProject.logoStyle}
+              style={{
+                backgroundColor: accentColor,
+                border: `0.2px solid ${accentColor}`,
+                boxShadow: `0px 0px 60px 0px ${accentColor}4D`,
+              }}
             >
-              <img
-                src={currentProject.logo}
-                alt={`${currentProject.title} logo`}
-                className="w-8 h-8 object-contain"
-              />
+              {favicon && (
+                <img
+                  src={favicon}
+                  alt={`${currentProject.title} favicon`}
+                  className="w-8 h-8 object-contain"
+                />
+              )}
             </div>
           </div>
 

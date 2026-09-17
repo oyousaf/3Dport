@@ -1,9 +1,13 @@
+export const getFaviconUrl = (href, size = 64) => {
+  try {
+    const { hostname } = new URL(href);
+    return `https://www.google.com/s2/favicons?sz=${size}&domain=${hostname}`;
+  } catch {
+    return null;
+  }
+};
+
 export const navLinks = [
-  {
-    id: 1,
-    name: "Home",
-    href: "#home",
-  },
   {
     id: 2,
     name: "About",
@@ -73,13 +77,9 @@ export const myProjects = [
     subdesc:
       "Built with Next.js 15, Tailwind CSS, Framer Motion, Car Specs API, and Unsplash.",
     href: "https://hxmza.uk",
+    favicon: "https://hxmza.uk/icon?6a9f627ae4bfd8ac",
+    accent: "#3c3938",
     texture: "/textures/project/project13.webp",
-    logo: "/assets/project-logo13.webp",
-    logoStyle: {
-      backgroundColor: "#D1CBC1",
-      border: "0.2px solid #D1CBC1",
-      boxShadow: "0px 0px 60px 0px #D1CBC14D",
-    },
     tags: [
       { id: 1, name: "React.js", path: "/assets/react.svg" },
       { id: 2, name: "Next", path: "/assets/next.svg" },
@@ -95,13 +95,9 @@ export const myProjects = [
     subdesc:
       "Powered by Supabase, Express, Cloudinary, Stripe, Tailwind CSS, React, Vite, and Node.js.",
     href: "https://legxcy.uk",
+    favicon: "https://legxcy.uk/apple-touch-icon.png",
+    accent: "#124440",
     texture: "/textures/project/project4.webp",
-    logo: "/assets/project-logo4.webp",
-    logoStyle: {
-      backgroundColor: "#003632",
-      border: "0.2px solid #003632",
-      boxShadow: "0px 0px 60px 0px #0036324D",
-    },
     tags: [
       { id: 1, name: "Supabase", path: "/assets/supabase.svg" },
       { id: 2, name: "Cloudinary", path: "/assets/cloudinary.svg" },
@@ -119,13 +115,9 @@ export const myProjects = [
     subdesc:
       "Developed using React, Next.js, Tailwind CSS, Framer Motion, Shadcn, Express, Node.js, Prisma, PostgreSQL, and Supabase.",
     href: "https://astra-ai-six.vercel.app/",
+    favicon: "https://astra-ai-six.vercel.app/favicon.ico",
+    accent: "#9b8c6f",
     texture: "/textures/project/project12.webp",
-    logo: "/assets/project-logo12.png",
-    logoStyle: {
-      backgroundColor: "#5b21b6",
-      border: "0.2px solid #5b21b6",
-      boxShadow: "0px 0px 60px 0px #5b21b64D",
-    },
     tags: [
       { id: 1, name: "React.js", path: "/assets/react.svg" },
       { id: 2, name: "Next", path: "/assets/next.svg" },
@@ -145,13 +137,9 @@ export const myProjects = [
     subdesc:
       "Engineered through the integration of Next.js, Framer Motion, Tailwind CSS, React, and Appwrite.",
     href: "https://acemotorsales.uk",
+    favicon: "https://acemotorsales.uk/favicon.ico",
+    accent: "#1c0809",
     texture: "/textures/project/project9.webp",
-    logo: "/assets/project-logo9.webp",
-    logoStyle: {
-      backgroundColor: "#B5485D",
-      border: "0.2px solid #B5485D",
-      boxShadow: "0px 0px 60px 0px #B5485D4D",
-    },
     tags: [
       { id: 1, name: "Appwrite", path: "/assets/appwrite.png" },
       { id: 2, name: "Framer Motion", path: "/assets/framer.svg" },
@@ -165,13 +153,9 @@ export const myProjects = [
     desc: "A user-friendly note-taking app with colour-coded organisation features.",
     subdesc: "Implemented with the use of React, Vite, and Appwrite.",
     href: "https://not3s.vercel.app/",
+    favicon: "https://not3s.vercel.app/favicon.svg",
+    accent: "#8B5CF6",
     texture: "/textures/project/project3.webp",
-    logo: "/assets/project-logo3.svg",
-    logoStyle: {
-      backgroundColor: "#000",
-      border: "0.2px solid #000",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-    },
     tags: [
       { id: 1, name: "Appwrite", path: "/assets/appwrite.png" },
       { id: 2, name: "React.js", path: "/assets/react.svg" },
@@ -183,13 +167,9 @@ export const myProjects = [
     desc: "A motivational website promoting personal growth and reflection.",
     subdesc: "Developed with React, Tailwind CSS, and Vite.",
     href: "https://uypp.vercel.app",
+    favicon: "https://uypp.vercel.app/favicon.ico",
+    accent: "#f6b575",
     texture: "/textures/project/project5.webp",
-    logo: "/assets/project-logo5.webp",
-    logoStyle: {
-      backgroundColor: "#ED872D",
-      border: "0.2px solid #ED872D",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-    },
     tags: [
       { id: 1, name: "React", path: "/assets/react.svg" },
       { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
@@ -201,34 +181,12 @@ export const myProjects = [
     desc: "A mobile-first weather app with sleek design and city search features.",
     subdesc: "Built using Vue.js and Tailwind CSS.",
     href: "https://kufi.uk/",
+    favicon: "https://kufi.uk/favicon.svg",
+    accent: "#9bd7c3",
     texture: "/textures/project/project6.webp",
-    logo: "/assets/project-logo6.svg",
-    logoStyle: {
-      backgroundColor: "#FFF",
-      border: "0.2px solid #FFF",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-    },
     tags: [
       { id: 1, name: "Tailwind", path: "/assets/tailwindcss.png" },
       { id: 2, name: "Vue", path: "/assets/vue.svg" },
-    ],
-  },
-  {
-    title: "Reddit Client",
-    desc: "A Reddit browsing client with media previews and post navigation.",
-    subdesc: "Developed using React, Redux, and Tailwind CSS.",
-    href: "https://red-client.netlify.app/",
-    texture: "/textures/project/project7.webp",
-    logo: "/assets/project-logo7.svg",
-    logoStyle: {
-      backgroundColor: "#FF4300",
-      border: "0.2px solid #FF4300",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-    },
-    tags: [
-      { id: 1, name: "React", path: "/assets/react.svg" },
-      { id: 2, name: "Redux", path: "/assets/redux.svg" },
-      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
     ],
   },
 ];

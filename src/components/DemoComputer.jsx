@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useGLTF, useAnimations, useTexture } from "@react-three/drei";
+import * as THREE from "three";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -11,6 +12,20 @@ const DemoComputer = (props) => {
   const txt = useTexture(
     props.texture ? props.texture : "/textures/project/project3.webp"
   );
+
+  useEffect(() => {
+    if (txt) {
+      // The monitor-screen mesh's UVs are mirrored relative to a normally
+      // -oriented image (confirmed visually against the source screenshot
+      // files, which are not themselves flipped).
+      txt.center.set(0.5, 0.5);
+      txt.rotation = Math.PI;
+      txt.wrapS = THREE.RepeatWrapping;
+      txt.repeat.x = -1;
+      txt.offset.x = 1;
+      txt.needsUpdate = true;
+    }
+  }, [txt]);
 
   useGSAP(() => {
     gsap.from(group.current.rotation, {
