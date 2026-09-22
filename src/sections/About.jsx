@@ -1,13 +1,14 @@
-import { useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { lazy, Suspense, useState } from "react";
 
-import GlobeWrapper from "../components/Globe";
 import Button from "../components/Button.jsx";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+import { useInViewport } from "../hooks/useInViewport.js";
+
+const GlobeScene = lazy(() => import("../components/GlobeScene.jsx"));
 
 const About = () => {
   const sectionRef = useRevealOnScroll();
+  const [globeRef, globeInView] = useInViewport();
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
@@ -79,13 +80,13 @@ const About = () => {
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container card-tilt">
             <div
+              ref={globeRef}
               className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center"
               aria-hidden="true"
             >
-              <Canvas camera={{ position: [0, 0, 400], fov: 35 }}>
-                <ambientLight intensity={1.5} />
-                <directionalLight position={[0, 0, 400]} intensity={1} />
-                <GlobeWrapper
+              <Suspense fallback={null}>
+                <GlobeScene
+                  inView={globeInView}
                   labels={[
                     {
                       lat: 53.68,
@@ -94,8 +95,7 @@ const About = () => {
                     },
                   ]}
                 />
-                <OrbitControls enableZoom={true} />
-              </Canvas>
+              </Suspense>
             </div>
             <div>
               <h3 className="grid-headtext">

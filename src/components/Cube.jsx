@@ -1,18 +1,19 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Float, useGLTF, useTexture } from "@react-three/drei";
 
-const Cube = ({ ...props }) => {
+const Cube = ({ active = true, ...props }) => {
   const { nodes } = useGLTF("models/cube.glb");
 
   const texture = useTexture("textures/cube.png");
 
   const cubeRef = useRef();
+  const timelineRef = useRef(null);
   const [hovered, setHovered] = useState(false);
 
   useGSAP(() => {
-    gsap
+    timelineRef.current = gsap
       .timeline({
         repeat: -1,
         repeatDelay: 0.5,
@@ -25,7 +26,12 @@ const Cube = ({ ...props }) => {
           each: 0.15,
         },
       });
-  });
+  }, [hovered]);
+
+  useEffect(() => {
+    if (active) timelineRef.current?.play();
+    else timelineRef.current?.pause();
+  }, [active]);
 
   return (
     <Float floatIntensity={2}>

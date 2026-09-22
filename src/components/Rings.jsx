@@ -1,10 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import { Center, useTexture } from "@react-three/drei";
 import gsap from "gsap";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
-const Rings = ({ position }) => {
+const Rings = ({ position, active = true }) => {
   const refList = useRef([]);
+  const timelineRef = useRef(null);
   const getRef = useCallback((mesh) => {
     if (mesh && !refList.current.includes(mesh)) {
       refList.current.push(mesh);
@@ -21,7 +22,7 @@ const Rings = ({ position }) => {
         r.position.set(position[0], position[1], position[2]);
       });
 
-      gsap
+      timelineRef.current = gsap
         .timeline({
           repeat: -1,
           repeatDelay: 0.5,
@@ -42,6 +43,11 @@ const Rings = ({ position }) => {
       dependencies: position,
     }
   );
+
+  useEffect(() => {
+    if (active) timelineRef.current?.play();
+    else timelineRef.current?.pause();
+  }, [active]);
 
   return (
     <Center>

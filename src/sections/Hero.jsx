@@ -1,23 +1,17 @@
-import { Leva } from "leva";
-import { Suspense, useMemo } from "react";
-import { Canvas } from "@react-three/fiber";
+import { lazy, Suspense, useMemo } from "react";
 import { useMediaQuery } from "react-responsive";
-import { PerspectiveCamera } from "@react-three/drei";
 
-import Cube from "../components/Cube.jsx";
-import Rings from "../components/Rings.jsx";
-import ReactLogo from "../components/ReactLogo.jsx";
 import Button from "../components/Button.jsx";
-import Target from "../components/Target.jsx";
-import CanvasLoader from "../components/Loading.jsx";
-import HeroCamera from "../components/HeroCamera.jsx";
 import { calculateSizes } from "../constants/index.js";
-import { HackerRoom } from "../components/HackerRoom.jsx";
+import { useInViewport } from "../hooks/useInViewport.js";
+
+const HeroScene = lazy(() => import("../components/HeroScene.jsx"));
 
 const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const [sectionRef, inView] = useInViewport();
 
   const sizes = useMemo(
     () => calculateSizes(isSmall, isMobile, isTablet),
@@ -27,29 +21,14 @@ const Hero = () => {
   return (
     <section
       id="home"
+      ref={sectionRef}
       className="relative w-full min-h-screen flex flex-col justify-center items-center bg-emeraldDark text-gray200 scroll-mt-20"
     >
       {/* 3D Canvas */}
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <Leva hidden />
-        <Canvas className="w-full h-full">
-          <Suspense fallback={<CanvasLoader />}>
-            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-            <HeroCamera isMobile={isMobile}>
-              <HackerRoom
-                position={sizes.deskPosition}
-                rotation={[0, -Math.PI, 0]}
-                scale={sizes.deskScale}
-              />
-            </HeroCamera>
-            <Target position={sizes.targetPosition} />
-            <ReactLogo position={sizes.reactLogoPosition} />
-            <Rings position={sizes.ringPosition} />
-            <Cube position={sizes.cubePosition} />
-            <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={0.5} />
-          </Suspense>
-        </Canvas>
+        <Suspense fallback={null}>
+          <HeroScene sizes={sizes} isMobile={isMobile} inView={inView} />
+        </Suspense>
       </div>
 
       {/* Hero Content */}

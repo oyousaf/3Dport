@@ -10,11 +10,13 @@ import CanvasLoader from "../components/Loading.jsx";
 import DemoComputer from "../components/DemoComputer.jsx";
 import { useRevealChildrenOnScroll } from "../hooks/useRevealChildrenOnScroll";
 import { useDominantColor } from "../hooks/useDominantColor";
+import { useInViewport } from "../hooks/useInViewport.js";
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const projectCardRef = useRevealChildrenOnScroll();
+  const [canvasRef, canvasInView] = useInViewport();
   const textRef = useRef([]);
   const currentProject = myProjects[selectedProjectIndex];
   // New project added but missing favicon/accent in constants/index.js?
@@ -78,9 +80,8 @@ const Projects = () => {
               }}
             />
             <div
-              className="absolute bottom-4 left-4 bg-white/10 backdrop-blur px-2 py-1 rounded-lg shadow"
+              className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-2 py-2 rounded-lg shadow flex items-center justify-center"
               style={{
-                backgroundColor: accentColor,
                 border: `0.2px solid ${accentColor}`,
                 boxShadow: `0px 0px 60px 0px ${accentColor}4D`,
               }}
@@ -157,10 +158,15 @@ const Projects = () => {
 
         {/* 3D Canvas Panel */}
         <div
+          ref={canvasRef}
           className="border border-gray200/20 rounded-2xl bg-emerald-900 h-[55vh] md:h-full overflow-hidden shadow-md max-w-full"
           aria-hidden="true"
         >
-          <Canvas>
+          <Canvas
+            frameloop={canvasInView ? "always" : "never"}
+            dpr={[1, 2]}
+            performance={{ min: 0.5 }}
+          >
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
             <Center>

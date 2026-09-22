@@ -1,9 +1,10 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Html } from "@react-three/drei";
+import { ContactShadows, OrbitControls, Html } from "@react-three/drei";
 import Developer from "../components/Developer.jsx";
 import { workExperiences } from "../constants/index.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+import { useInViewport } from "../hooks/useInViewport.js";
 
 const FallbackLoader = () => (
   <Html center>
@@ -16,6 +17,7 @@ const FallbackLoader = () => (
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState("idle");
   const sectionRef = useRevealOnScroll();
+  const [canvasRef, canvasInView] = useInViewport();
 
   return (
     <section
@@ -34,13 +36,23 @@ const WorkExperience = () => {
       <div className="grid md:grid-cols-2 gap-10">
         {/* 3D Canvas */}
         <div
+          ref={canvasRef}
           className="bg-emerald-900 border border-gray200/10 rounded-2xl shadow-inner h-96"
           aria-hidden="true"
         >
-          <Canvas>
-            <ambientLight intensity={7} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <directionalLight position={[10, 10, 10]} intensity={1} />
+          <Canvas
+            frameloop={canvasInView ? "always" : "never"}
+            dpr={[1, 2]}
+            performance={{ min: 0.5 }}
+          >
+            <ambientLight intensity={2} />
+            <spotLight
+              position={[10, 10, 10]}
+              angle={0.3}
+              penumbra={1}
+              intensity={2}
+            />
+            <directionalLight position={[-5, 5, -5]} intensity={0.8} />
             <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
             <Suspense fallback={<FallbackLoader />}>
@@ -48,6 +60,13 @@ const WorkExperience = () => {
                 position-y={-3}
                 scale={3}
                 animationName={animationName}
+              />
+              <ContactShadows
+                position-y={-3}
+                opacity={0.5}
+                scale={10}
+                blur={2.5}
+                far={4}
               />
             </Suspense>
           </Canvas>

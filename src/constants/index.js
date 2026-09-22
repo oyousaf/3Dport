@@ -72,6 +72,22 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "AWISEE",
+    desc: "An international link building and SEO agency site for brands competing in unforgiving niches.",
+    subdesc:
+      "Built with Astro 7, React 19, Tailwind CSS 4, and TypeScript.",
+    href: "https://awisee.vercel.app",
+    favicon: "https://awisee.vercel.app/favicon.ico",
+    accent: "#3a4025",
+    texture: "/textures/project/project14.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Hxmza",
     desc: "A stylish and responsive platform for renting cars with a modern UI.",
     subdesc:
