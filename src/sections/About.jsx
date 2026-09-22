@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 
 import Button from "../components/Button.jsx";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
@@ -9,13 +9,6 @@ const GlobeScene = lazy(() => import("../components/GlobeScene.jsx"));
 const About = () => {
   const sectionRef = useRevealOnScroll();
   const [globeRef, globeInView] = useInViewport();
-  const [hasCopied, setHasCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText("o_yousaf@live.co.uk");
-    setHasCopied(true);
-    setTimeout(() => setHasCopied(false), 2000);
-  };
 
   return (
     <section
@@ -45,10 +38,12 @@ const About = () => {
             <div>
               <h3 className="grid-headtext">Hi, I’m Omar</h3>
               <p className="grid-subtext">
-                With five years of experience, I’ve primarily honed my skills in
-                frontend development, while recently expanding into full-stack
-                development to better understand backend integration. I focus on
-                crafting dynamic, responsive websites with seamless UX.
+                With over a decade&rsquo;s experience, I have honed my expertise
+                predominantly in frontend development, whilst more recently
+                broadening into full-stack disciplines to deepen my
+                comprehension of backend integration. I am dedicated to
+                crafting dynamic, responsive websites underpinned by
+                impeccable user experience.
               </p>
             </div>
           </div>
@@ -77,7 +72,7 @@ const About = () => {
         </div>
 
         {/* 3D Globe + Button */}
-        <div className="col-span-1 xl:row-span-4">
+        <div className="col-span-1 xl:row-span-6">
           <div className="grid-container card-tilt">
             <div
               ref={globeRef}
@@ -131,44 +126,14 @@ const About = () => {
             <div>
               <h3 className="grid-headtext">My Passion for Coding</h3>
               <p className="grid-subtext">
-                I thrive on solving problems and building meaningful solutions
-                through code. Programming isn&rsquo;t just a profession &mdash;
-                it&rsquo;s a true calling. I continuously explore new
-                technologies and sharpen my skillset.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Copy to clipboard */}
-        <div className="xl:col-span-1 xl:row-span-2">
-          <div className="grid-container card-tilt">
-            <img
-              src="assets/grid4.webp"
-              alt="Contact info background"
-              loading="lazy"
-              width="276"
-              height="276"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
-            />
-            <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact me</p>
-              <button
-                type="button"
-                className="copy-container w-full rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
-                onClick={handleCopy}
-              >
-                <img
-                  src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
-                  alt=""
-                  aria-hidden="true"
-                />
-                <p className="lg:text-xl md:text-lg font-mono text-white text-center">
-                  o_yousaf@live.co.uk
-                </p>
-              </button>
-              <p className="sr-only" role="status" aria-live="polite">
-                {hasCopied ? "Email address copied to clipboard" : ""}
+                I am endlessly invigorated by the challenge of unravelling
+                intricate problems and architecting meaningful solutions
+                through code. Programming transcends mere profession
+                &mdash; it is an abiding vocation. I remain perpetually
+                curious, exploring emergent technologies and refining my
+                craft with unwavering dedication, most recently embracing
+                agentic coding workflows through tools such as Claude Code
+                and Codex to augment my practice.
               </p>
             </div>
           </div>

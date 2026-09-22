@@ -14,9 +14,16 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [hasCopied, setHasCopied] = useState(false);
 
   const handleChange = useCallback(({ target: { name, value } }) => {
     setForm((prev) => ({ ...prev, [name]: value }));
+  }, []);
+
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText("o_yousaf@live.co.uk");
+    setHasCopied(true);
+    setTimeout(() => setHasCopied(false), 2000);
   }, []);
 
   const handleSubmit = useCallback(
@@ -100,9 +107,27 @@ const Contact = () => {
           >
             Let&rsquo;s converse
           </h2>
-          <p className="text-gray200 text-base leading-relaxed mb-10">
+          <p className="text-gray200 text-base leading-relaxed mb-6">
             Whether you&rsquo;re building a new site or just want to say hello —
             feel free to reach out.
+          </p>
+
+          <button
+            type="button"
+            className="copy-container mx-auto mb-10 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+            onClick={handleCopy}
+          >
+            <img
+              src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
+              alt=""
+              aria-hidden="true"
+            />
+            <span className="font-mono text-sm text-mint">
+              o_yousaf@live.co.uk
+            </span>
+          </button>
+          <p className="sr-only" role="status" aria-live="polite">
+            {hasCopied ? "Email address copied to clipboard" : ""}
           </p>
 
           <form
