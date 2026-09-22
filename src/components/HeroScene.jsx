@@ -42,7 +42,9 @@ const HeroScene = ({ sizes, isMobile, inView }) => (
         ))}
         <ambientLight intensity={1} />
         <directionalLight position={[10, 10, 10]} intensity={0.5} />
-        <Environment preset="city" environmentIntensity={0.4} />
+        <Suspense fallback={null}>
+          <Environment preset="city" environmentIntensity={0.4} />
+        </Suspense>
         {inView && (
           <EffectComposer>
             <Bloom

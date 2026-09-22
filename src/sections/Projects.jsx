@@ -89,6 +89,8 @@ const Projects = () => {
                 <img
                   src={favicon}
                   alt={`${currentProject.title} favicon`}
+                  width="48"
+                  height="48"
                   className="w-12 h-12 object-contain"
                 />
               )}

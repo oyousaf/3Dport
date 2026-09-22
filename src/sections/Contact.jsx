@@ -121,6 +121,8 @@ const Contact = () => {
               src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
               alt=""
               aria-hidden="true"
+              width="20"
+              height="20"
             />
             <span className="font-mono text-sm text-mint">
               o_yousaf@live.co.uk
