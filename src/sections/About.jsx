@@ -19,7 +19,7 @@ const About = () => {
     >
       <h2
         id="about-heading"
-        className="text-3xl sm:text-4xl font-bold text-lime text-center mb-12"
+        className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12"
       >
         About Me
       </h2>
@@ -39,10 +39,9 @@ const About = () => {
             <p className="grid-subtext">
               With over a decade&rsquo;s experience, I have honed my expertise
               predominantly in frontend development, whilst more recently
-              broadening into full-stack disciplines to deepen my
-              comprehension of backend integration. I am dedicated to
-              crafting dynamic, responsive websites underpinned by
-              impeccable user experience.
+              broadening into full-stack disciplines to deepen my comprehension
+              of backend integration. I am dedicated to crafting dynamic,
+              responsive websites underpinned by impeccable user experience.
             </p>
           </div>
         </div>
@@ -120,13 +119,12 @@ const About = () => {
             <h3 className="grid-headtext">My Passion for Coding</h3>
             <p className="grid-subtext">
               I am endlessly invigorated by the challenge of unravelling
-              intricate problems and architecting meaningful solutions
-              through code. Programming transcends mere profession
-              &mdash; it is an abiding vocation. I remain perpetually
-              curious, exploring emergent technologies and refining my
-              craft with unwavering dedication, most recently embracing
-              agentic coding workflows through tools such as Claude Code
-              and Codex to augment my practice.
+              intricate problems and architecting meaningful solutions through
+              code. Programming transcends mere profession &mdash; it is an
+              abiding vocation. I remain perpetually curious, exploring emergent
+              technologies and refining my craft with unwavering dedication,
+              most recently embracing agentic coding workflows through tools
+              such as Claude Code and Codex to augment my practice.
             </p>
           </div>
         </div>
