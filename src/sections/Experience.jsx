@@ -98,7 +98,7 @@ const WorkExperience = () => {
                   className="w-10 h-10 rounded-md object-contain transition-transform duration-300 group-hover:scale-110"
                 />
                 <div>
-                  <p className="text-white font-bold">{item.name}</p>
+                  <p className="text-mint font-bold">{item.name}</p>
                   <p className="text-gray200 text-sm">
                     {item.pos} —{" "}
                     <span className="font-mono text-xs">{item.duration}</span>

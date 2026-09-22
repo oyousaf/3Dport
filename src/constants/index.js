@@ -91,7 +91,7 @@ export const myProjects = [
     title: "Hxmza",
     desc: "A stylish and responsive platform for renting cars with a modern UI.",
     subdesc:
-      "Built with Next.js 15, Tailwind CSS, Framer Motion, Car Specs API, and Unsplash.",
+      "Built with Next.js 15, Tailwind CSS, Motion, Car Specs API, and Unsplash.",
     href: "https://hxmza.uk",
     favicon: "https://hxmza.uk/icon?6a9f627ae4bfd8ac",
     accent: "#3c3938",
@@ -100,7 +100,7 @@ export const myProjects = [
       { id: 1, name: "React.js", path: "/assets/react.svg" },
       { id: 2, name: "Next", path: "/assets/next.svg" },
       { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
-      { id: 4, name: "Framer Motion", path: "/assets/framer.svg" },
+      { id: 4, name: "Motion", path: "/assets/framer.svg" },
       { id: 5, name: "RapidAPI", path: "/assets/rapidapi.png" },
       { id: 6, name: "Unsplash", path: "/assets/unsplash.png" },
     ],
@@ -244,7 +244,7 @@ export const workExperiences = [
     pos: "Web Developer",
     duration: "2024 - Present",
     title:
-      "I'm currently working as a freelance developer, specialising in modern frontend development with tools like React, Next.js, Tailwind CSS, and Framer Motion to craft responsive, scalable, and visually engaging SPAs. Lately, I've been expanding into full-stack development, integrating powerful backends using PostgreSQL, Supabase, Appwrite, Prisma, Express, and Node.js — all deployed seamlessly with Vercel. This evolution allows me to build complete, performant apps with a consistent developer experience end-to-end.",
+      "I'm currently working as a freelance developer, specialising in modern frontend development with tools like React, Next.js, Tailwind CSS, and Motion to craft responsive, scalable, and visually engaging SPAs. Lately, I've been expanding into full-stack development, integrating powerful backends using PostgreSQL, Supabase, Appwrite, Prisma, Express, and Node.js — all deployed seamlessly with Vercel. This evolution allows me to build complete, performant apps with a consistent developer experience end-to-end.",
     icon: "/assets/legxcysol.webp",
     animation: "salute",
   },

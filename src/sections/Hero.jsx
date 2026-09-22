@@ -39,7 +39,7 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />
             </span>
-            Available for freelance work
+            Open for Freelance Deployment
           </div>
           <h1 className="text-4xl sm:text-6xl font-bold font-generalsans text-white drop-shadow-lg">
             Hi, I am Omar{" "}

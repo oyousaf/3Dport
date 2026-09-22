@@ -86,7 +86,7 @@ html {
   }
 
   .grid-headtext {
-    @apply font-generalsans font-semibold mb-2 text-white text-xl;
+    @apply font-generalsans font-semibold mb-2 text-mint text-xl;
   }
 
   .grid-subtext {

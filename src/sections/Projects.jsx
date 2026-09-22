@@ -80,17 +80,16 @@ const Projects = () => {
               }}
             />
             <div
-              className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-2 py-2 rounded-lg shadow flex items-center justify-center"
+              className="absolute bottom-4 left-4 flex items-center justify-center drop-shadow-lg"
               style={{
-                border: `0.2px solid ${accentColor}`,
-                boxShadow: `0px 0px 60px 0px ${accentColor}4D`,
+                filter: `drop-shadow(0px 0px 20px ${accentColor}80)`,
               }}
             >
               {favicon && (
                 <img
                   src={favicon}
                   alt={`${currentProject.title} favicon`}
-                  className="w-8 h-8 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               )}
             </div>
@@ -98,7 +97,7 @@ const Projects = () => {
 
           <div className="space-y-4">
             <h3
-              className="text-2xl font-semibold text-white"
+              className="text-2xl font-semibold text-mint"
               ref={(el) => (textRef.current[0] = el)}
             >
               {currentProject.title}

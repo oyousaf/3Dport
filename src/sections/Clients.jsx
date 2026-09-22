@@ -43,7 +43,7 @@ const Clients = () => {
                   }`}
                 />
                 <div>
-                  <p className="text-white font-semibold leading-tight">
+                  <p className="text-mint font-semibold leading-tight">
                     {item.name}
                   </p>
                   <p className="text-gray200 text-xs">{item.position}</p>
