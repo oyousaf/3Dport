@@ -11,8 +11,13 @@
 }
 
 /* Core layout handling */
-html {
-  scrollbar-gutter: stable;
+/* Reserve scrollbar space only where desktop browsers actually render an
+   overlay-less scrollbar; mobile has no persistent scrollbar, so reserving
+   the gutter there just leaves dead space on the right edge. */
+@media (min-width: 768px) {
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
 html,

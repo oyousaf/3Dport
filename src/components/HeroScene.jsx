@@ -4,10 +4,8 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, PerspectiveCamera } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
-import Cube from "./Cube.jsx";
-import Rings from "./Rings.jsx";
 import ReactLogo from "./ReactLogo.jsx";
-import Target from "./Target.jsx";
+import TechLogo from "./TechLogo.jsx";
 import CanvasLoader from "./Loading.jsx";
 import HeroCamera from "./HeroCamera.jsx";
 import { HackerRoom } from "./HackerRoom.jsx";
@@ -30,10 +28,18 @@ const HeroScene = ({ sizes, isMobile, inView }) => (
             scale={sizes.deskScale}
           />
         </HeroCamera>
-        <Target position={sizes.targetPosition} active={inView} />
-        <ReactLogo position={sizes.reactLogoPosition} />
-        <Rings position={sizes.ringPosition} active={inView} />
-        <Cube position={sizes.cubePosition} active={inView} />
+        <ReactLogo
+          position={sizes.reactLogoPosition}
+          scale={sizes.reactLogoScale}
+        />
+        {sizes.techLogos.map((logo) => (
+          <TechLogo
+            key={logo.texture}
+            texture={logo.texture}
+            position={logo.position}
+            scale={logo.scale}
+          />
+        ))}
         <ambientLight intensity={1} />
         <directionalLight position={[10, 10, 10]} intensity={0.5} />
         <Environment preset="city" environmentIntensity={0.4} />

@@ -202,38 +202,45 @@ export const myProjects = [
   },
 ];
 
+// Base (desktop-scale) scattered layout for the Hero background logos — one
+// even heptagon around the desk (React included), so every logo — the GLTF
+// React mark and the flat texture logos alike — shares a single coordinated
+// arrangement and none can ever land on the same spot. Smaller breakpoints
+// scale the spread down so nothing clips off-screen.
+const heroLogoLayout = [
+  { type: "gltf", key: "react", base: [0, 6.5, 0] },
+  { type: "texture", key: "next", texture: "/textures/hero/next.webp", base: [7, 5.6, -5] },
+  { type: "texture", key: "vue", texture: "/textures/hero/vue.webp", base: [8.8, -2, -6] },
+  { type: "texture", key: "typescript", texture: "/textures/hero/typescript.webp", base: [3.9, -8.1, -6] },
+  { type: "texture", key: "nuxt", texture: "/textures/hero/nuxt.webp", base: [-3.9, -8.1, -5] },
+  { type: "texture", key: "astro", texture: "/textures/hero/astro.webp", base: [-8.8, -2, -7] },
+  { type: "texture", key: "tailwind", texture: "/textures/hero/tailwind.webp", base: [-7, 5.6, -5] },
+];
+
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
+  const spread = isSmall ? 0.35 : isMobile ? 0.55 : isTablet ? 0.75 : 1;
+  const logoScale = isSmall ? 0.8 : isMobile ? 1 : 1.2;
+
+  const heroLogos = heroLogoLayout.map(({ base, ...rest }) => ({
+    ...rest,
+    position: [base[0] * spread, base[1] * spread, base[2]],
+    scale: logoScale,
+  }));
+
+  const reactPosition = heroLogos.find((l) => l.key === "react").position;
+  // Extra upward nudge on narrow viewports only, clear of the desk/navbar.
+  const reactYBoost = isSmall ? 0.6 : isMobile ? 0.4 : 0;
+
   return {
     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    cubePosition: isSmall
-      ? [4, -7, 0]
-      : isMobile
-        ? [5, -5, 0]
-        : isTablet
-          ? [7, -5, 0]
-          : [9, -5.5, 0],
-    reactLogoPosition: isSmall
-      ? [3, 4, 0]
-      : isMobile
-        ? [5, 4, 0]
-        : isTablet
-          ? [5, 4, 0]
-          : [8, 3, 0],
-    ringPosition: isSmall
-      ? [-5, 7, 0]
-      : isMobile
-        ? [-10, 10, 0]
-        : isTablet
-          ? [-12, 6, 0]
-          : [-19, 6, 0],
-    targetPosition: isSmall
-      ? [-6, -12, -10]
-      : isMobile
-        ? [-9, -10, -10]
-        : isTablet
-          ? [-11, -7, -10]
-          : [-13, -13, -10],
+    reactLogoPosition: [
+      reactPosition[0],
+      reactPosition[1] + reactYBoost,
+      reactPosition[2],
+    ],
+    reactLogoScale: isSmall ? 0.22 : isMobile ? 0.28 : isTablet ? 0.34 : 0.4,
+    techLogos: heroLogos.filter((l) => l.type === "texture"),
   };
 };
 
