@@ -72,10 +72,24 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Hecky Travel",
+    desc: "A modern travel agency website for discovering destinations, exploring holiday packages, and planning memorable getaways.",
+    subdesc: "Built with Astro 7, React 19, TypeScript, and Tailwind CSS 4.",
+    href: "https://heckytravel.uk",
+    favicon: "https://heckytravel.uk/favicon-32.png",
+    accent: "#37b1a8",
+    texture: "/textures/project/project15.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TypeScript", path: "/assets/typescript.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+    ],
+  },
+  {
     title: "AWISEE",
     desc: "An international link building and SEO agency site for brands competing in unforgiving niches.",
-    subdesc:
-      "Built with Astro 7, React 19, Tailwind CSS 4, and TypeScript.",
+    subdesc: "Built with Astro 7, React 19, Tailwind CSS 4, and TypeScript.",
     href: "https://awisee.vercel.app",
     favicon: "https://awisee.vercel.app/favicon.ico",
     accent: "#3a4025",
@@ -88,7 +102,7 @@ export const myProjects = [
     ],
   },
   {
-    title: "Hxmza",
+    title: "Beds4U",
     desc: "A stylish and responsive platform for renting cars with a modern UI.",
     subdesc:
       "Built with Next.js 15, Tailwind CSS, Motion, Car Specs API, and Unsplash.",
@@ -103,6 +117,21 @@ export const myProjects = [
       { id: 4, name: "Motion", path: "/assets/framer.svg" },
       { id: 5, name: "RapidAPI", path: "/assets/rapidapi.png" },
       { id: 6, name: "Unsplash", path: "/assets/unsplash.png" },
+    ],
+  },
+  {
+    title: "Hxmza",
+    desc: "A modern car rental platform to compare and hire supercars, EVs, and everyday cars across the UK.",
+    subdesc: "Built with Next.js 16, React 19, Tailwind CSS 4, and Motion.",
+    href: "https://hxmza.vercel.app",
+    favicon: "https://hxmza.vercel.app/favicon.ico?favicon.2yscoldfd3-rv.ico",
+    accent: "#4a2073",
+    texture: "/textures/project/project16.webp",
+    tags: [
+      { id: 1, name: "Next", path: "/assets/next.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "Motion", path: "/assets/framer.svg" },
     ],
   },
   {
@@ -209,12 +238,42 @@ export const myProjects = [
 // scale the spread down so nothing clips off-screen.
 const heroLogoLayout = [
   { type: "gltf", key: "react", base: [0, 6.5, 0] },
-  { type: "texture", key: "next", texture: "/textures/hero/next.webp", base: [7, 5.6, -5] },
-  { type: "texture", key: "vue", texture: "/textures/hero/vue.webp", base: [8.8, -2, -6] },
-  { type: "texture", key: "typescript", texture: "/textures/hero/typescript.webp", base: [3.9, -8.1, -6] },
-  { type: "texture", key: "nuxt", texture: "/textures/hero/nuxt.webp", base: [-3.9, -8.1, -5] },
-  { type: "texture", key: "astro", texture: "/textures/hero/astro.webp", base: [-8.8, -2, -7] },
-  { type: "texture", key: "tailwind", texture: "/textures/hero/tailwind.webp", base: [-7, 5.6, -5] },
+  {
+    type: "texture",
+    key: "next",
+    texture: "/textures/hero/next.webp",
+    base: [7, 5.6, -5],
+  },
+  {
+    type: "texture",
+    key: "vue",
+    texture: "/textures/hero/vue.webp",
+    base: [8.8, -2, -6],
+  },
+  {
+    type: "texture",
+    key: "typescript",
+    texture: "/textures/hero/typescript.webp",
+    base: [3.9, -8.1, -6],
+  },
+  {
+    type: "texture",
+    key: "nuxt",
+    texture: "/textures/hero/nuxt.webp",
+    base: [-3.9, -8.1, -5],
+  },
+  {
+    type: "texture",
+    key: "astro",
+    texture: "/textures/hero/astro.webp",
+    base: [-8.8, -2, -7],
+  },
+  {
+    type: "texture",
+    key: "tailwind",
+    texture: "/textures/hero/tailwind.webp",
+    base: [-7, 5.6, -5],
+  },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
