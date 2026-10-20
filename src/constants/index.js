@@ -72,6 +72,22 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Ellipsis Earth",
+    desc: "An environmental data platform mapping pollution with machine learning, turning roadside surveys into insight for councils, classrooms and changemakers.",
+    subdesc: "Built with Astro 7, React 19, Tailwind CSS 4, Motion, and TypeScript.",
+    href: "https://ellipsis-tau.vercel.app",
+    favicon: "https://ellipsis-tau.vercel.app/favicon.svg",
+    accent: "#e2b714",
+    texture: "/textures/project/project17.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "Motion", path: "/assets/framer.svg" },
+      { id: 5, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Hecky Travel",
     desc: "A modern travel agency website for discovering destinations, exploring holiday packages, and planning memorable getaways.",
     subdesc: "Built with Astro 7, React 19, TypeScript, and Tailwind CSS 4.",
