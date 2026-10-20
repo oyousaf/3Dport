@@ -92,8 +92,8 @@ export const myProjects = [
     desc: "A modern travel agency website for discovering destinations, exploring holiday packages, and planning memorable getaways.",
     subdesc: "Built with Astro 7, React 19, TypeScript, and Tailwind CSS 4.",
     href: "https://heckytravel.uk",
-    favicon: "https://heckytravel.uk/favicon-32.png",
-    accent: "#37b1a8",
+    favicon: "https://heckytravel.uk/favicon.ico",
+    accent: "#37b1a7",
     texture: "/textures/project/project15.webp",
     tags: [
       { id: 1, name: "Astro", path: "/assets/astro.svg" },
