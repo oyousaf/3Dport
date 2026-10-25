@@ -75,8 +75,8 @@ export const myProjects = [
     title: "Ellipsis Earth",
     desc: "An environmental data platform mapping pollution with machine learning, turning roadside surveys into insight for councils, classrooms and changemakers.",
     subdesc: "Built with Astro 7, React 19, Tailwind CSS 4, Motion, and TypeScript.",
-    href: "https://ellipsis-tau.vercel.app",
-    favicon: "https://ellipsis-tau.vercel.app/favicon.svg",
+    href: "https://ellipsis.legxcysol.dev",
+    favicon: "https://ellipsis.legxcysol.dev/favicon.svg",
     accent: "#e2b714",
     texture: "/textures/project/project17.webp",
     tags: [
@@ -106,8 +106,8 @@ export const myProjects = [
     title: "AWISEE",
     desc: "An international link building and SEO agency site for brands competing in unforgiving niches.",
     subdesc: "Built with Astro 7, React 19, Tailwind CSS 4, and TypeScript.",
-    href: "https://awisee.vercel.app",
-    favicon: "https://awisee.vercel.app/favicon.ico",
+    href: "https://awisee.legxcysol.dev",
+    favicon: "https://awisee.legxcysol.dev/favicon.ico",
     accent: "#3a4025",
     texture: "/textures/project/project14.webp",
     tags: [
@@ -119,11 +119,11 @@ export const myProjects = [
   },
   {
     title: "Beds4U",
-    desc: "A stylish and responsive platform for renting cars with a modern UI.",
+    desc: "A fully fledged e-commerce storefront for a British bed manufacturer.",
     subdesc:
       "Built with Next.js 15, Tailwind CSS, Motion, Car Specs API, and Unsplash.",
-    href: "https://hxmza.uk",
-    favicon: "https://hxmza.uk/icon?6a9f627ae4bfd8ac",
+    href: "https://saeed.hxmza.uk",
+    favicon: "https://saeed.hxmza.uk/icon?6a9f627ae4bfd8ac",
     accent: "#3c3938",
     texture: "/textures/project/project13.webp",
     tags: [
@@ -139,8 +139,8 @@ export const myProjects = [
     title: "Hxmza",
     desc: "A modern car rental platform to compare and hire supercars, EVs, and everyday cars across the UK.",
     subdesc: "Built with Next.js 16, React 19, Tailwind CSS 4, and Motion.",
-    href: "https://hxmza.vercel.app",
-    favicon: "https://hxmza.vercel.app/favicon.ico?favicon.2yscoldfd3-rv.ico",
+    href: "https://hxmza.uk",
+    favicon: "https://hxmza.uk/favicon.ico?favicon.2yscoldfd3-rv.ico",
     accent: "#4a2073",
     texture: "/textures/project/project16.webp",
     tags: [
@@ -176,8 +176,8 @@ export const myProjects = [
     desc: "An AI-assisted job tracker built to streamline and manage job applications efficiently.",
     subdesc:
       "Developed using Next.js 16, React 19, TypeScript, Tailwind CSS, Motion, and Radix UI.",
-    href: "https://astra-ai-six.vercel.app/",
-    favicon: "https://astra-ai-six.vercel.app/favicon.ico",
+    href: "https://astra-ai.legxcysol.dev",
+    favicon: "https://astra-ai.legxcysol.dev/favicon.ico",
     accent: "#9b8c6f",
     texture: "/textures/project/project12.webp",
     tags: [
@@ -209,8 +209,8 @@ export const myProjects = [
     title: "Sticky Notes",
     desc: "A user-friendly note-taking app with colour-coded organisation features.",
     subdesc: "Implemented with the use of React 19 and Vite.",
-    href: "https://not3s.vercel.app/",
-    favicon: "https://not3s.vercel.app/favicon.svg",
+    href: "https://notes.legxcysol.dev",
+    favicon: "https://notes.legxcysol.dev/favicon.svg",
     accent: "#8B5CF6",
     texture: "/textures/project/project3.webp",
     tags: [
@@ -222,8 +222,8 @@ export const myProjects = [
     title: "Unlock Your Potential",
     desc: "A motivational website promoting personal growth and reflection.",
     subdesc: "Developed with React 18, Tailwind CSS, and Vite.",
-    href: "https://uypp.vercel.app",
-    favicon: "https://uypp.vercel.app/favicon.ico",
+    href: "https://uyp.legxcysol.dev",
+    favicon: "https://uyp.legxcysol.dev/favicon.ico",
     accent: "#f6b575",
     texture: "/textures/project/project5.webp",
     tags: [
