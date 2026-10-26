@@ -72,6 +72,22 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Kanestone",
+    desc: "A cinematic redesign for a British luxury automotive company supplying Rolls-Royce, Bentley, Aston Martin and Range Rover vehicles to businesses, with a scroll-driven film hero and an interactive collection.",
+    subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Motion, and Lenis.",
+    href: "https://kanestone.vercel.app",
+    favicon: "https://kanestone.vercel.app/icon.png",
+    accent: "#d9cbad",
+    texture: "/textures/project/project18.webp",
+    tags: [
+      { id: 1, name: "Next", path: "/assets/next.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "Motion", path: "/assets/framer.svg" },
+      { id: 5, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Ellipsis Earth",
     desc: "An environmental data platform mapping pollution with machine learning, turning roadside surveys into insight for councils, classrooms and changemakers.",
     subdesc: "Built with Astro 7, React 19, Tailwind CSS 4, Motion, and TypeScript.",
