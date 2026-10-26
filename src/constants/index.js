@@ -75,8 +75,8 @@ export const myProjects = [
     title: "Kanestone",
     desc: "A cinematic redesign for a British luxury automotive company supplying Rolls-Royce, Bentley, Aston Martin and Range Rover vehicles to businesses, with a scroll-driven film hero and an interactive collection.",
     subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Motion, and Lenis.",
-    href: "https://kanestone.vercel.app",
-    favicon: "https://kanestone.vercel.app/icon.png",
+    href: "https://kanestone.legxcysol.dev",
+    favicon: "https://kanestone.legxcysol.dev/icon.png",
     accent: "#d9cbad",
     texture: "/textures/project/project18.webp",
     tags: [
