@@ -72,6 +72,21 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "huni",
+    desc: "A concept redesign for a hair and body care brand built around raw honey from Mayan beekeepers, with 3D product renders and a Pollinator Index powered by live open data.",
+    subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, Motion, and Leaflet.",
+    href: "https://huni.legxcysol.dev",
+    favicon: "https://huni.legxcysol.dev/favicon.svg",
+    accent: "#e0a526",
+    texture: "/textures/project/project19.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 3, name: "Motion", path: "/assets/framer.svg" },
+      { id: 4, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Kanestone",
     desc: "A cinematic redesign for a British luxury automotive company supplying Rolls-Royce, Bentley, Aston Martin and Range Rover vehicles to businesses, with a scroll-driven film hero and an interactive collection.",
     subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Motion, and Lenis.",
