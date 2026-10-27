@@ -73,7 +73,7 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "ECAMS",
-    desc: "A redesign for a London eco-friendly cleaning and maintenance company, replacing a Wix site with service and pricing pages, a quote and booking form, and light and dark themes.",
+    desc: "A redesign for an eco-friendly cleaning and maintenance company, replacing a Wix site with service and pricing pages, a quote and booking form, and light and dark themes.",
     subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://ecams.legxcysol.dev",
     favicon: "https://ecams.legxcysol.dev/icon.svg",
