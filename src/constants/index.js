@@ -72,6 +72,22 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "ECAMS",
+    desc: "A redesign for a London eco-friendly cleaning and maintenance company, replacing a Wix site with service and pricing pages, a quote and booking form, and light and dark themes.",
+    subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
+    href: "https://ecams.legxcysol.dev",
+    favicon: "https://ecams.legxcysol.dev/icon.svg",
+    accent: "#c8f169",
+    texture: "/textures/project/project20.webp",
+    tags: [
+      { id: 1, name: "Next", path: "/assets/next.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "Motion", path: "/assets/framer.svg" },
+      { id: 5, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "huni",
     desc: "A concept redesign for a hair and body care brand built around raw honey from Mayan beekeepers, with 3D product renders and a Pollinator Index powered by live open data.",
     subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, Motion, and Leaflet.",
