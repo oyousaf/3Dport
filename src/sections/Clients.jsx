@@ -14,7 +14,7 @@ const Clients = () => {
         id="clients-heading"
         className="text-3xl sm:text-4xl font-bold text-mint text-center mb-12"
       >
-        What My Clients Say
+        Kind Words
       </h2>
 
       <div

@@ -35,17 +35,11 @@ export const navLinks = [
   },
 ];
 
+// `placeholder: true` entries are filler copy awaiting real client quotes.
+// They render in `npm run dev` only and are left out of production builds.
 export const clientReviews = [
   {
     id: 1,
-    name: "Fez Khan",
-    position: "Owner of AMS",
-    img: "assets/project-logo9.webp",
-    review:
-      "Outstanding service from start to finish! Very professional and informative through every step of the way, providing knowledgeable input into creating the best marketing website for my business. Highly recommend to anyone looking to have a stress-free experience in creating their website. Very pleased with my website. Many thanks!",
-  },
-  {
-    id: 2,
     name: "Hamza Ahmed",
     position: "CEO of Unlock Your Potential",
     img: "assets/project-logo5.webp",
@@ -53,22 +47,78 @@ export const clientReviews = [
       "Working with Omar was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
   },
   {
-    id: 3,
-    name: "Mark Rogers",
-    position: "Founder of Legxcy",
-    img: "assets/review2.webp",
+    id: 2,
+    placeholder: true,
+    name: "DMIA",
+    position: "Founder · placeholder",
+    img: "https://dmia.legxcysol.dev/favicon.svg",
     review:
-      "Omar’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.",
+      "Advisory is a hard thing to show on a screen. Omar turned our rail, road and bus work into a network map and a departures board, and suddenly people get what we do in seconds.",
+  },
+  {
+    id: 3,
+    placeholder: true,
+    name: "MTD Trade Books",
+    position: "Director · placeholder",
+    img: "https://mtd.legxcysol.dev/favicon.svg",
+    review:
+      "Our clients are builders, not accountants. The new site explains Making Tax Digital in plain English and the enrolment form takes two minutes. Far fewer confused phone calls since we moved off Wix.",
   },
   {
     id: 4,
-    name: "John Dohsas",
-    position: "Project Manager at Pollards",
-    img: "assets/review3.webp",
+    placeholder: true,
+    name: "ECAMS",
+    position: "Owner · placeholder",
+    img: "https://ecams.legxcysol.dev/icon.svg",
     review:
-      "I can’t say enough good things about Omar. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "Clear pricing, a quote form that actually gets filled in, and a look that matches our eco values. Customers regularly mention how easy it was to book.",
   },
-];
+  {
+    id: 5,
+    placeholder: true,
+    name: "huni",
+    position: "Founder · placeholder",
+    img: "https://huni.legxcysol.dev/favicon.svg",
+    review:
+      "Omar got the story behind our honey straight away. The product renders feel premium and the Pollinator Index gives people a reason to come back beyond the shop.",
+  },
+  {
+    id: 6,
+    placeholder: true,
+    name: "Kanestone",
+    position: "Managing Director · placeholder",
+    img: "https://kanestone.legxcysol.dev/icon.png",
+    review:
+      "Our cars deserve a proper stage and that is what we got. The film hero sets the tone instantly, and the collection is effortless to browse on a phone.",
+  },
+  {
+    id: 7,
+    placeholder: true,
+    name: "Ellipsis Earth",
+    position: "Project Lead · placeholder",
+    img: "https://ellipsis.legxcysol.dev/favicon.svg",
+    review:
+      "We had a lot of complex pollution data and needed councils and teachers to understand it. Omar made it visual and approachable without dumbing down the science.",
+  },
+  {
+    id: 8,
+    placeholder: true,
+    name: "Hecky Travel",
+    position: "Owner · placeholder",
+    img: "https://heckytravel.uk/favicon.ico",
+    review:
+      "Holidays, flights and Hajj & Umrah packages all in one place, and it's quick to update. Omar was patient with every change we asked for along the way.",
+  },
+  {
+    id: 9,
+    placeholder: true,
+    name: "AWISEE",
+    position: "Founder · placeholder",
+    img: "https://awisee.legxcysol.dev/favicon.ico",
+    review:
+      "We sell to SEO people, so the site had to be fast and sharp. It loads in a blink, reads with confidence, and finally looks like the agency we are.",
+  },
+].filter((r) => import.meta.env.DEV || !r.placeholder);
 
 export const myProjects = [
   {
