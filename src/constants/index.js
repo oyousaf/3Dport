@@ -48,7 +48,6 @@ export const clientReviews = [
   },
   {
     id: 2,
-    placeholder: true,
     name: "DMIA",
     position: "Founder · placeholder",
     img: "https://dmia.legxcysol.dev/favicon.svg",
@@ -57,7 +56,6 @@ export const clientReviews = [
   },
   {
     id: 3,
-    placeholder: true,
     name: "MTD Trade Books",
     position: "Director · placeholder",
     img: "https://mtd.legxcysol.dev/favicon.svg",
@@ -66,7 +64,6 @@ export const clientReviews = [
   },
   {
     id: 4,
-    placeholder: true,
     name: "ECAMS",
     position: "Owner · placeholder",
     img: "https://ecams.legxcysol.dev/icon.svg",
@@ -75,7 +72,6 @@ export const clientReviews = [
   },
   {
     id: 5,
-    placeholder: true,
     name: "huni",
     position: "Founder · placeholder",
     img: "https://huni.legxcysol.dev/favicon.svg",
@@ -84,7 +80,6 @@ export const clientReviews = [
   },
   {
     id: 6,
-    placeholder: true,
     name: "Kanestone",
     position: "Managing Director · placeholder",
     img: "https://kanestone.legxcysol.dev/icon.png",
@@ -93,7 +88,6 @@ export const clientReviews = [
   },
   {
     id: 7,
-    placeholder: true,
     name: "Ellipsis Earth",
     position: "Project Lead · placeholder",
     img: "https://ellipsis.legxcysol.dev/favicon.svg",
@@ -102,7 +96,6 @@ export const clientReviews = [
   },
   {
     id: 8,
-    placeholder: true,
     name: "Hecky Travel",
     position: "Owner · placeholder",
     img: "https://heckytravel.uk/favicon.ico",
@@ -111,7 +104,6 @@ export const clientReviews = [
   },
   {
     id: 9,
-    placeholder: true,
     name: "AWISEE",
     position: "Founder · placeholder",
     img: "https://awisee.legxcysol.dev/favicon.ico",
