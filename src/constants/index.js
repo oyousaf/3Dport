@@ -89,7 +89,7 @@ export const myProjects = [
   },
   {
     title: "ECAMS",
-    desc: "A redesign for an eco-friendly cleaning and maintenance company, replacing a Wix site with service and pricing pages, a quote and booking form, and light and dark themes.",
+    desc: "A website for an eco-friendly cleaning and maintenance company, with service and pricing pages, a quote and booking form, and light and dark themes.",
     subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://ecams.legxcysol.dev",
     favicon: "https://ecams.legxcysol.dev/icon.svg",
@@ -105,7 +105,7 @@ export const myProjects = [
   },
   {
     title: "huni",
-    desc: "A concept redesign for a hair and body care brand built around raw honey from Mayan beekeepers, with 3D product renders and a Pollinator Index powered by live open data.",
+    desc: "A website for a hair and body care brand built around raw honey from Mayan beekeepers, with 3D product renders and a Pollinator Index powered by live open data.",
     subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, Motion, and Leaflet.",
     href: "https://huni.legxcysol.dev",
     favicon: "https://huni.legxcysol.dev/favicon.svg",
@@ -120,7 +120,7 @@ export const myProjects = [
   },
   {
     title: "Kanestone",
-    desc: "A cinematic redesign for a British luxury automotive company supplying Rolls-Royce, Bentley, Aston Martin and Range Rover vehicles to businesses, with a scroll-driven film hero and an interactive collection.",
+    desc: "A cinematic website for a British luxury automotive company supplying Rolls-Royce, Bentley, Aston Martin and Range Rover vehicles to businesses, with a scroll-driven film hero and an interactive collection.",
     subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Motion, and Lenis.",
     href: "https://kanestone.legxcysol.dev",
     favicon: "https://kanestone.legxcysol.dev/icon.png",
