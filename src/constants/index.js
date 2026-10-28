@@ -39,7 +39,7 @@ export const clientReviews = [
   {
     id: 1,
     name: "DMIA",
-    position: "Founder · placeholder",
+    position: "Founder",
     img: "https://dmia.legxcysol.dev/favicon.svg",
     review:
       "Advisory is a hard thing to show on a screen. Omar turned our rail, road and bus work into a network map and a departures board, and suddenly people get what we do in seconds.",
@@ -47,7 +47,7 @@ export const clientReviews = [
   {
     id: 2,
     name: "MTD Trade Books",
-    position: "Director · placeholder",
+    position: "Director",
     img: "https://mtd.legxcysol.dev/favicon.svg",
     review:
       "Our clients are builders, not accountants. The new site explains Making Tax Digital in plain English and the enrolment form takes two minutes. Far fewer confused phone calls since we moved off Wix.",
@@ -55,7 +55,7 @@ export const clientReviews = [
   {
     id: 3,
     name: "ECAMS",
-    position: "Owner · placeholder",
+    position: "Owner",
     img: "https://ecams.legxcysol.dev/icon.svg",
     review:
       "Clear pricing, a quote form that actually gets filled in, and a look that matches our eco values. Customers regularly mention how easy it was to book.",
@@ -63,7 +63,7 @@ export const clientReviews = [
   {
     id: 4,
     name: "huni",
-    position: "Founder · placeholder",
+    position: "Founder",
     img: "https://huni.legxcysol.dev/favicon.svg",
     review:
       "Omar got the story behind our honey straight away. The product renders feel premium and the Pollinator Index gives people a reason to come back beyond the shop.",
@@ -71,7 +71,7 @@ export const clientReviews = [
   {
     id: 5,
     name: "Kanestone",
-    position: "Managing Director · placeholder",
+    position: "Managing Director",
     img: "https://kanestone.legxcysol.dev/icon.png",
     review:
       "Our cars deserve a proper stage and that is what we got. The film hero sets the tone instantly, and the collection is effortless to browse on a phone.",
@@ -79,7 +79,7 @@ export const clientReviews = [
   {
     id: 6,
     name: "Ellipsis Earth",
-    position: "Project Lead · placeholder",
+    position: "Project Lead",
     img: "https://ellipsis.legxcysol.dev/favicon.svg",
     review:
       "We had a lot of complex pollution data and needed councils and teachers to understand it. Omar made it visual and approachable without dumbing down the science.",
@@ -87,7 +87,7 @@ export const clientReviews = [
   {
     id: 7,
     name: "Hecky Travel",
-    position: "Owner · placeholder",
+    position: "Owner",
     img: "https://heckytravel.uk/favicon.ico",
     review:
       "Holidays, flights and Hajj & Umrah packages all in one place, and it's quick to update. Omar was patient with every change we asked for along the way.",
@@ -95,7 +95,7 @@ export const clientReviews = [
   {
     id: 8,
     name: "AWISEE",
-    position: "Founder · placeholder",
+    position: "Founder",
     img: "https://awisee.legxcysol.dev/favicon.ico",
     review:
       "We sell to SEO people, so the site had to be fast and sharp. It loads in a blink, reads with confidence, and finally looks like the agency we are.",
@@ -108,7 +108,7 @@ export const clientReviews = [
     review:
       "Working with Omar was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
   },
-].filter((r) => import.meta.env.DEV || !r.placeholder);
+].filter((r) => import.meta.env.DEV);
 
 export const myProjects = [
   {
