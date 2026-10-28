@@ -72,6 +72,22 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "DMIA",
+    desc: "A website for a London transport and infrastructure advisory firm, with a transit-map project explorer, a split-flap departure board of case studies, scroll-drawn track lines and light and dark themes.",
+    subdesc: "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
+    href: "https://dmia.legxcysol.dev",
+    favicon: "https://dmia.legxcysol.dev/favicon.svg",
+    accent: "#F0505F",
+    texture: "/textures/project/project22.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "Motion", path: "/assets/framer.svg" },
+      { id: 5, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "MTD Trade Books",
     desc: "A redesign for a bookkeeping firm serving builders, tradespeople and CIS subcontractors, replacing a Wix site with Making Tax Digital tools, a £20 enrolment form, plain-English guides, and light and dark themes.",
     subdesc: "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
