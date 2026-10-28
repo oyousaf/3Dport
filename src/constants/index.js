@@ -35,8 +35,6 @@ export const navLinks = [
   },
 ];
 
-// `placeholder: true` entries are filler copy awaiting real client quotes.
-// They render in `npm run dev` only and are left out of production builds.
 export const clientReviews = [
   {
     id: 1,
