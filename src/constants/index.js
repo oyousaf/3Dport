@@ -38,14 +38,6 @@ export const navLinks = [
 export const clientReviews = [
   {
     id: 1,
-    name: "Hamza Ahmed",
-    position: "CEO of Unlock Your Potential",
-    img: "assets/project-logo5.webp",
-    review:
-      "Working with Omar was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-  },
-  {
-    id: 2,
     name: "DMIA",
     position: "Founder · placeholder",
     img: "https://dmia.legxcysol.dev/favicon.svg",
@@ -53,7 +45,7 @@ export const clientReviews = [
       "Advisory is a hard thing to show on a screen. Omar turned our rail, road and bus work into a network map and a departures board, and suddenly people get what we do in seconds.",
   },
   {
-    id: 3,
+    id: 2,
     name: "MTD Trade Books",
     position: "Director · placeholder",
     img: "https://mtd.legxcysol.dev/favicon.svg",
@@ -61,7 +53,7 @@ export const clientReviews = [
       "Our clients are builders, not accountants. The new site explains Making Tax Digital in plain English and the enrolment form takes two minutes. Far fewer confused phone calls since we moved off Wix.",
   },
   {
-    id: 4,
+    id: 3,
     name: "ECAMS",
     position: "Owner · placeholder",
     img: "https://ecams.legxcysol.dev/icon.svg",
@@ -69,7 +61,7 @@ export const clientReviews = [
       "Clear pricing, a quote form that actually gets filled in, and a look that matches our eco values. Customers regularly mention how easy it was to book.",
   },
   {
-    id: 5,
+    id: 4,
     name: "huni",
     position: "Founder · placeholder",
     img: "https://huni.legxcysol.dev/favicon.svg",
@@ -77,7 +69,7 @@ export const clientReviews = [
       "Omar got the story behind our honey straight away. The product renders feel premium and the Pollinator Index gives people a reason to come back beyond the shop.",
   },
   {
-    id: 6,
+    id: 5,
     name: "Kanestone",
     position: "Managing Director · placeholder",
     img: "https://kanestone.legxcysol.dev/icon.png",
@@ -85,7 +77,7 @@ export const clientReviews = [
       "Our cars deserve a proper stage and that is what we got. The film hero sets the tone instantly, and the collection is effortless to browse on a phone.",
   },
   {
-    id: 7,
+    id: 6,
     name: "Ellipsis Earth",
     position: "Project Lead · placeholder",
     img: "https://ellipsis.legxcysol.dev/favicon.svg",
@@ -93,7 +85,7 @@ export const clientReviews = [
       "We had a lot of complex pollution data and needed councils and teachers to understand it. Omar made it visual and approachable without dumbing down the science.",
   },
   {
-    id: 8,
+    id: 7,
     name: "Hecky Travel",
     position: "Owner · placeholder",
     img: "https://heckytravel.uk/favicon.ico",
@@ -101,12 +93,20 @@ export const clientReviews = [
       "Holidays, flights and Hajj & Umrah packages all in one place, and it's quick to update. Omar was patient with every change we asked for along the way.",
   },
   {
-    id: 9,
+    id: 8,
     name: "AWISEE",
     position: "Founder · placeholder",
     img: "https://awisee.legxcysol.dev/favicon.ico",
     review:
       "We sell to SEO people, so the site had to be fast and sharp. It loads in a blink, reads with confidence, and finally looks like the agency we are.",
+  },
+  {
+    id: 9,
+    name: "Hamza Ahmed",
+    position: "CEO of Unlock Your Potential",
+    img: "assets/project-logo5.webp",
+    review:
+      "Working with Omar was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
   },
 ].filter((r) => import.meta.env.DEV || !r.placeholder);
 
@@ -114,7 +114,8 @@ export const myProjects = [
   {
     title: "DMIA",
     desc: "A website for a London transport and infrastructure advisory firm, with a transit-map project explorer, a split-flap departure board of case studies, scroll-drawn track lines and light and dark themes.",
-    subdesc: "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
+    subdesc:
+      "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://dmia.legxcysol.dev",
     favicon: "https://dmia.legxcysol.dev/favicon.svg",
     accent: "#F0505F",
@@ -130,7 +131,8 @@ export const myProjects = [
   {
     title: "MTD Trade Books",
     desc: "A redesign for a bookkeeping firm serving builders, tradespeople and CIS subcontractors, replacing a Wix site with Making Tax Digital tools, a £20 enrolment form, plain-English guides, and light and dark themes.",
-    subdesc: "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
+    subdesc:
+      "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://mtd.legxcysol.dev",
     favicon: "https://mtd.legxcysol.dev/favicon.svg",
     accent: "#ff5b1f",
@@ -146,7 +148,8 @@ export const myProjects = [
   {
     title: "ECAMS",
     desc: "A website for an eco-friendly cleaning and maintenance company, with service and pricing pages, a quote and booking form, and light and dark themes.",
-    subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
+    subdesc:
+      "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://ecams.legxcysol.dev",
     favicon: "https://ecams.legxcysol.dev/icon.svg",
     accent: "#c8f169",
@@ -162,7 +165,8 @@ export const myProjects = [
   {
     title: "huni",
     desc: "A website for a hair and body care brand built around raw honey from Mayan beekeepers, with 3D product renders and a Pollinator Index powered by live open data.",
-    subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, Motion, and Leaflet.",
+    subdesc:
+      "Built with Astro 7, TypeScript, Tailwind CSS 4, Motion, and Leaflet.",
     href: "https://huni.legxcysol.dev",
     favicon: "https://huni.legxcysol.dev/favicon.svg",
     accent: "#e0a526",
@@ -177,7 +181,8 @@ export const myProjects = [
   {
     title: "Kanestone",
     desc: "A cinematic website for a British luxury automotive company supplying Rolls-Royce, Bentley, Aston Martin and Range Rover vehicles to businesses, with a scroll-driven film hero and an interactive collection.",
-    subdesc: "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Motion, and Lenis.",
+    subdesc:
+      "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Motion, and Lenis.",
     href: "https://kanestone.legxcysol.dev",
     favicon: "https://kanestone.legxcysol.dev/icon.png",
     accent: "#d9cbad",
@@ -193,7 +198,8 @@ export const myProjects = [
   {
     title: "Ellipsis Earth",
     desc: "An environmental data platform mapping pollution with machine learning, turning roadside surveys into insight for councils, classrooms and changemakers.",
-    subdesc: "Built with Astro 7, React 19, Tailwind CSS 4, Motion, and TypeScript.",
+    subdesc:
+      "Built with Astro 7, React 19, Tailwind CSS 4, Motion, and TypeScript.",
     href: "https://ellipsis.legxcysol.dev",
     favicon: "https://ellipsis.legxcysol.dev/favicon.svg",
     accent: "#e2b714",
