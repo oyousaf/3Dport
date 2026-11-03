@@ -112,6 +112,21 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Excel Computer Solutions",
+    desc: "A website for a computer repair shop in Ossett, replacing a Wix template with a repair-bench design: a live open-now job ticket, a parts-tray services grid, review receipts, a spam-protected job-sheet contact form, a subtle falling-code backdrop, and light and dark themes with a toggle.",
+    subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
+    href: "https://excelcomp.legxcysol.dev",
+    favicon: "https://excelcomp.legxcysol.dev/favicon.svg",
+    accent: "#53E800",
+    texture: "/textures/project/project24.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 3, name: "Motion", path: "/assets/framer.svg" },
+      { id: 4, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "A Picture of You",
     desc: "A website for a wedding, portrait and newborn photographer in Ossett, replacing a Zenfolio template with galleries and a lightbox, clear pricing, a studio services page, a no-JavaScript enquiry form, and light and dark themes.",
     subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
