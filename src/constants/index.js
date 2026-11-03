@@ -112,6 +112,21 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "A Picture of You",
+    desc: "A website for a wedding, portrait and newborn photographer in Ossett, replacing a Zenfolio template with galleries and a lightbox, clear pricing, a studio services page, a no-JavaScript enquiry form, and light and dark themes.",
+    subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
+    href: "https://apou.legxcysol.dev",
+    favicon: "https://apou.legxcysol.dev/favicon.svg",
+    accent: "#D9A7CB",
+    texture: "/textures/project/project23.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 3, name: "Motion", path: "/assets/framer.svg" },
+      { id: 4, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "DMIA",
     desc: "A website for a London transport and infrastructure advisory firm, with a transit-map project explorer, a split-flap departure board of case studies, scroll-drawn track lines and light and dark themes.",
     subdesc:
