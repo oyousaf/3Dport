@@ -112,6 +112,20 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Maslin Jones",
+    desc: "A website for a property and grounds maintenance business in Milton Keynes, replacing a Wix template: a page for each of its six services, mown-lawn stripes that drift on scroll, a quote form built to work without JavaScript, and automatic light and dark themes.",
+    subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
+    href: "https://maslinjones.legxcysol.dev",
+    favicon: "https://maslinjones.legxcysol.dev/favicon.svg",
+    accent: "#DCEB7A",
+    texture: "/textures/project/project25.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 3, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Excel Computer Solutions",
     desc: "A website for a computer repair shop in Ossett, replacing a Wix template with a repair-bench design: a live open-now job ticket, a parts-tray services grid, review receipts, a spam-protected job-sheet contact form, a subtle falling-code backdrop, and light and dark themes with a toggle.",
     subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
