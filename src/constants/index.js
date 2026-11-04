@@ -112,6 +112,20 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Elcam",
+    desc: "A website design for a building and maintenance company in Milton Keynes: an interactive blueprint of a house and office block where each room opens a service, a project timeline, a 52-week maintenance chart, and device, light and dark themes.",
+    subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
+    href: "https://elcam.legxcysol.dev",
+    favicon: "https://elcam.legxcysol.dev/favicon.svg",
+    accent: "#E6FF2B",
+    texture: "/textures/project/project27.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 3, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "PropertyRama",
     desc: "A website design for a property repair and maintenance company in Milton Keynes: a blueprint-style house cutaway showing every trade under one roof, a call and quote bar on mobile, an accessible job-sheet quote form, and automatic light and dark themes.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
