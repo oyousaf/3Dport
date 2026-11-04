@@ -112,6 +112,20 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "PropertyRama",
+    desc: "A website design for a property repair and maintenance company in Milton Keynes: a blueprint-style house cutaway showing every trade under one roof, a call and quote bar on mobile, an accessible job-sheet quote form, and automatic light and dark themes.",
+    subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
+    href: "https://propertyrama.legxcysol.dev",
+    favicon: "https://propertyrama.legxcysol.dev/favicon.svg",
+    accent: "#F0963A",
+    texture: "/textures/project/project26.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 3, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Maslin Jones",
     desc: "A website for a property and grounds maintenance business in Milton Keynes, replacing a Wix template: a page for each of its six services, mown-lawn stripes that drift on scroll, a quote form built to work without JavaScript, and automatic light and dark themes.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
