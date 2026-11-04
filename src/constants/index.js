@@ -113,7 +113,7 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "Elcam",
-    desc: "A website design for a building and maintenance company in Milton Keynes: an interactive blueprint of a house and office block where each room opens a service, a project timeline, a 52-week maintenance chart, and device, light and dark themes.",
+    desc: "A website design for a building and maintenance company: an interactive blueprint of a house and office block where each room opens a service, a project timeline, a 52-week maintenance chart, and device, light and dark themes.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
     href: "https://elcam.legxcysol.dev",
     favicon: "https://elcam.legxcysol.dev/favicon.svg",
@@ -127,7 +127,7 @@ export const myProjects = [
   },
   {
     title: "PropertyRama",
-    desc: "A website design for a property repair and maintenance company in Milton Keynes: a blueprint-style house cutaway showing every trade under one roof, a call and quote bar on mobile, an accessible job-sheet quote form, and automatic light and dark themes.",
+    desc: "A website design for a property repair and maintenance company: a blueprint-style house cutaway showing every trade under one roof, a call and quote bar on mobile, an accessible job-sheet quote form, and automatic light and dark themes.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
     href: "https://propertyrama.legxcysol.dev",
     favicon: "https://propertyrama.legxcysol.dev/favicon.svg",
@@ -141,7 +141,7 @@ export const myProjects = [
   },
   {
     title: "Maslin Jones",
-    desc: "A website for a property and grounds maintenance business in Milton Keynes, replacing a Wix template: a page for each of its six services, mown-lawn stripes that drift on scroll, a quote form built to work without JavaScript, and automatic light and dark themes.",
+    desc: "A website for a property and grounds maintenance business, replacing a Wix template: a page for each of its six services, mown-lawn stripes that drift on scroll, a quote form built to work without JavaScript, and automatic light and dark themes.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
     href: "https://maslinjones.legxcysol.dev",
     favicon: "https://maslinjones.legxcysol.dev/favicon.svg",
@@ -155,7 +155,7 @@ export const myProjects = [
   },
   {
     title: "Excel Computer Solutions",
-    desc: "A website for a computer repair shop in Ossett, replacing a Wix template with a repair-bench design: a live open-now job ticket, a parts-tray services grid, review receipts, a spam-protected job-sheet contact form, a subtle falling-code backdrop, and light and dark themes with a toggle.",
+    desc: "A website for a computer repair shop, replacing a Wix template with a repair-bench design: a live open-now job ticket, a parts-tray services grid, review receipts, a spam-protected job-sheet contact form, a subtle falling-code backdrop, and light and dark themes with a toggle.",
     subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://excelcomp.legxcysol.dev",
     favicon: "https://excelcomp.legxcysol.dev/favicon.svg",
@@ -170,7 +170,7 @@ export const myProjects = [
   },
   {
     title: "A Picture of You",
-    desc: "A website for a wedding, portrait and newborn photographer in Ossett, replacing a Zenfolio template with galleries and a lightbox, clear pricing, a studio services page, a no-JavaScript enquiry form, and light and dark themes.",
+    desc: "A website for a wedding, portrait and newborn photographer, replacing a Zenfolio template with galleries and a lightbox, clear pricing, a studio services page, a no-JavaScript enquiry form, and light and dark themes.",
     subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://apou.legxcysol.dev",
     favicon: "https://apou.legxcysol.dev/favicon.svg",
@@ -185,7 +185,7 @@ export const myProjects = [
   },
   {
     title: "DMIA",
-    desc: "A website for a London transport and infrastructure advisory firm, with a transit-map project explorer, a split-flap departure board of case studies, scroll-drawn track lines and light and dark themes.",
+    desc: "A website for a transport and infrastructure advisory firm, with a transit-map project explorer, a split-flap departure board of case studies, scroll-drawn track lines and light and dark themes.",
     subdesc:
       "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://dmia.legxcysol.dev",
