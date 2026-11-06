@@ -45,14 +45,6 @@ export const clientReviews = [
       "Advisory is a hard thing to show on a screen. Omar turned our rail, road and bus work into a network map and a departures board, and suddenly people get what we do in seconds.",
   },
   {
-    id: 2,
-    name: "MTD Trade Books",
-    position: "Director",
-    img: "https://mtd.legxcysol.dev/favicon.svg",
-    review:
-      "Our clients are builders, not accountants. The new site explains Making Tax Digital in plain English and the enrolment form takes two minutes. Far fewer confused phone calls since we moved off Wix.",
-  },
-  {
     id: 3,
     name: "ECAMS",
     position: "Owner",
@@ -113,7 +105,7 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "Elcam",
-    desc: "A website design for a building and maintenance company: an interactive blueprint of a house and office block where each room opens a service, a project timeline, a 52-week maintenance chart, and device, light and dark themes.",
+    desc: "A website design for a building and maintenance company: an interactive blueprint of a house and office block where each room opens a service, a project timeline and a 52-week maintenance chart.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
     href: "https://elcam.legxcysol.dev",
     favicon: "https://elcam.legxcysol.dev/favicon.svg",
@@ -126,22 +118,8 @@ export const myProjects = [
     ],
   },
   {
-    title: "PropertyRama",
-    desc: "A website design for a property repair and maintenance company: a blueprint-style house cutaway showing every trade under one roof, a call and quote bar on mobile, an accessible job-sheet quote form, and automatic light and dark themes.",
-    subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
-    href: "https://propertyrama.legxcysol.dev",
-    favicon: "https://propertyrama.legxcysol.dev/favicon.svg",
-    accent: "#F0963A",
-    texture: "/textures/project/project26.webp",
-    tags: [
-      { id: 1, name: "Astro", path: "/assets/astro.svg" },
-      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
-      { id: 3, name: "TypeScript", path: "/assets/typescript.svg" },
-    ],
-  },
-  {
     title: "Maslin Jones",
-    desc: "A website for a property and grounds maintenance business, replacing a Wix template: a page for each of its six services, mown-lawn stripes that drift on scroll, a quote form built to work without JavaScript, and automatic light and dark themes.",
+    desc: "A website for a property and grounds maintenance business: a page for each of its six services, mown-lawn stripes that drift on scroll, and a quote form built to work without JavaScript.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
     href: "https://maslinjones.legxcysol.dev",
     favicon: "https://maslinjones.legxcysol.dev/favicon.svg",
@@ -155,7 +133,7 @@ export const myProjects = [
   },
   {
     title: "Excel Computer Solutions",
-    desc: "A website for a computer repair shop, replacing a Wix template with a repair-bench design: a live open-now job ticket, a parts-tray services grid, review receipts, a spam-protected job-sheet contact form, a subtle falling-code backdrop, and light and dark themes with a toggle.",
+    desc: "A website for a computer repair shop with a repair-bench design: a live open-now job ticket, a parts-tray services grid, review receipts, a spam-protected job-sheet contact form and a subtle falling-code backdrop.",
     subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://excelcomp.legxcysol.dev",
     favicon: "https://excelcomp.legxcysol.dev/favicon.svg",
@@ -169,23 +147,8 @@ export const myProjects = [
     ],
   },
   {
-    title: "A Picture of You",
-    desc: "A website for a wedding, portrait and newborn photographer, replacing a Zenfolio template with galleries and a lightbox, clear pricing, a studio services page, a no-JavaScript enquiry form, and light and dark themes.",
-    subdesc: "Built with Astro 7, TypeScript, Tailwind CSS 4, and Motion.",
-    href: "https://apou.legxcysol.dev",
-    favicon: "https://apou.legxcysol.dev/favicon.svg",
-    accent: "#D9A7CB",
-    texture: "/textures/project/project23.webp",
-    tags: [
-      { id: 1, name: "Astro", path: "/assets/astro.svg" },
-      { id: 2, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
-      { id: 3, name: "Motion", path: "/assets/framer.svg" },
-      { id: 4, name: "TypeScript", path: "/assets/typescript.svg" },
-    ],
-  },
-  {
     title: "DMIA",
-    desc: "A website for a transport and infrastructure advisory firm, with a transit-map project explorer, a split-flap departure board of case studies, scroll-drawn track lines and light and dark themes.",
+    desc: "A website for a transport and infrastructure advisory firm, with a transit-map project explorer, a split-flap departure board of case studies and scroll-drawn track lines.",
     subdesc:
       "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://dmia.legxcysol.dev",
@@ -201,25 +164,8 @@ export const myProjects = [
     ],
   },
   {
-    title: "MTD Trade Books",
-    desc: "A redesign for a bookkeeping firm serving builders, tradespeople and CIS subcontractors, replacing a Wix site with Making Tax Digital tools, a £20 enrolment form, plain-English guides, and light and dark themes.",
-    subdesc:
-      "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
-    href: "https://mtd.legxcysol.dev",
-    favicon: "https://mtd.legxcysol.dev/favicon.svg",
-    accent: "#ff5b1f",
-    texture: "/textures/project/project21.webp",
-    tags: [
-      { id: 1, name: "Astro", path: "/assets/astro.svg" },
-      { id: 2, name: "React.js", path: "/assets/react.svg" },
-      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
-      { id: 4, name: "Motion", path: "/assets/framer.svg" },
-      { id: 5, name: "TypeScript", path: "/assets/typescript.svg" },
-    ],
-  },
-  {
     title: "ECAMS",
-    desc: "A website for an eco-friendly cleaning and maintenance company, with service and pricing pages, a quote and booking form, and light and dark themes.",
+    desc: "A website for an eco-friendly cleaning and maintenance company, with service and pricing pages and a quote and booking form.",
     subdesc:
       "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://ecams.legxcysol.dev",
