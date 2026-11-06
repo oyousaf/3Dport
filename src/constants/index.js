@@ -38,6 +38,14 @@ export const navLinks = [
 export const clientReviews = [
   {
     id: 1,
+    name: "Elcam",
+    position: "Director",
+    img: "https://elcam.legxcysol.dev/favicon.svg",
+    review:
+      "Omar demonstrated an exceptional understanding of our business and translated our requirements into a sophisticated, highly functional website. Their meticulous attention to detail, thoughtful approach to user experience and ability to present our extensive range of services with clarity and professionalism exceeded our expectations. The result is a distinctive digital presence that reflects our company's values, reinforces our credibility and provides a strong foundation for future growth.”",
+  },
+  {
+    id: 2,
     name: "DMIA",
     position: "Founder",
     img: "https://dmia.legxcysol.dev/favicon.svg",
