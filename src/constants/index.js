@@ -112,6 +112,23 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "Daniel & Son",
+    desc: "A website design for a family-run landscaping company: a hero laid out like paving, before-and-after sliders on every project, a gallery filtered by material, a live cost estimator and a three-way theme toggle.",
+    subdesc:
+      "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
+    href: "https://dandsons.legxcysol.dev",
+    favicon: "https://dandsons.legxcysol.dev/favicon-32x32.png",
+    accent: "#B8E0B9",
+    texture: "/textures/project/project28.webp",
+    tags: [
+      { id: 1, name: "Astro", path: "/assets/astro.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "Motion", path: "/assets/framer.svg" },
+      { id: 5, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Elcam",
     desc: "A website design for a building and maintenance company: an interactive blueprint of a house and office block where each room opens a service, a project timeline and a 52-week maintenance chart.",
     subdesc: "Built with Astro 7, TypeScript, and Tailwind CSS 4.",
