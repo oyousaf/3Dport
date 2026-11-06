@@ -42,7 +42,7 @@ export const clientReviews = [
     position: "Director",
     img: "https://elcam.legxcysol.dev/favicon.svg",
     review:
-      "Omar demonstrated an exceptional understanding of our business and translated our requirements into a sophisticated, highly functional website. Their meticulous attention to detail, thoughtful approach to user experience and ability to present our extensive range of services with clarity and professionalism exceeded our expectations. The result is a distinctive digital presence that reflects our company's values, reinforces our credibility and provides a strong foundation for future growth.”",
+      "Omar understood our business from the outset, transforming our services into a refined, intuitive website. His attention to detail has given us a digital presence we are proud of.",
   },
   {
     id: 2,
