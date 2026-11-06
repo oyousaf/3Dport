@@ -15,7 +15,7 @@ A bold, immersive portfolio built with React, Three.js, and Vite, showcasing dyn
 ### 🖼 Frontend
 - **React** + **Vite** – high-performance development
 - **Tailwind CSS** – utility-first styling
-- **Framer Motion** + **GSAP** – animation and scroll control
+- **Motion** + **GSAP** – animation and scroll control
 
 ### 🎮 3D & Canvas
 - **Three.js** via `@react-three/fiber` and `@react-three/drei`
