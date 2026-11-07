@@ -104,9 +104,7 @@ const Projects = () => {
             >
               {currentProject.title}
             </h3>
-            <p className="empty:hidden" ref={(el) => (textRef.current[1] = el)}>
-              {currentProject.desc}
-            </p>
+            <p ref={(el) => (textRef.current[1] = el)}>{currentProject.desc}</p>
             <p ref={(el) => (textRef.current[2] = el)}>
               {currentProject.subdesc}
             </p>

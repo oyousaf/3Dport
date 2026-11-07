@@ -113,6 +113,7 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "The Beauty Spot",
+    desc: "A concept website design for a beauty salon: a top-to-toe treatment menu, a showcase booking system and a matching salon diary.",
     subdesc:
       "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://tbs.legxcysol.dev",
@@ -129,7 +130,7 @@ export const myProjects = [
   },
   {
     title: "Daniel & Son",
-    desc: "A website design for a family-run landscaping company: a hero laid out like paving, before-and-after sliders on every project, a gallery filtered by material, a live cost estimator and a three-way theme toggle.",
+    desc: "A website design for a family-run landscaping company: a hero laid out like paving, before-and-after sliders on every project, a gallery filtered by material and a live cost estimator.",
     subdesc:
       "Built with Astro 7, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://dandsons.legxcysol.dev",
