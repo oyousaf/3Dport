@@ -5,6 +5,7 @@ import About from "./sections/About";
 import Clients from "./sections/Clients.jsx";
 import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
+import ScrollTop from "./components/ScrollTop.jsx";
 import { Analytics } from "@vercel/analytics/react";
 
 const Projects = lazy(() => import("./sections/Projects"));
@@ -18,7 +19,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <main className="max-w-7xl mx-auto relative">
+      <main id="main" tabIndex={-1} className="max-w-7xl mx-auto relative outline-none">
         <Hero />
         <About />
         <Suspense fallback={<SectionFallback />}>
@@ -31,6 +32,7 @@ const App = () => {
         <Contact />
         <Footer />
       </main>
+      <ScrollTop />
       <Analytics />
     </>
   );
