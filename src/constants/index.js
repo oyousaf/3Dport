@@ -113,7 +113,7 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: "The Beauty Spot",
-    desc: "A concept website design for a beauty salon: a top-to-toe treatment menu, a showcase booking system and a matching salon diary.",
+    desc: "A website design for a beauty salon: a top-to-toe treatment menu, a showcase booking system and a matching salon diary.",
     subdesc:
       "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
     href: "https://tbs.legxcysol.dev",
