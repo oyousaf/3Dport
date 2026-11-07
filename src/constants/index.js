@@ -108,7 +108,7 @@ export const clientReviews = [
     review:
       "Working with Omar was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
   },
-].filter((r) => import.meta.env);
+]
 
 export const myProjects = [
   {
