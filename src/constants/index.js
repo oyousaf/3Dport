@@ -112,6 +112,22 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: "The Beauty Spot",
+    subdesc:
+      "Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Motion.",
+    href: "https://tbs.legxcysol.dev",
+    favicon: "https://tbs.legxcysol.dev/icon.svg",
+    accent: "#E3C49A",
+    texture: "/textures/project/project29.webp",
+    tags: [
+      { id: 1, name: "Next", path: "/assets/next.svg" },
+      { id: 2, name: "React.js", path: "/assets/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/tailwindcss.svg" },
+      { id: 4, name: "Motion", path: "/assets/motion.svg" },
+      { id: 5, name: "TypeScript", path: "/assets/typescript.svg" },
+    ],
+  },
+  {
     title: "Daniel & Son",
     desc: "A website design for a family-run landscaping company: a hero laid out like paving, before-and-after sliders on every project, a gallery filtered by material, a live cost estimator and a three-way theme toggle.",
     subdesc:
