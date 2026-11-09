@@ -5,7 +5,7 @@ import HeroField from "../components/HeroField.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ContactForm from "../components/ContactForm.astro";
 import portrait from "../assets/omar.webp";
-import { FEATURED_COUNT, experiences, projects, reviews, site } from "../constants";
+import { FEATURED_COUNT, education, experiences, projects, reviews, site } from "../constants";
 
 const featured = projects.slice(0, FEATURED_COUNT);
 const archive = projects.slice(FEATURED_COUNT);
@@ -109,8 +109,8 @@ const jsonLd = [
       </div>
       <dl class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-ink/10 pt-6">
         <div>
-          <dt class="font-mono text-xs text-muted">Experience</dt>
-          <dd class="font-display text-2xl font-semibold sm:text-3xl">10+ yrs</dd>
+          <dt class="font-mono text-xs text-muted">Graduated</dt>
+          <dd class="font-display text-2xl font-semibold sm:text-3xl">2016</dd>
         </div>
         <div>
           <dt class="font-mono text-xs text-muted">Shipped</dt>
@@ -177,14 +177,14 @@ const jsonLd = [
 
   <!-- 03 About -->
   <section id="about" aria-labelledby="about-heading" class="border-y border-ink/10 bg-paper-2">
-    <div class="wrap grid gap-12 py-20 sm:py-28 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-      <figure class="reveal mx-auto w-full max-w-sm lg:sticky lg:top-24 lg:max-w-none lg:self-start">
+    <div class="wrap grid gap-12 py-20 sm:py-28 lg:grid-cols-[minmax(0,21rem)_minmax(0,1fr)] lg:gap-20 xl:gap-24">
+      <figure class="reveal mx-auto w-full max-w-xs sm:max-w-sm lg:sticky lg:top-24 lg:mx-0 lg:max-w-none lg:self-start">
         <div class="overflow-hidden rounded-t-full rounded-b-4xl border border-ink/10 bg-paper shadow-[0_30px_80px_-40px] shadow-ink/40">
           <Picture
             src={portrait}
             alt="Omar in a graduation cap and gown with a gold-lined hood"
             widths={[320, 480, 640, 960]}
-            sizes="(min-width: 1024px) 34vw, (min-width: 640px) 24rem, 90vw"
+            sizes="(min-width: 1024px) 21rem, (min-width: 640px) 24rem, 20rem"
             formats={["avif"]}
             fallbackFormat="webp"
             class="aspect-4/5 w-full object-cover object-[50%_30%]"
@@ -196,12 +196,12 @@ const jsonLd = [
       <div>
         <p class="eyebrow">02 — About</p>
         <h2 id="about-heading" class="display-lg mt-6 font-semibold">
-          A decade of building for the web, one detail at a time.
+          Building for the web, one detail at a time.
         </h2>
         <div class="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-muted">
           <p>
-            I&rsquo;m Omar, a frontend developer with over ten years&rsquo; experience turning ideas into
-            fast, accessible websites. I care about the things people feel but rarely notice: how a page
+            I&rsquo;m Omar, a frontend developer and web development graduate who turns ideas into fast,
+            accessible websites. I care about the things people feel but rarely notice: how a page
             loads, how it reads on a phone and how it works with a keyboard.
           </p>
           <p>
@@ -224,7 +224,7 @@ const jsonLd = [
   <!-- 04 Experience -->
   <section id="experience" aria-labelledby="experience-heading" class="wrap py-20 sm:py-28">
     <p class="eyebrow">03 — Experience</p>
-    <h2 id="experience-heading" class="display-lg mt-6 max-w-3xl font-semibold">Where I&rsquo;ve been.</h2>
+    <h2 id="experience-heading" class="display-lg mt-6 max-w-3xl font-semibold">How I got here.</h2>
     <ol class="mt-14 grid gap-px overflow-hidden rounded-3xl border border-ink/10 bg-ink/10">
       {
         experiences.map((item) => (
@@ -239,6 +239,10 @@ const jsonLd = [
         ))
       }
     </ol>
+    <p class="mt-6 flex flex-wrap items-center gap-3 text-muted">
+      <span class="chip">Education</span>
+      <span>{education.name}, {education.year}</span>
+    </p>
   </section>
 
   <!-- 05 Kind words -->

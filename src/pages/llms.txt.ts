@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { experiences, projects, site } from "../constants";
+import { education, experiences, projects, site } from "../constants";
 
 // A plain-text summary for AI answer engines (llmstxt.org convention).
 export const GET: APIRoute = () => {
@@ -16,6 +16,7 @@ export const GET: APIRoute = () => {
     "## Experience",
     "",
     ...experiences.map((e) => `- ${e.role}, ${e.name} (${e.period})`),
+    `- ${education.name} (${education.year})`,
     "",
     "## Projects",
     "",

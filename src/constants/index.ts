@@ -39,7 +39,7 @@ export const site = {
   github: "https://github.com/oyousaf",
   linkedin: "https://linkedin.com/in/oyousaf",
   description:
-    "Omar (oyousaf) is a frontend web developer with over a decade's experience building fast, accessible websites and web apps with React, Next.js, Astro, TypeScript and Tailwind CSS.",
+    "Omar (oyousaf) is a frontend web developer and web development graduate building fast, accessible websites and web apps with React, Next.js, Astro, TypeScript and Tailwind CSS.",
 };
 
 export const navLinks = [
@@ -335,26 +335,16 @@ export const reviews: Review[] = [
 export const experiences: Experience[] = [
   {
     name: "Legxcy Solutions",
-    role: "Web Developer",
-    period: "2024 - Present",
-    summary: "I'm currently working as a freelance developer, specialising in modern frontend development with tools like React, Next.js, Tailwind CSS, and Motion to craft responsive, scalable, and visually engaging SPAs. Lately, I've been expanding into full-stack development, integrating powerful backends using PostgreSQL, Supabase, Appwrite, Prisma, Express, and Node.js — all deployed seamlessly with Vercel. This evolution allows me to build complete, performant apps with a consistent developer experience end-to-end.",
+    role: "Founder & developer",
+    period: "2024 – Present",
+    summary: "My own web studio. I design and build websites and web apps end to end, from first sketch to launch and beyond, mostly with Astro, Next.js, React, TypeScript, Tailwind CSS and Motion, plus Supabase, PostgreSQL and Node when a project needs a backend.",
   },
   {
-    name: "Zen Internet",
-    role: "Technical Support Advisor",
-    period: "2024",
-    summary: "Maintained a customer-focused approach, effectively communicating technical info and resolving issues with empathy. Managed tasks independently, meeting deadlines, embracing new technologies, and improving efficiency. Consistently upheld high service standards in fast-paced environments.",
-  },
-  {
-    name: "Professional Development",
-    role: "SPA Ninja",
-    period: "2022 - Present",
-    summary: "I've always had a passion for coding and knew I wanted to be a developer—whether frontend, backend, or even mobile. After working on passion projects, I'm now diving back into development through Codecademy's Full Stack Engineer course, expanding my skills in what I love.",
-  },
-  {
-    name: "Utility Warehouse",
-    role: "Technical Support Advisor",
-    period: "2023",
-    summary: "Provided exceptional customer service via phone, email, and chat by resolving issues, troubleshooting technical problems, and escalating complex cases. Collaborated with teams to enhance services, maintained detailed records, and stayed updated on industry trends, earning positive feedback.",
+    name: "Client projects",
+    role: "Freelance frontend developer",
+    period: "2021 – 2024",
+    summary: "Websites and web apps for small businesses and individuals, from online shops and booking flows to dashboards, built and shipped end to end with React, TypeScript and Tailwind CSS.",
   },
 ];
+
+export const education = { name: "Web Development degree", year: "2016" };
