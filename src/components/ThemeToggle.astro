@@ -1,42 +1,84 @@
+<!-- Cycles System → Light → Dark. "System" follows the device setting live. -->
 <button
   type="button"
   data-theme-toggle
-  class="grid size-11 place-items-center rounded-full border border-ink/15 text-ink transition-colors hover:bg-ink hover:text-paper"
-  aria-label="Switch theme"
+  class="theme-toggle grid size-11 place-items-center rounded-full border border-ink/15 text-ink transition-colors hover:bg-ink hover:text-paper"
+  aria-label="Theme: system"
 >
-  <svg class="hidden dark:block" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+  <svg class="icon icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+    <path d="M8 20h8M12 16v4"></path>
+  </svg>
+  <svg class="icon icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
     <circle cx="12" cy="12" r="4"></circle>
     <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
   </svg>
-  <svg class="dark:hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <svg class="icon icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path>
   </svg>
 </button>
 
-<script>
-  const root = document.documentElement;
-  const label = (btn: Element) =>
-    btn.setAttribute(
-      "aria-label",
-      root.dataset.theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
-    );
+<style>
+  .icon {
+    display: none;
+  }
+  :global(html:not([data-pref="light"]):not([data-pref="dark"])) .icon-system,
+  :global(html[data-pref="light"]) .icon-light,
+  :global(html[data-pref="dark"]) .icon-dark {
+    display: block;
+  }
+</style>
 
-  document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
-    label(btn);
-    btn.addEventListener("click", () => {
-      const next = root.dataset.theme === "dark" ? "light" : "dark";
-      const apply = () => {
-        root.dataset.theme = next;
-        try {
-          localStorage.setItem("theme", next);
-        } catch {
-          /* storage blocked */
-        }
-        document.querySelectorAll("[data-theme-toggle]").forEach(label);
-      };
-      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (document.startViewTransition && !reduce) document.startViewTransition(apply);
-      else apply();
-    });
+<script>
+  type Pref = "system" | "light" | "dark";
+  const root = document.documentElement;
+  const media = matchMedia("(prefers-color-scheme: dark)");
+  const order: Pref[] = ["system", "light", "dark"];
+  const names: Record<Pref, string> = { system: "system", light: "light", dark: "dark" };
+
+  const current = (): Pref => {
+    const p = root.dataset.pref;
+    return p === "light" || p === "dark" ? p : "system";
+  };
+
+  const resolve = (pref: Pref) =>
+    pref === "system" ? (media.matches ? "dark" : "light") : pref;
+
+  const label = () => {
+    const pref = current();
+    const next = order[(order.indexOf(pref) + 1) % order.length];
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) =>
+      btn.setAttribute("aria-label", `Theme: ${names[pref]}. Switch to ${names[next]}`),
+    );
+  };
+
+  const set = (pref: Pref) => {
+    const apply = () => {
+      root.dataset.pref = pref;
+      root.dataset.theme = resolve(pref);
+      try {
+        if (pref === "system") localStorage.removeItem("theme");
+        else localStorage.setItem("theme", pref);
+      } catch {
+        /* storage blocked */
+      }
+      label();
+    };
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (document.startViewTransition && !reduce && resolve(pref) !== root.dataset.theme) {
+      document.startViewTransition(apply);
+    } else apply();
+  };
+
+  // Follow the device while on "system".
+  media.addEventListener("change", () => {
+    if (current() === "system") root.dataset.theme = resolve("system");
   });
+
+  label();
+  document.querySelectorAll("[data-theme-toggle]").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      set(order[(order.indexOf(current()) + 1) % order.length]);
+    }),
+  );
 </script>

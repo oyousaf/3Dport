@@ -38,18 +38,42 @@
   const FRAG = `precision highp float;
 uniform vec2 uRes;uniform float uTime;uniform vec2 uPtr;
 uniform vec3 uFlesh;uniform vec3 uCream;uniform vec3 uRind;
+vec3 c0;vec3 c1;vec3 c2;vec3 c3;vec3 c4;
 float smin(float a,float b,float k){float h=clamp(.5+.5*(b-a)/k,0.,1.);return mix(b,a,h)-k*h*(1.-h);}
 float map(vec3 p){
-  float t=uTime*.32;
-  float d=length(p-vec3(sin(t)*.42,cos(t*1.3)*.3,sin(t*.7)*.25))-.68;
-  d=smin(d,length(p-vec3(cos(t*.8)*.78,sin(t*1.1)*.52,cos(t*.5)*.35))-.44,.42);
-  d=smin(d,length(p-vec3(sin(t*1.4+2.)*.55,sin(t*.6+1.)*.78,.15))-.36,.42);
-  d=smin(d,length(p-vec3(cos(t*.9+4.)*.8,cos(t*1.2+3.)*.5,-.2))-.3,.38);
-  d=smin(d,length(p-vec3(uPtr*.95,.45))-.24,.5);
+  float d=length(p-c0)-.68;
+  d=smin(d,length(p-c1)-.44,.42);
+  d=smin(d,length(p-c2)-.36,.42);
+  d=smin(d,length(p-c3)-.3,.38);
+  d=smin(d,length(p-c4)-.24,.5);
   return d;
+}
+vec3 hash3(vec3 p){return fract(sin(vec3(dot(p,vec3(127.1,311.7,74.7)),dot(p,vec3(269.5,183.3,246.1)),dot(p,vec3(113.5,271.9,124.6))))*43758.5453);}
+// Sparse seeds pinned to whichever blob the point belongs to, so they ride
+// along with it. Returns 0..1 coverage.
+float seeds(vec3 p){
+  vec3 c=c0;float k=0.;float m=length(p-c0)-.68;float e;
+  e=length(p-c1)-.44;if(e<m){m=e;c=c1;k=1.;}
+  e=length(p-c2)-.36;if(e<m){m=e;c=c2;k=2.;}
+  e=length(p-c3)-.3;if(e<m){m=e;c=c3;k=3.;}
+  e=length(p-c4)-.24;if(e<m){m=e;c=c4;k=4.;}
+  vec3 q=normalize(p-c);
+  float a=uTime*.12+k*1.7;float ca=cos(a);float sa=sin(a);
+  q=vec3(ca*q.x+sa*q.z,q.y,-sa*q.x+ca*q.z);
+  vec3 g=q*4.2+k*7.3;vec3 cell=floor(g);vec3 h=hash3(cell);
+  if(h.x>.6)return 0.;
+  vec3 o=fract(g)-(.28+.44*h.yzx);
+  float d=length(o*vec3(1.,1.7,1.));
+  return 1.-smoothstep(.085,.12,d);
 }
 vec3 nrm(vec3 p){vec2 e=vec2(.003,0.);return normalize(vec3(map(p+e.xyy)-map(p-e.xyy),map(p+e.yxy)-map(p-e.yxy),map(p+e.yyx)-map(p-e.yyx)));}
 void main(){
+  float tm=uTime*.32;
+  c0=vec3(sin(tm)*.42,cos(tm*1.3)*.3,sin(tm*.7)*.25);
+  c1=vec3(cos(tm*.8)*.78,sin(tm*1.1)*.52,cos(tm*.5)*.35);
+  c2=vec3(sin(tm*1.4+2.)*.55,sin(tm*.6+1.)*.78,.15);
+  c3=vec3(cos(tm*.9+4.)*.8,cos(tm*1.2+3.)*.5,-.2);
+  c4=vec3(uPtr*.95,.45);
   float s=min(uRes.x,uRes.y);
   vec2 uv=(gl_FragCoord.xy-.5*uRes)/s;
   vec3 ro=vec3(0.,0.,4.3);vec3 rd=normalize(vec3(uv,-1.55));
@@ -69,6 +93,8 @@ void main(){
   float f=1.-max(dot(n,-rd),0.);
   vec3 col=mix(uFlesh,uCream,smoothstep(.42,.52,f));
   col=mix(col,uRind,smoothstep(.56,.68,f));
+  // Seeds only on the flesh, fading out well before the cream band.
+  col=mix(col,vec3(.17,.09,.08),.55*seeds(p)*(1.-smoothstep(.26,.4,f)));
   float dif=max(dot(n,l),0.);
   col*=.62+.5*dif;
   col+=.55*pow(max(dot(reflect(-l,n),-rd),0.),36.);

@@ -58,24 +58,29 @@ const ogImage = new URL("/og-image.png", site.url).href;
     <Font cssVariable="--font-geist-mono" />
 
     <script is:inline>
-      // Apply the stored or system theme before first paint.
+      // Apply the stored choice, or the device theme by default, before first paint.
       (() => {
-        let theme;
+        let pref;
         try {
-          theme = localStorage.getItem("theme");
+          pref = localStorage.getItem("theme");
         } catch {
           /* storage blocked */
         }
-        if (theme !== "light" && theme !== "dark") {
-          theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-        document.documentElement.dataset.theme = theme;
+        if (pref !== "light" && pref !== "dark") pref = "system";
+        const root = document.documentElement;
+        root.dataset.pref = pref;
+        root.dataset.theme =
+          pref === "system"
+            ? matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : pref;
       })();
     </script>
 
     {
       jsonLd.map((data) => (
-        <script type="application/ld+json" set:html={JSON.stringify(data)} />
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />
       ))
     }
   </head>
