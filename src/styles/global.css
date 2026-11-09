@@ -43,9 +43,10 @@
   --color-flesh: var(--flesh);
   --color-cream: var(--cream);
 
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --font-display: var(--font-funnel-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-funnel-display), ui-sans-serif, system-ui, sans-serif;
+  /* One typeface throughout; the "mono" name is kept for the label role. */
+  --font-mono: var(--font-funnel-display), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme {
@@ -87,7 +88,6 @@
 
   body {
     @apply bg-paper font-sans text-ink antialiased;
-    font-feature-settings: "ss01", "cv11";
     text-rendering: optimizeLegibility;
   }
 
@@ -132,8 +132,7 @@
   .display-xl {
     font-size: clamp(3.25rem, 1.6rem + 7.5vw, 9rem);
     line-height: 0.9;
-    letter-spacing: -0.045em;
-    font-variation-settings: "wdth" 85;
+    letter-spacing: -0.035em;
   }
 
   .display-lg {

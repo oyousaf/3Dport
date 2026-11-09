@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
 
+
 export default defineConfig({
   site: "https://oyousaf.dev",
   trailingSlash: "never",
@@ -26,30 +27,12 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.fontsource(),
-      name: "Bricolage Grotesque",
-      cssVariable: "--font-bricolage",
-      weights: ["200 800"],
+      name: "Funnel Display",
+      cssVariable: "--font-funnel-display",
+      weights: ["300 800"],
       styles: ["normal"],
       subsets: ["latin"],
       fallbacks: ["sans-serif"],
-    },
-    {
-      provider: fontProviders.fontsource(),
-      name: "Geist",
-      cssVariable: "--font-geist",
-      weights: ["100 900"],
-      styles: ["normal"],
-      subsets: ["latin"],
-      fallbacks: ["sans-serif"],
-    },
-    {
-      provider: fontProviders.fontsource(),
-      name: "Geist Mono",
-      cssVariable: "--font-geist-mono",
-      weights: ["400 600"],
-      styles: ["normal"],
-      subsets: ["latin"],
-      fallbacks: ["monospace"],
     },
   ],
 });
