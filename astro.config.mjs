@@ -14,7 +14,7 @@ export default defineConfig({
   env: {
     schema: {
       RESEND_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
-      CONTACT_TO: envField.string({ context: "server", access: "secret", default: "o_yousaf@live.co.uk" }),
+      CONTACT_TO: envField.string({ context: "server", access: "secret", default: "admin@legxcysol.dev" }),
       CONTACT_FROM: envField.string({
         context: "server",
         access: "secret",
