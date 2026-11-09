@@ -35,7 +35,7 @@ export const site = {
   name: "Omar",
   handle: "oyousaf",
   role: "Frontend Web Developer",
-  email: "o_yousaf@live.co.uk",
+  email: "hello@oyousaf.dev",
   github: "https://github.com/oyousaf",
   linkedin: "https://linkedin.com/in/oyousaf",
   description:
