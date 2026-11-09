@@ -1,0 +1,319 @@
+---
+import { Picture, getImage } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import HeroField from "../components/HeroField.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ContactForm from "../components/ContactForm.astro";
+import portrait from "../assets/omar.webp";
+import { FEATURED_COUNT, experiences, projects, reviews, site } from "../constants";
+
+const featured = projects.slice(0, FEATURED_COUNT);
+const archive = projects.slice(FEATURED_COUNT);
+
+const stack = [
+  "React",
+  "Next.js",
+  "Astro",
+  "Vue & Nuxt",
+  "TypeScript",
+  "Tailwind CSS",
+  "Motion",
+  "Node.js",
+  "Express",
+  "PostgreSQL",
+  "Prisma",
+  "Supabase",
+  "MongoDB",
+  "Stripe",
+  "Vercel",
+];
+
+const ogPortrait = await getImage({ src: portrait, width: 800, format: "webp" });
+const portraitUrl = new URL(ogPortrait.src, site.url).href;
+
+const person = {
+  "@type": "Person",
+  "@id": `${site.url}/#person`,
+  name: site.name,
+  alternateName: site.handle,
+  jobTitle: site.role,
+  description: site.description,
+  url: site.url,
+  image: portraitUrl,
+  email: `mailto:${site.email}`,
+  sameAs: [site.github, site.linkedin],
+  worksFor: {
+    "@type": "Organization",
+    name: "Legxcy Solutions",
+    url: "https://legxcysol.dev",
+  },
+  knowsAbout: [
+    "Frontend development",
+    "Web accessibility",
+    "Web performance",
+    "React",
+    "Next.js",
+    "Astro",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+  ],
+};
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    url: site.url,
+    name: "Omar — Frontend Web Developer",
+    mainEntity: person,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    url: site.url,
+    name: "Omar — oyousaf.dev",
+    inLanguage: "en-GB",
+    author: { "@id": `${site.url}/#person` },
+  },
+];
+---
+
+<Base
+  title="Omar — Frontend Web Developer | oyousaf"
+  description={site.description}
+  jsonLd={jsonLd}
+  ogType="profile"
+>
+  <!-- 01 Hero -->
+  <section class="wrap relative grid items-center gap-8 pt-10 pb-20 sm:pt-16 lg:grid-cols-[1.15fr_1fr] lg:pb-28">
+    <div class="relative z-10">
+      <p class="inline-flex items-center gap-2.5 rounded-full border border-rind/30 bg-rind/8 px-3.5 py-1.5 font-mono text-xs text-rind">
+        <span class="relative flex size-2" aria-hidden="true">
+          <span class="absolute inline-flex size-full rounded-full bg-rind opacity-70 motion-safe:animate-ping"></span>
+          <span class="relative inline-flex size-2 rounded-full bg-rind"></span>
+        </span>
+        Available for freelance projects
+      </p>
+      <h1 class="mt-6">
+        <span class="display-xl block font-bold">Omar<span class="text-flesh">.</span></span>
+        <span class="mt-5 block max-w-xl font-sans text-xl leading-snug font-normal text-muted sm:text-2xl">
+          Frontend web developer crafting fast, accessible websites that people{" "}
+          <em class="font-display font-semibold text-ink not-italic">enjoy</em> using.
+        </span>
+      </h1>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="#work" class="btn btn-primary">See selected work <span aria-hidden="true">↓</span></a>
+        <a href="#contact" class="btn btn-ghost">Start a project</a>
+      </div>
+      <dl class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-ink/10 pt-6">
+        <div>
+          <dt class="font-mono text-xs text-muted">Experience</dt>
+          <dd class="font-display text-2xl font-semibold sm:text-3xl">10+ yrs</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs text-muted">Shipped</dt>
+          <dd class="font-display text-2xl font-semibold sm:text-3xl">{projects.length} sites</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs text-muted">Focus</dt>
+          <dd class="font-display text-2xl font-semibold sm:text-3xl">Frontend</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="pointer-events-none mx-auto w-full max-w-72 sm:max-w-md lg:max-w-none">
+      <HeroField />
+    </div>
+  </section>
+
+  <!-- 02 Work -->
+  <section id="work" aria-labelledby="work-heading" class="wrap py-20 sm:py-28">
+    <p class="eyebrow">01 — Work</p>
+    <div class="mt-6 flex flex-wrap items-end justify-between gap-6">
+      <h2 id="work-heading" class="display-lg max-w-3xl font-semibold">
+        Selected work, from salons to supercars.
+      </h2>
+      <p class="max-w-sm text-muted">
+        Websites and web apps designed and built end to end. Open any project for the details.
+      </p>
+    </div>
+    <div class="mt-14 grid gap-x-8 gap-y-16 md:grid-cols-2">
+      {featured.map((project, i) => <ProjectCard project={project} index={i} eager={i < 2} />)}
+    </div>
+
+    <div class="mt-24">
+      <h3 class="eyebrow">Archive</h3>
+      <ol class="mt-4 divide-y divide-ink/10 border-b border-ink/10">
+        {
+          archive.map((project, i) => (
+            <li class="group">
+              <a
+                href={`/work/${project.slug}`}
+                class="grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-4 gap-y-1 py-5 transition-colors hover:bg-ink/4 sm:grid-cols-[3rem_15rem_1fr_auto] sm:px-2"
+              >
+                <span class="font-mono text-xs text-muted">
+                  {String(i + FEATURED_COUNT + 1).padStart(2, "0")}
+                </span>
+                <span class="grid gap-1 sm:contents">
+                  <span class="font-display text-xl font-semibold tracking-tight group-hover:text-flesh">
+                    {project.title}
+                  </span>
+                  <span class="text-sm text-muted">{project.desc}</span>
+                </span>
+                <span
+                  class="font-mono text-sm text-muted transition-transform group-hover:translate-x-1 group-hover:text-ink"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- 03 About -->
+  <section id="about" aria-labelledby="about-heading" class="border-y border-ink/10 bg-paper-2">
+    <div class="wrap grid gap-12 py-20 sm:py-28 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+      <figure class="reveal mx-auto w-full max-w-sm lg:sticky lg:top-24 lg:max-w-none lg:self-start">
+        <div class="overflow-hidden rounded-t-full rounded-b-4xl border border-ink/10 bg-paper shadow-[0_30px_80px_-40px] shadow-ink/40">
+          <Picture
+            src={portrait}
+            alt="Omar in a graduation cap and gown with a gold-lined hood"
+            widths={[320, 480, 640, 960]}
+            sizes="(min-width: 1024px) 34vw, (min-width: 640px) 24rem, 90vw"
+            formats={["avif"]}
+            fallbackFormat="webp"
+            class="aspect-4/5 w-full object-cover object-[50%_30%]"
+          />
+        </div>
+        <figcaption class="mt-4 font-mono text-xs text-muted">Graduation day — still learning every day since.</figcaption>
+      </figure>
+
+      <div>
+        <p class="eyebrow">02 — About</p>
+        <h2 id="about-heading" class="display-lg mt-6 font-semibold">
+          A decade of building for the web, one detail at a time.
+        </h2>
+        <div class="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-muted">
+          <p>
+            I&rsquo;m Omar, a frontend developer with over ten years&rsquo; experience turning ideas into
+            fast, accessible websites. I care about the things people feel but rarely notice: how a page
+            loads, how it reads on a phone and how it works with a keyboard.
+          </p>
+          <p>
+            Most of my work is in React, Next.js and Astro with TypeScript and Tailwind CSS, and I&rsquo;ve
+            grown into full-stack work &mdash; databases, auth and payments &mdash; so projects ship end to
+            end. Agentic tools such as Claude Code and Codex are part of how I work now, helping me move
+            quickly without cutting corners.
+          </p>
+          <p>Based in the UK, working remotely with clients in any time zone, and open to relocation.</p>
+        </div>
+
+        <h3 class="mt-12 font-mono text-xs tracking-[0.18em] text-muted uppercase">Toolkit</h3>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {stack.map((item) => <li class="chip text-sm text-ink">{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Experience -->
+  <section id="experience" aria-labelledby="experience-heading" class="wrap py-20 sm:py-28">
+    <p class="eyebrow">03 — Experience</p>
+    <h2 id="experience-heading" class="display-lg mt-6 max-w-3xl font-semibold">Where I&rsquo;ve been.</h2>
+    <ol class="mt-14 grid gap-px overflow-hidden rounded-3xl border border-ink/10 bg-ink/10">
+      {
+        experiences.map((item) => (
+          <li class="reveal grid gap-4 bg-paper p-6 sm:p-8 md:grid-cols-[14rem_1fr] md:gap-10">
+            <div>
+              <p class="font-mono text-xs text-muted">{item.period}</p>
+              <h3 class="mt-2 text-xl font-semibold tracking-tight">{item.name}</h3>
+              <p class="text-sm text-rind">{item.role}</p>
+            </div>
+            <p class="max-w-3xl leading-relaxed text-muted">{item.summary}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- 05 Kind words -->
+  <section id="words" aria-labelledby="words-heading" class="bg-ink text-paper">
+    <div class="wrap py-20 sm:py-28">
+      <p class="eyebrow text-paper/60 after:bg-paper/20">04 — Kind words</p>
+      <h2 id="words-heading" class="display-lg mt-6 max-w-3xl font-semibold">
+        What clients say once the site is live.
+      </h2>
+      <div class="mt-14 columns-1 gap-6 md:columns-2 lg:columns-3">
+        {
+          reviews.map((item) => (
+            <figure class="reveal mb-6 break-inside-avoid rounded-3xl border border-paper/12 bg-paper/4 p-6">
+              <blockquote class="leading-relaxed text-paper/85">
+                <p>&ldquo;{item.review}&rdquo;</p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center gap-3">
+                <img
+                  src={item.img}
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                  decoding="async"
+                  class="size-10 rounded-full bg-white object-contain p-1.5"
+                />
+                <span>
+                  <span class="block font-semibold">{item.name}</span>
+                  <span class="block text-sm text-paper/60">{item.position}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Contact -->
+  <section id="contact" aria-labelledby="contact-heading" class="wrap py-20 sm:py-28">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+      <div>
+        <p class="eyebrow">05 — Contact</p>
+        <h2 id="contact-heading" class="display-lg mt-6 font-semibold">
+          Got a project in mind<span class="text-flesh">?</span>
+        </h2>
+        <p class="mt-6 max-w-md text-lg text-muted">
+          Tell me a little about it. I reply to every message, usually within a day or two.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href={`mailto:${site.email}`} class="link text-lg">{site.email}</a>
+          <button
+            type="button"
+            data-copy={site.email}
+            class="chip min-h-11 cursor-pointer px-4 transition-colors hover:border-ink hover:text-ink"
+          >
+            Copy email
+          </button>
+        </div>
+      </div>
+      <ContactForm />
+    </div>
+  </section>
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy ?? "");
+        btn.textContent = "Copied ✓";
+      } catch {
+        btn.textContent = "Copy failed";
+      }
+      setTimeout(() => (btn.textContent = "Copy email"), 2000);
+    });
+  });
+</script>

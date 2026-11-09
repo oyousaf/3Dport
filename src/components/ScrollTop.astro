@@ -1,0 +1,50 @@
+<button
+  type="button"
+  data-scroll-top
+  aria-label="Back to top"
+  class="scroll-top no-print fixed right-4 bottom-4 z-40 grid size-12 place-items-center rounded-full bg-flesh text-paper shadow-lg ring-2 ring-paper transition-[opacity,translate,background-color] duration-300 hover:bg-ink sm:right-6 sm:bottom-6"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"></path>
+  </svg>
+</button>
+
+<style>
+  .scroll-top:not(.is-visible) {
+    opacity: 0;
+    translate: 0 1rem;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .scroll-top {
+    transition-property: opacity, translate, visibility, background-color;
+  }
+</style>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>("[data-scroll-top]");
+  if (btn) {
+    let ticking = false;
+    const update = () => {
+      btn.classList.toggle("is-visible", window.scrollY > 600);
+      ticking = false;
+    };
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true },
+    );
+    update();
+
+    btn.addEventListener("click", () => {
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "instant" : "smooth" });
+      document.getElementById("main")?.focus({ preventScroll: true });
+    });
+  }
+</script>

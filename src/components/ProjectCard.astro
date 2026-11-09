@@ -1,0 +1,69 @@
+---
+import type { Project } from "../constants";
+
+interface Props {
+  project: Project;
+  index: number;
+  eager?: boolean;
+}
+
+const { project, index, eager = false } = Astro.props;
+---
+
+<article
+  class="project-card group reveal @container relative flex flex-col gap-5"
+  style={`--accent: ${project.accent}`}
+>
+  <a
+    href={`/work/${project.slug}`}
+    class="relative block overflow-hidden rounded-3xl border border-ink/10 bg-paper-2 transition-[box-shadow,translate] duration-300 group-hover:-translate-y-1"
+  >
+    <img
+      src={project.texture}
+      alt={`${project.title} website landing page`}
+      width="1600"
+      height="1000"
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      class="aspect-16/10 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+      style={`view-transition-name: shot-${project.slug}`}
+    />
+    <span
+      class="absolute top-4 left-4 rounded-full bg-paper/85 px-3 py-1 font-mono text-xs text-ink backdrop-blur"
+    >
+      {String(index + 1).padStart(2, "0")}
+    </span>
+    <span class="sr-only">Read about {project.title}</span>
+  </a>
+  <div class="flex flex-col gap-3 @md:flex-row @md:items-start @md:justify-between @md:gap-6">
+    <div class="space-y-2">
+      <h3 class="text-2xl font-semibold tracking-tight">
+        <a href={`/work/${project.slug}`} class="hover:text-flesh">{project.title}</a>
+      </h3>
+      <p class="max-w-prose text-muted">{project.desc}</p>
+    </div>
+    <a
+      href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link shrink-0 font-mono text-sm whitespace-nowrap"
+    >
+      Live site <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
+    </a>
+  </div>
+  <ul class="flex flex-wrap gap-2" aria-label="Built with">
+    {project.tags.map((tag) => <li class="chip">{tag}</li>)}
+  </ul>
+</article>
+
+<style>
+  .project-card a:first-child {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  .project-card:hover a:first-child,
+  .project-card:focus-within a:first-child {
+    box-shadow:
+      0 0 0 3px color-mix(in oklab, var(--accent) 70%, transparent),
+      0 24px 60px -24px color-mix(in oklab, var(--accent) 60%, transparent);
+  }
+</style>

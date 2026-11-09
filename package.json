@@ -1,50 +1,30 @@
 {
   "name": "3dport",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "generate-sitemap": "node generate-sitemap.cjs",
-    "build": "npm run generate-sitemap && vite build",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
     "lint": "eslint .",
-    "preview": "vite preview",
     "resolve-favicons": "node scripts/resolve-favicons.mjs"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@gsap/react": "^2.1.2",
-    "@react-three/drei": "^10.7.8",
-    "@react-three/fiber": "^9.7.0",
-    "@react-three/postprocessing": "^3.1.1",
-    "@vercel/analytics": "^1.6.1",
-    "gsap": "^3.15.0",
-    "leva": "^0.10.1",
-    "postprocessing": "^6.39.5",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "react-icons": "^5.7.0",
-    "react-responsive": "^10.0.1",
-    "three": "^0.184.0",
-    "three-globe": "^2.45.2",
-    "three-stdlib": "^2.36.1"
-  },
-  "overrides": {
-    "three-mesh-bvh": "^0.8.0"
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/vite": "^4.3.5",
+    "@vercel/analytics": "^2.0.1",
+    "astro": "^7.4.7",
+    "tailwindcss": "^4.3.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^4.7.0",
-    "autoprefixer": "^10.6.1",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.26",
-    "globals": "^15.9.0",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.19",
-    "vite": "^5.4.21"
+    "@astrojs/check": "^0.9.12",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "globals": "^17.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
   }
 }

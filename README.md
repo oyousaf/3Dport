@@ -1,40 +1,36 @@
-# 3D Portfolio
+# oyousaf.dev
 
-A bold, immersive portfolio built with React, Three.js, and Vite, showcasing dynamic 3D models, animated transitions, and a clean developer aesthetic. Built to highlight projects, skills, and style in one interactive experience.
+Personal portfolio of Omar, a frontend web developer. It's a static Astro site with a project archive, a case-study page per project, and a small raymarched "watermelon" hero written in raw WebGL, with no 3D library.
 
----
+**Live:** [https://oyousaf.dev](https://oyousaf.dev)
 
-## 🚀 Live Site
+## Stack
 
-👉 [https://oyousaf.dev](https://oyousaf.dev)
+- **Astro 7**: static output and cross-document view transitions, with fonts self-hosted through the Astro Fonts API (Fontsource).
+- **TypeScript 6**.
+- **Tailwind CSS 4**: CSS-first `@theme`, with light and dark themes.
+- **Raw WebGL** for the hero field: about 4 KB, paused off screen, still under reduced motion.
+- **EmailJS REST API** for the contact form, with no SDK. Preview mode applies in dev or when keys are missing.
+- **Vercel** hosting with Vercel Analytics and security headers (`vercel.json`).
 
----
+## Scripts
 
-## 🧰 Tech Stack
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server at `localhost:4321` |
+| `npm run check` | Type-check `.astro` and `.ts` files |
+| `npm run lint` | ESLint |
+| `npm run build` | Production build to `dist/` |
+| `npm run resolve-favicons` | Print `favicon`/`accent` values for each project |
 
-### 🖼 Frontend
-- **React** + **Vite** – high-performance development
-- **Tailwind CSS** – utility-first styling
-- **Motion** + **GSAP** – animation and scroll control
+## Adding a project
 
-### 🎮 3D & Canvas
-- **Three.js** via `@react-three/fiber` and `@react-three/drei`
-- Custom `GLB` models and animated video textures
+1. Add an entry to the top of `projects` in `src/constants/index.ts`.
+2. Save a 1600×1000 WebP of the live hero to `public/textures/project/project<N>.webp`.
+3. Run `npm run resolve-favicons` and paste the project's `favicon`/`accent` into the entry.
 
-### 💾 Backend (per project)
-- **Node.js**, **Express**
-- **Prisma** + **PostgreSQL**
-- **Supabase**, **Appwrite**, **Firebase**
+The first six projects are featured cards; the rest appear in the archive. Every project gets a `/work/<slug>` page, plus sitemap and `llms.txt` entries.
 
-### 🌐 Deployment
-- **Vercel** for CI/CD and production
+## Environment
 
----
-
-## 📦 Features
-
-- 📽️ Video-textured project previews  
-- 🎯 GSAP-powered scroll-based UI animations  
-- 🖼️ Custom OG social preview + SEO meta tags  
-- 🧠 Semantic HTML and fully responsive layout  
-- ⚙️ Vercel-ready with fast CI/CD pipeline  
+The contact form reads `VITE_APP_EMAILJS_SERVICE_ID`, `VITE_APP_EMAILJS_TEMPLATE_ID` and `VITE_APP_EMAILJS_PUBLIC_KEY` at build time. These are set in the Vercel project.

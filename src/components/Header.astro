@@ -1,0 +1,125 @@
+---
+import { navLinks } from "../constants";
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
+<header
+  class="no-print sticky top-0 z-50 border-b border-ink/10 bg-paper/80 backdrop-blur-lg supports-backdrop-filter:bg-paper/70"
+>
+  <div class="wrap flex h-16 items-center justify-between gap-6">
+    <a
+      href="/"
+      class="font-display text-xl font-bold tracking-tight"
+      aria-label="Omar — home"
+    >
+      Omar <span aria-hidden="true">🍉</span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden md:block">
+      <ul class="flex items-center gap-1">
+        {
+          navLinks.map(({ name, href }) => (
+            <li>
+              <a
+                href={href}
+                class="rounded-full px-3.5 py-2 text-sm text-muted transition-colors hover:bg-ink/6 hover:text-ink"
+              >
+                {name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <ThemeToggle />
+      <a href="/#contact" class="btn btn-primary hidden min-h-10 px-5 text-sm md:inline-flex">
+        Hire me
+      </a>
+      <button
+        type="button"
+        popovertarget="mobile-menu"
+        class="grid size-11 place-items-center rounded-full border border-ink/15 md:hidden"
+        aria-label="Open menu"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 8h16M4 16h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div
+  id="mobile-menu"
+  popover
+  class="mobile-menu m-0 h-dvh max-h-none w-full max-w-none bg-paper p-0 text-ink md:hidden"
+  aria-label="Menu"
+>
+  <div class="wrap flex h-full flex-col py-4">
+    <div class="flex h-12 items-center justify-between">
+      <span class="font-display text-xl font-bold">Omar <span aria-hidden="true">🍉</span></span>
+      <button
+        type="button"
+        popovertarget="mobile-menu"
+        popovertargetaction="hide"
+        class="grid size-11 place-items-center rounded-full border border-ink/15"
+        aria-label="Close menu"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile" class="mt-10 flex-1">
+      <ol class="space-y-2">
+        {
+          navLinks.map(({ name, href }, i) => (
+            <li>
+              <a
+                href={href}
+                data-menu-link
+                class="flex items-baseline gap-4 py-2 font-display text-5xl font-semibold tracking-tight"
+              >
+                <span class="font-mono text-xs text-muted">0{i + 1}</span>
+                {name}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+    <a href="/#contact" data-menu-link class="btn btn-primary mb-4 w-full">Start a project</a>
+  </div>
+</div>
+
+<style>
+  .mobile-menu {
+    inset: 0;
+    opacity: 0;
+    translate: 0 -1rem;
+    transition:
+      opacity 0.25s ease,
+      translate 0.25s ease,
+      display 0.25s allow-discrete,
+      overlay 0.25s allow-discrete;
+  }
+  .mobile-menu:popover-open {
+    opacity: 1;
+    translate: 0 0;
+  }
+  @starting-style {
+    .mobile-menu:popover-open {
+      opacity: 0;
+      translate: 0 -1rem;
+    }
+  }
+</style>
+
+<script>
+  const menu = document.getElementById("mobile-menu");
+  menu?.querySelectorAll("[data-menu-link]").forEach((link) =>
+    link.addEventListener("click", () => menu.hidePopover()),
+  );
+</script>

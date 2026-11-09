@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Watermelon palette: paper is the warm flesh-of-the-rind cream, rind the deep
+   green skin, flesh the fruit. Raw tokens switch per theme; @theme maps them to
+   Tailwind colours so opacity modifiers (bg-ink/8) keep working. */
+:root {
+  color-scheme: light;
+  --paper: #f4eee4;
+  --paper-2: #ece4d6;
+  --ink: #13211b;
+  --muted: #56635c;
+  --rind: #1e5a3d;
+  --flesh: #c02b48;
+  --cream: #f7f0d8;
+  /* Colours the hero field renders with (kept rich in both themes). */
+  --melon-flesh: #f0506e;
+  --melon-cream: #f6efcf;
+  --melon-rind: #2b7a4b;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0e1813;
+  --paper-2: #15231c;
+  --ink: #eee7da;
+  --muted: #a3b0a8;
+  --rind: #79c99a;
+  --flesh: #ff6f86;
+  --cream: #2a2a1f;
+  --melon-flesh: #ff5f7c;
+  --melon-cream: #f3ecd2;
+  --melon-rind: #3f9a63;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rind: var(--rind);
+  --color-flesh: var(--flesh);
+  --color-cream: var(--cream);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+
+@theme {
+  --animate-heartbeat: heartbeat 1.6s ease-in-out infinite;
+
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    14% {
+      transform: scale(1.2);
+    }
+    28% {
+      transform: scale(1);
+    }
+    42% {
+      transform: scale(1.14);
+    }
+    70% {
+      transform: scale(1);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: var(--paper);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-flesh text-paper;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-3 outline-flesh;
+  }
+
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-balance;
+    font-optical-sizing: auto;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-8;
+  }
+
+  /* Section eyebrow: "01 — Work" */
+  .eyebrow {
+    @apply flex items-center gap-3 font-mono text-xs tracking-[0.18em] text-muted uppercase;
+  }
+  .eyebrow::after {
+    content: "";
+    @apply h-px flex-1 bg-ink/15;
+  }
+
+  .display-xl {
+    font-size: clamp(3.25rem, 1.6rem + 7.5vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    font-variation-settings: "wdth" 85;
+  }
+
+  .display-lg {
+    font-size: clamp(2.25rem, 1.4rem + 3.6vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-ink/15 px-3 py-1 font-mono text-xs text-muted;
+  }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 font-medium transition-[background-color,color,transform,box-shadow] duration-200 active:scale-98;
+  }
+  .btn-primary {
+    @apply bg-flesh text-paper hover:bg-ink;
+  }
+  .btn-ghost {
+    @apply border border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-paper;
+  }
+
+  .link {
+    @apply underline decoration-ink/30 decoration-1 underline-offset-4 transition-colors hover:decoration-flesh;
+  }
+
+  .field {
+    @apply w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3 text-ink transition-colors placeholder:text-muted/80 hover:border-ink/35 focus:border-rind focus:outline-none;
+  }
+  .field:user-invalid {
+    @apply border-flesh;
+  }
+}
+
+/* Scroll-driven reveal, no JavaScript. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cross-document view transitions between the home page and case studies. */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

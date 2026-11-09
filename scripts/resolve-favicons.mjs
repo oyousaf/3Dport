@@ -1,7 +1,7 @@
 // Resolves each project's real live favicon and its dominant accent colour,
-// for pasting into src/constants/index.js as `favicon`/`accent` fields.
+// for pasting into src/constants/index.ts as `favicon`/`accent` fields.
 //
-// Why this exists: Projects.jsx loads each project's favicon live from its
+// Why this exists: ProjectCard.astro loads each project's favicon live from its
 // own domain rather than a locally bundled logo image, so it always reflects
 // whatever icon is actually deployed. Extracting an accent colour from that
 // image in the browser needs CORS support the favicon host may not provide,
@@ -10,12 +10,12 @@
 // generic placeholder for less common hosts).
 //
 // Run after adding/changing a project: `node scripts/resolve-favicons.mjs`,
-// then copy the printed favicon/accent values into constants/index.js.
+// then copy the printed favicon/accent values into constants/index.ts.
 import { execSync } from "child_process";
 import { mkdtempSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
-import { myProjects } from "../src/constants/index.js";
+import { projects } from "../src/constants/index.ts";
 
 const TMP_DIR = mkdtempSync(path.join(tmpdir(), "favicon-resolve-"));
 
@@ -71,7 +71,7 @@ async function averageColor(imageUrl, tmpBase) {
   return `#${[r, g, b].map((c) => c.toString(16).padStart(2, "0")).join("")}`;
 }
 
-for (const p of myProjects) {
+for (const p of projects) {
   try {
     const faviconUrl = await resolveFavicon(p.href);
     let accent = "#aaf0d1";
