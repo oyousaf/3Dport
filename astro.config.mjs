@@ -18,7 +18,7 @@ export default defineConfig({
       CONTACT_FROM: envField.string({
         context: "server",
         access: "secret",
-        default: "oyousaf.dev <contact@legxcysol.dev>",
+        default: "oyousaf.dev <form@oyousaf.dev>",
       }),
     },
   },
