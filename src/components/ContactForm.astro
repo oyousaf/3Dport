@@ -1,33 +1,18 @@
 ---
 import { site } from "../constants";
-
-// EmailJS keys live in the Vercel project env (VITE_APP_EMAILJS_*). They are
-// public by design (EmailJS sends from the browser), so they are read at build
-// time and handed to the client script. Missing keys or dev = preview mode.
-const env = import.meta.env;
-const serviceId = env.VITE_APP_EMAILJS_SERVICE_ID ?? "";
-const templateId = env.VITE_APP_EMAILJS_TEMPLATE_ID ?? "";
-const publicKey = env.VITE_APP_EMAILJS_PUBLIC_KEY ?? "";
-const preview = env.DEV || !serviceId || !templateId || !publicKey;
+// Posts to /api/contact (a Vercel function that sends through Resend).
+// Without RESEND_API_KEY in dev, the endpoint runs in preview mode.
 ---
 
-<form
-  data-contact
-  data-service={serviceId}
-  data-template={templateId}
-  data-key={publicKey}
-  data-preview={preview ? "true" : "false"}
-  data-email={site.email}
-  class="grid gap-4"
->
+<form data-contact data-email={site.email} class="grid gap-4" novalidate>
   <div class="grid gap-4 sm:grid-cols-2">
     <label class="grid gap-2">
       <span class="text-sm font-medium">Name</span>
-      <input name="name" type="text" required autocomplete="name" class="field" />
+      <input name="name" type="text" required maxlength="100" autocomplete="name" class="field" />
     </label>
     <label class="grid gap-2">
       <span class="text-sm font-medium">Email</span>
-      <input name="email" type="email" required autocomplete="email" class="field" />
+      <input name="email" type="email" required maxlength="200" autocomplete="email" class="field" />
     </label>
   </div>
   <label class="grid gap-2">
@@ -42,6 +27,10 @@ const preview = env.DEV || !serviceId || !templateId || !publicKey;
       class="field resize-y"
       placeholder="What are you building, and when do you need it?"></textarea>
   </label>
+  <!-- Honeypot: hidden from people, tempting to bots. -->
+  <div class="absolute -left-[9999px] size-px overflow-hidden" aria-hidden="true">
+    <label>Company <input name="company" type="text" tabindex="-1" autocomplete="off" /></label>
+  </div>
   <div class="flex flex-wrap items-center gap-4">
     <button type="submit" class="btn btn-primary disabled:opacity-60">
       <span data-label>Send message</span>
@@ -49,17 +38,28 @@ const preview = env.DEV || !serviceId || !templateId || !publicKey;
     </button>
     <p data-status role="status" aria-live="polite" class="text-sm"></p>
   </div>
-  {preview && <p class="font-mono text-xs text-muted">Preview mode: messages are not sent.</p>}
+  <noscript>
+    <p class="text-sm text-muted">
+      The form needs JavaScript. You can email <a class="link" href={`mailto:${site.email}`}>{site.email}</a> instead.
+    </p>
+  </noscript>
 </form>
 
 <script>
   const form = document.querySelector<HTMLFormElement>("[data-contact]");
   if (form) {
+    const startedAt = Date.now();
     const status = form.querySelector<HTMLElement>("[data-status]")!;
     const label = form.querySelector<HTMLElement>("[data-label]")!;
     const button = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
     const count = form.querySelector<HTMLElement>("[data-count]")!;
     const message = form.elements.namedItem("message") as HTMLTextAreaElement;
+    const email = form.dataset.email;
+
+    const say = (text: string, ok: boolean) => {
+      status.className = `text-sm ${ok ? "text-rind" : "text-flesh"}`;
+      status.textContent = text;
+    };
 
     message.addEventListener("input", () => {
       count.textContent = `${message.value.length} / 500`;
@@ -68,43 +68,31 @@ const preview = env.DEV || !serviceId || !templateId || !publicKey;
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!form.reportValidity()) return;
-      const data = new FormData(form);
-      const { service, template, key, preview, email } = form.dataset;
+      const data = Object.fromEntries(new FormData(form));
 
       button.disabled = true;
       label.textContent = "Sending…";
       status.textContent = "";
 
       try {
-        if (preview === "true") {
-          await new Promise((r) => setTimeout(r, 600));
-        } else {
-          const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              service_id: service,
-              template_id: template,
-              user_id: key,
-              template_params: {
-                from_name: data.get("name"),
-                from_email: data.get("email"),
-                to_name: "Omar",
-                to_email: email,
-                message: data.get("message"),
-              },
-            }),
-          });
-          if (!res.ok) throw new Error(await res.text());
-        }
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...data, startedAt }),
+        });
+        const body = (await res.json().catch(() => ({}))) as { ok?: boolean; preview?: boolean; error?: string };
+        if (!res.ok || !body.ok) throw new Error(body.error ?? `HTTP ${res.status}`);
         form.reset();
         count.textContent = "0 / 500";
-        status.className = "text-sm text-rind";
-        status.textContent = "Thanks — your message is on its way. I'll reply within a day or two.";
+        say(
+          body.preview
+            ? "Preview mode: the message was logged, not sent."
+            : "Thanks — your message is on its way. I'll reply within a day or two.",
+          true,
+        );
       } catch (err) {
         console.error(err);
-        status.className = "text-sm text-flesh";
-        status.textContent = `Something went wrong. Please email ${email} directly.`;
+        say(`Something went wrong. Please email ${email} directly.`, false);
       } finally {
         button.disabled = false;
         label.textContent = "Send message";

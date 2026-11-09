@@ -1,13 +1,27 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
   site: "https://oyousaf.dev",
   trailingSlash: "never",
   build: { format: "file" },
-  integrations: [sitemap()],
+  // Pages stay static; only /api/contact runs on demand (a Vercel function).
+  adapter: vercel(),
+  integrations: [sitemap({ filter: (page) => !page.includes("/api/") })],
+  env: {
+    schema: {
+      RESEND_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
+      CONTACT_TO: envField.string({ context: "server", access: "secret", default: "o_yousaf@live.co.uk" }),
+      CONTACT_FROM: envField.string({
+        context: "server",
+        access: "secret",
+        default: "oyousaf.dev <contact@legxcysol.dev>",
+      }),
+    },
+  },
   vite: { plugins: [tailwindcss()] },
   fonts: [
     {
