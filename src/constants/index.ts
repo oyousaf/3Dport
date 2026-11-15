@@ -264,14 +264,14 @@ export const projects: Project[] = [
   },
   {
     slug: "weather",
-    title: "Weather",
-    desc: "A mobile-first weather app with sleek design and city search features.",
-    subdesc: "Built using Vue 3, Nuxt 4, and the OpenWeather API.",
+    title: "Weatherly",
+    desc: "A weather app whose sky shifts colour with the temperature, with city search and live conditions at a glance.",
+    subdesc: "Built with Nuxt 4, Vue 3, TypeScript, and the OpenWeather API.",
     href: "https://kufi.uk/",
     favicon: "https://kufi.uk/favicon.svg",
     accent: "#9bd7c3",
     texture: "/textures/project/project6.webp",
-    tags: ["Vue", "Nuxt"],
+    tags: ["Nuxt", "Vue", "TypeScript"],
   },
 ];
 
